@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="CivicBird helps people navigate everyday paperwork and citizen assistance services with clear guidance.">
+<title>CivicBird | Your Work, Our Assistance</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#155eef;--navy:#102a43;--yellow:#ffca28;--muted:#617184;--bg:#f7f9fc}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--navy);background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+header{padding:17px 6%;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #edf0f5}
+.logo{font-size:25px;font-weight:800;letter-spacing:-1px}.logo span{color:var(--blue)}
+.nav-cta{background:var(--blue);color:#fff;padding:10px 16px;border-radius:9px;font-weight:700;font-size:14px}
+.hero{padding:70px 6% 60px;background:linear-gradient(135deg,#f3f7ff,#fffdf5);text-align:center}
+.tag{display:inline-block;background:#e6edff;color:var(--blue);padding:6px 13px;border-radius:30px;font-size:13px;font-weight:700;margin-bottom:20px}
+h1{font-size:clamp(35px,7vw,58px);line-height:1.13;letter-spacing:-1.7px;max-width:760px;margin:auto}h1 span{color:var(--blue)}
+.hero p{color:var(--muted);max-width:590px;margin:20px auto;font-size:17px}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{display:inline-block;padding:13px 20px;border-radius:10px;font-weight:700;border:1px solid #dce3ed;cursor:pointer;font-size:15px}
+.primary{background:var(--blue);color:#fff;border-color:var(--blue)}.secondary{background:#fff}
+.trust{font-size:13px!important}
+section{padding:55px 6%}.section-heading{text-align:center;margin-bottom:30px}
+.section-heading h2{font-size:29px;letter-spacing:-.6px}.section-heading p{color:var(--muted);margin-top:8px}
+.services{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.service{border:1px solid #e8edf4;border-radius:15px;padding:20px 15px;background:#fff}
+.emoji{font-size:28px}.service h3{font-size:16px;margin:8px 0 4px}.service p{color:var(--muted);font-size:13px}
+.how{background:var(--bg)}.steps{display:grid;gap:15px}.step{background:#fff;border:1px solid #e8edf4;border-radius:13px;padding:19px}
+.step b{display:block;margin-bottom:5px}.step p{color:var(--muted);font-size:14px}
+.notice{margin-top:25px;padding:16px;background:#fff7df;border-radius:12px;font-size:13px;color:#664d03}
+.contact{text-align:center}.contact p{color:var(--muted);margin:10px 0 20px}
+footer{padding:25px 6%;border-top:1px solid #edf0f5;text-align:center;color:var(--muted);font-size:12px}
+@media(min-width:650px){.services{grid-template-columns:repeat(3,minmax(0,1fr))}.steps{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{padding-top:95px;padding-bottom:85px}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="#">Civic<span>Bird</span>.</a><a class="nav-cta" href="#services">Explore Services ↗</a></header>
+<main>
+<section class="hero">
+<span class="tag">YOUR CITIZEN ASSISTANCE PARTNER</span>
+<h1>Government work, <span>made simpler.</span></h1>
+<p>Need help understanding paperwork or navigating everyday public services? CivicBird helps you find the right guidance and assistance, one step at a time.</p>
+<div class="actions"><a class="btn primary" href="#services">Explore Services →</a><a class="btn secondary" href="#how">How It Works</a></div>
+<p class="trust">Clear guidance · Transparent charges · Human assistance</p>
+</section>
+<section id="services">
+<div class="section-heading"><h2>How can we help you?</h2><p>Choose the type of assistance you need.</p></div>
+<div class="services">
+<article class="service"><div class="emoji">⚡</div><h3>Electricity Services</h3><p>Guidance for connection, billing and related paperwork.</p></article>
+<article class="service"><div class="emoji">🏛️</div><h3>Government Offices</h3><p>Help understanding procedures and required documents.</p></article>
+<article class="service"><div class="emoji">📄</div><h3>Document Assistance</h3><p>Understand forms, checklists and application steps.</p></article>
+<article class="service"><div class="emoji">🏠</div><h3>Municipal Services</h3><p>General guidance for local civic services and paperwork.</p></article>
+<article class="service"><div class="emoji">📮</div><h3>Post Office Help</h3><p>Guidance on common postal services and documentation.</p></article>
+<article class="service"><div class="emoji">🤝</div><h3>Other Assistance</h3><p>Tell us what you need help with and we will review it.</p></article>
+</div>
+<div class="notice"><strong>Important:</strong> CivicBird is an independent assistance service, not a government department. Services are subject to availability. Official decisions remain with the relevant government authority.</div>
+</section>
+<section class="how" id="how">
+<div class="section-heading"><h2>Simple. Clear. Convenient.</h2><p>Here's how CivicBird is designed to work.</p></div>
+<div class="steps">
+<div class="step"><b>01 · Choose</b><p>Select the service or paperwork you need assistance with.</p></div>
+<div class="step"><b>02 · Connect</b><p>Share your request so our team can review the details.</p></div>
+<div class="step"><b>03 · Get assistance</b><p>Discuss availability, charges and the next steps before proceeding.</p></div>
+</div>
+</section>
+<section class="contact"><div class="section-heading"><h2>Need a helping hand?</h2><p>We're building a simpler way to navigate everyday paperwork.</p></div><a class="btn primary" href="#services">Browse Assistance</a></section>
+</main>
+<footer><p><strong>CivicBird</strong> · Your Work, Our Assistance</p><p>Independent assistance service. Not affiliated with any government.</p><p>© <span id="year"></span> CivicBird. All rights reserved.</p></footer>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>

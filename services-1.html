@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123b72">
+  <meta name="description" content="Choose a CivicBird service, describe your task, add source and destination details, and review the service fee before requesting assistance.">
+  <title>Services & Request Assistance | CivicBird</title>
+  <style>
+    :root{--navy:#123b72;--navy-dark:#0b2850;--blue:#2468bd;--sky:#eaf3ff;--ink:#172337;--muted:#607086;--line:#dce4ee;--paper:#fff;--soft:#f6f9fd;--green:#18794e;--red:#b42318;--radius:18px;--shadow:0 16px 45px rgba(18,59,114,.10);--max:1160px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}.container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}.icon{width:23px;height:23px;flex:0 0 23px}.announcement{background:var(--navy-dark);color:#fff;font-size:.85rem}.announcement-inner{min-height:36px;display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;padding:6px 0}.announcement strong{color:#fff}.site-header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav-wrap{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:inline-flex;align-items:center;gap:10px;min-width:170px}.brand img{width:44px;height:44px;object-fit:contain;border-radius:8px}.brand-name{display:block;color:var(--navy);font-size:1.3rem;font-weight:900;letter-spacing:-.045em;line-height:1}.brand-tag{display:block;color:var(--muted);font-size:.62rem;font-weight:700;letter-spacing:.035em;margin-top:5px}.nav-links{display:flex;align-items:center;gap:24px}.nav-links a{font-size:.91rem;font-weight:750;color:#34465c}.nav-links a:hover,.nav-links a[aria-current=page]{color:var(--blue)}.nav-actions{display:flex;gap:10px;align-items:center}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:11px 18px;border:1px solid transparent;border-radius:10px;font-weight:800;line-height:1.2;cursor:pointer;transition:transform .18s ease,background .18s ease}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--navy);color:#fff}.btn-primary:hover{background:var(--navy-dark)}.btn-outline{border-color:#c9d8eb;background:#fff;color:var(--navy)}.btn-outline:hover{background:var(--sky)}.menu-toggle{display:none;width:43px;height:43px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--navy)}.hero{background:radial-gradient(circle at 88% 15%,#d9eaff 0,transparent 27%),linear-gradient(120deg,#f8fbff,#fff 55%,#edf5ff);padding:62px 0 54px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--blue);font-weight:850;letter-spacing:.12em;text-transform:uppercase;font-size:.75rem}.eyebrow:before{content:"";width:23px;height:2px;background:currentColor;border-radius:9px}h1,h2,h3,p{margin-top:0}h1,h2,h3{line-height:1.14;letter-spacing:-.035em}h1{font-size:clamp(2.4rem,5vw,4rem);margin:16px 0}h1 span{color:var(--blue)}h2{font-size:clamp(1.8rem,3.5vw,2.7rem);margin-bottom:12px}h3{font-size:1.14rem;margin-bottom:9px}p{color:var(--muted)}.hero p{max-width:760px;font-size:1.06rem;margin-bottom:0}.section{padding:64px 0}.section-soft{background:var(--soft)}.layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);gap:26px;align-items:start}.panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 8px 28px rgba(18,59,114,.045)}.panel-heading{display:flex;align-items:flex-start;gap:13px;margin-bottom:24px}.icon-box{width:48px;height:48px;display:grid;place-items:center;border-radius:13px;background:var(--sky);color:var(--navy);flex:0 0 48px}.panel-heading p{font-size:.91rem;margin-bottom:0}.step-label{font-size:.75rem;font-weight:850;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}.form-section{padding:22px 0;border-top:1px solid var(--line)}.form-section:first-of-type{border-top:0;padding-top:0}.section-title{display:flex;align-items:center;gap:10px;font-size:1.04rem;font-weight:850;margin-bottom:16px}.section-title .number{width:29px;height:29px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:.82rem}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:grid;gap:7px;min-width:0}.field[hidden]{display:none!important}.field.full{grid-column:1/-1}label{font-size:.86rem;font-weight:780;color:#33465e}input,select,textarea{width:100%;min-height:47px;padding:11px 12px;border:1px solid #cbd6e4;border-radius:9px;background:#fff;color:var(--ink);outline:none}textarea{min-height:110px;resize:vertical}input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(36,104,189,.12)}.help{font-size:.78rem;color:var(--muted);margin:0}.required{color:var(--red)}.location-row{display:flex;gap:10px;align-items:stretch}.location-row input{flex:1;min-width:0}.location-row .btn{white-space:nowrap;padding-inline:13px}.location-status{font-size:.82rem;margin:9px 0 0;overflow-wrap:anywhere}.location-status.success{color:var(--green)}.location-status.error{color:var(--red)}.check-row{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:#43566e}.check-row input{width:18px;height:18px;min-height:18px;margin-top:3px;flex:0 0 18px}.estimate{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:18px}.estimate-title{font-size:.78rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:13px}.estimate-line{display:flex;justify-content:space-between;gap:15px;padding:8px 0;color:#43566e;font-size:.91rem}.estimate-line strong{color:var(--ink);text-align:right}.estimate-line.total{border-top:1px solid var(--line);margin-top:6px;padding-top:14px;font-size:1.03rem;font-weight:850}.estimate-line.total strong{color:var(--navy);font-size:1.25rem}.notice{display:flex;gap:10px;padding:13px;border-radius:11px;background:var(--sky);color:#294b77;font-size:.83rem;margin:17px 0}.notice .icon{width:20px;height:20px;flex:0 0 20px}.summary-list{display:grid;gap:13px;margin:0 0 20px}.summary-item{display:flex;align-items:flex-start;gap:10px}.summary-item .icon{color:var(--blue);width:19px;height:19px;flex:0 0 19px;margin-top:2px}.summary-item strong{display:block;font-size:.89rem}.summary-item span{display:block;font-size:.81rem;color:var(--muted)}.summary-card{position:sticky;top:100px}.summary-card h2{font-size:1.45rem}.summary-card>p{font-size:.9rem}.summary-rule{height:1px;background:var(--line);margin:20px 0}.legal-note{font-size:.78rem;line-height:1.6;margin:14px 0 0}.status-message{display:none;padding:13px;border-radius:10px;background:#e8f7ef;color:#176744;font-size:.88rem;margin-top:14px;overflow-wrap:anywhere}.status-message.show{display:block}.status-message.error{background:#fff0ef;color:#a12820}.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.info-card{border:1px solid var(--line);background:#fff;border-radius:15px;padding:22px}.info-card .icon-box{margin-bottom:15px}.info-card p{font-size:.88rem;margin-bottom:0}.faq-list{display:grid;gap:11px;max-width:850px}details{border:1px solid var(--line);border-radius:12px;background:#fff;padding:0 17px}summary{list-style:none;cursor:pointer;padding:17px 30px 17px 0;position:relative;font-weight:800}summary::-webkit-details-marker{display:none}summary:after{content:"+";position:absolute;right:0;top:12px;font-size:1.45rem;color:var(--blue);font-weight:500}details[open] summary:after{content:"−"}details p{font-size:.9rem;margin:0;padding:0 0 17px}.site-footer{background:#0b1e36;color:#fff;padding:45px 0 22px}.footer-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:30px;padding-bottom:30px}.footer-brand p{color:#b7c6d9;font-size:.88rem;max-width:370px;margin-top:16px}.footer-brand .brand-name{color:#fff}.footer-brand .brand-tag{color:#b7c6d9}.footer-title{font-size:.9rem;font-weight:850;margin-bottom:13px}.footer-links{display:grid;gap:9px}.footer-links a{color:#b7c6d9;font-size:.87rem}.footer-links a:hover{color:#fff}.footer-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:18px;color:#9eb0c6;font-size:.79rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:980px){.nav-links{gap:14px}.nav-links a{font-size:.84rem}.layout{grid-template-columns:minmax(0,1fr) 310px}.panel{padding:22px}.footer-grid{grid-template-columns:1.2fr 1fr 1fr}}
+    @media(max-width:760px){.container{width:min(var(--max),calc(100% - 30px))}.nav-wrap{min-height:68px}.brand{min-width:0}.brand img{width:40px;height:40px}.brand-name{font-size:1.2rem}.brand-tag{font-size:.58rem}.menu-toggle{display:grid;place-items:center}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;padding:12px 20px 20px;border-bottom:1px solid var(--line);box-shadow:0 15px 25px rgba(18,59,114,.08);gap:0;align-items:stretch}.nav-links.open{display:flex;flex-direction:column}.nav-links a{padding:12px 2px;border-bottom:1px solid #edf1f6;font-size:.94rem}.nav-actions .btn-outline{display:none}.nav-actions .btn-primary{min-height:41px;padding:9px 12px;font-size:.82rem}.hero{padding:48px 0 42px}.section{padding:48px 0}.layout{grid-template-columns:1fr}.summary-card{position:static}.info-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
+    @media(max-width:460px){.field-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.location-row{flex-direction:column}.location-row .btn{width:100%}.panel{padding:19px}.footer-grid{gap:22px 16px}.nav-actions .btn-primary{display:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <svg class="sr-only" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M14 2v6h6M8 13h8M8 17h8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-location" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-support" viewBox="0 0 24 24"><path d="M4 13v-2a8 8 0 0 1 16 0v2M4 13a2 2 0 0 0 2 2h1v-5H6a2 2 0 0 0-2 2Zm16 0a2 2 0 0 1-2 2h-1v-5h1a2 2 0 0 1 2 2ZM12 21h3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="18" cy="6" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M9 18h2a3 3 0 0 0 3-3v-3a3 3 0 0 1 3-3h1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v5M12 7h.01" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <div class="announcement"><div class="container announcement-inner"><span>CivicBird Services</span><strong>Kaam Aapka, Saath Hamara.</strong></div></div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="CivicBird homepage"><img src="logo.png" alt="CivicBird logo" onerror="this.style.display='none'"><span><span class="brand-name">CivicBird</span><span class="brand-tag">KAAM AAPKA, SAATH HAMARA</span></span></a>
+      <nav class="nav-links" id="mainNav" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="services.html" aria-current="page">Services</a><a href="index.html#how-it-works">How It Works</a><a href="index.html#pricing">Pricing</a><a href="index.html#safety">Safety</a><a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="nav-actions"><a class="btn btn-outline" href="index.html#contact">Contact Us</a><a class="btn btn-primary" href="#requestForm">Request Assistance</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Services and task requests</span>
+        <h1>Tell us what you need.<br><span>Plan the next step clearly.</span></h1>
+        <p>Select a service category, describe the work and add your source and destination. Review the service-fee breakdown before preparing your request.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container layout">
+        <form class="panel" id="requestForm">
+          <div class="panel-heading">
+            <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></div>
+            <div><div class="step-label">Service request</div><h2 style="font-size:1.55rem;margin-bottom:7px">Request assistance</h2><p>Fields marked with an asterisk are required.</p></div>
+          </div>
+
+          <div class="form-section">
+            <div class="section-title"><span class="number">1</span>Choose your service</div>
+            <div class="field-grid">
+              <div class="field full"><label for="serviceCategory">Service category <span class="required">*</span></label>
+                <select id="serviceCategory" name="serviceCategory" required>
+                  <option value="">Select a category</option>
+                  <option>Certificates and documentation</option>
+                  <option>Government forms and applications</option>
+                  <option>Land and property records</option>
+                  <option>Electricity, water and utility services</option>
+                  <option>Education and scholarship assistance</option>
+                  <option>Identity and travel documentation</option>
+                  <option>Banking or financial-service paperwork</option>
+                  <option>Local office visit or follow-up</option>
+                  <option>Other — please specify</option>
+                </select>
+              </div>
+              <div class="field full" id="otherServiceWrap" hidden><label for="otherService">Specify your service <span class="required">*</span></label><input id="otherService" name="otherService" maxlength="160" placeholder="Describe the service you need"></div>
+              <div class="field full"><label for="workDescription">What work do you need done? <span class="required">*</span></label><textarea id="workDescription" name="workDescription" required maxlength="1800" placeholder="Describe the task, relevant office or department, and what help you need. Do not enter OTPs, passwords or unnecessary identity numbers."></textarea><p class="help">Please provide enough detail for the request to be reviewed. Do not share original documents or login credentials in this field.</p></div>
+              <div class="field"><label for="preferredDate">Preferred date <span class="required">*</span></label><input type="date" id="preferredDate" name="preferredDate" required></div>
+              <div class="field"><label for="preferredTime">Preferred time <span class="required">*</span></label><input type="time" id="preferredTime" name="preferredTime" required></div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="section-title"><span class="number">2</span>Where is the work?</div>
+            <div class="field-grid">
+              <div class="field full"><label for="sourceAddress">Source / your current location <span class="required">*</span></label><input id="sourceAddress" name="sourceAddress" required maxlength="250" autocomplete="street-address" placeholder="House, street, area, city, PIN code"></div>
+              <div class="field full"><label for="destinationAddress">Destination / office to visit <span class="required">*</span></label><input id="destinationAddress" name="destinationAddress" required maxlength="250" placeholder="Office name, address, area, city, PIN code"></div>
+              <div class="field full"><label for="liveLocation">Customer live location <span class="required">*</span></label>
+                <div class="location-row"><input id="liveLocation" name="liveLocation" required readonly placeholder="Use the button to share your current location"><button class="btn btn-outline" type="button" id="getLocation"><svg class="icon" aria-hidden="true"><use href="#i-location"/></svg> Share Location</button></div>
+                <p class="help">Your browser will ask for permission. Location access works on HTTPS websites and supported browsers.</p><p class="location-status" id="locationStatus" aria-live="polite"></p>
+              </div>
+              <div class="field"><label for="customerName">Your full name <span class="required">*</span></label><input id="customerName" name="customerName" required maxlength="100" autocomplete="name" placeholder="Full name"></div>
+              <div class="field"><label for="customerPhone">Mobile number <span class="required">*</span></label><input id="customerPhone" name="customerPhone" required type="tel" inputmode="tel" autocomplete="tel" pattern="[0-9+() -]{8,18}" maxlength="18" placeholder="Contact number"></div>
+              <div class="field full"><label for="customerEmail">Email address (optional)</label><input id="customerEmail" name="customerEmail" type="email" autocomplete="email" maxlength="150" placeholder="you@example.com"></div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="section-title"><span class="number">3</span>Review and consent</div>
+            <label class="check-row"><input type="checkbox" id="consent" name="consent" required><span>I confirm the information I have provided is accurate and agree that CivicBird may use these details to respond to this service request. I understand that a request is not confirmed until availability, scope and charges are reviewed.</span></label>
+            <div class="notice"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Do not submit Aadhaar images, passwords, OTPs or banking credentials in this form. If documents are needed, use a secure method provided by CivicBird after the request is reviewed.</span></div>
+            <button class="btn btn-primary" type="submit" style="width:100%">Review Request Details <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <p class="help" style="margin-top:12px">Submitting this request does not guarantee availability, an appointment or a government approval.</p>
+            <div class="status-message" id="formStatus" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+
+        <aside class="panel summary-card" aria-label="Service fee summary">
+          <div class="panel-heading">
+            <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-route"/></svg></div>
+            <div><div class="step-label">Cost summary</div><h2>Service fee</h2><p>Review the known charges before you proceed.</p></div>
+          </div>
+          <div class="estimate">
+            <div class="estimate-title">Standard service fee</div>
+            <div class="estimate-line"><span>Service fee</span><strong>₹300.00</strong></div>
+            <div class="estimate-line"><span>GST (18%)</span><strong>₹54.00</strong></div>
+            <div class="estimate-line total"><span>Service fee total</span><strong>₹354.00</strong></div>
+          </div>
+          <div class="summary-list">
+            <div class="summary-item"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><div><strong>Clear service-fee breakdown</strong><span>₹300 plus 18% GST.</span></div></div>
+            <div class="summary-item"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><div><strong>Task reviewed before confirmation</strong><span>Scope and availability must be confirmed.</span></div></div>
+            <div class="summary-item"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><div><strong>Official charges shown separately</strong><span>Government or department fees are not included unless explicitly stated.</span></div></div>
+          </div>
+          <div class="summary-rule"></div>
+          <h3>Before you request</h3>
+          <p>Check your source and destination details, select a preferred date and time, and share your current location when prompted.</p>
+          <div class="notice"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span>CivicBird cannot guarantee government decisions, eligibility or processing times. These are determined by the relevant authority.</span></div>
+          <p class="legal-note">Any additional travel or task-related charge must be explained and agreed before the service is confirmed. No online payment is requested on this page.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div style="max-width:740px;margin-bottom:30px"><span class="eyebrow">What happens next</span><h2>Every request starts with clear details.</h2><p>These steps help establish the task scope before any work is accepted.</p></div>
+        <div class="info-grid">
+          <article class="info-card"><div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></div><h3>Request review</h3><p>The selected service and task description need to be reviewed for scope and eligibility.</p></article>
+          <article class="info-card"><div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></div><h3>Availability confirmation</h3><p>Your preferred date and time are requests, not a confirmed appointment until accepted.</p></article>
+          <article class="info-card"><div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></div><h3>Confirm charges and process</h3><p>Review the agreed work, service fee, any separately disclosed costs and next steps before proceeding.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div style="max-width:740px;margin-bottom:28px"><span class="eyebrow">Service questions</span><h2>Before you submit a request.</h2></div>
+        <div class="faq-list">
+          <details><summary>What is included in the ₹354 service fee?</summary><p>The standard service fee is ₹300 plus 18% GST, totalling ₹354. Official department fees and any separately agreed travel or task-related charges are not included unless clearly stated.</p></details>
+          <details><summary>Why do I need to share my live location?</summary><p>Your current location helps identify where the request is being made. Your browser will ask permission before sharing coordinates. You can deny permission, but the location field is required to submit this request form.</p></details>
+          <details><summary>Is my booking confirmed as soon as I submit the form?</summary><p>No. The request details need to be reviewed and availability, service scope and applicable charges confirmed. Do not consider a preferred date or time booked until you receive confirmation.</p></details>
+          <details><summary>Can CivicBird guarantee a government certificate or approval?</summary><p>No. CivicBird may assist with process guidance or task coordination, but eligibility, decisions and processing timelines remain with the relevant government department or authority.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a class="brand" href="index.html"><img src="logo.png" alt="" onerror="this.style.display='none'"><span><span class="brand-name">CivicBird</span><span class="brand-tag">KAAM AAPKA, SAATH HAMARA</span></span></a><p>Everyday civic and documentation assistance, with clear communication and transparent service expectations.</p></div>
+        <div><div class="footer-title">Explore</div><div class="footer-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="index.html#how-it-works">How It Works</a><a href="index.html#pricing">Pricing</a></div></div>
+        <div><div class="footer-title">Contact</div><div class="footer-links"><a href="tel:+919065760751">+91 90657 60751</a><a href="mailto:civicbird7@gmail.com">civicbird7@gmail.com</a><a href="index.html#safety">Safety</a><a href="index.html#contact">Contact Us</a></div></div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="currentYear">2026</span> CivicBird. All rights reserved.</span><span>Kaam Aapka, Saath Hamara.</span></div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      "use strict";
+      const menuToggle=document.getElementById("menuToggle");
+      const mainNav=document.getElementById("mainNav");
+      if(menuToggle&&mainNav){
+        menuToggle.addEventListener("click",function(){
+          const open=mainNav.classList.toggle("open");
+          menuToggle.setAttribute("aria-expanded",String(open));
+          menuToggle.setAttribute("aria-label",open?"Close navigation menu":"Open navigation menu");
+        });
+        mainNav.querySelectorAll("a").forEach(function(link){link.addEventListener("click",function(){mainNav.classList.remove("open");menuToggle.setAttribute("aria-expanded","false");});});
+      }
+      document.getElementById("currentYear").textContent=new Date().getFullYear();
+
+      const category=document.getElementById("serviceCategory");
+      const otherWrap=document.getElementById("otherServiceWrap");
+      const otherInput=document.getElementById("otherService");
+      category.addEventListener("change",function(){
+        const isOther=category.value==="Other — please specify";
+        otherWrap.hidden=!isOther;
+        otherInput.required=isOther;
+        if(!isOther)otherInput.value="";
+      });
+
+      const dateInput=document.getElementById("preferredDate");
+      const now=new Date();
+      const localToday=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,10);
+      dateInput.min=localToday;
+
+      const locationButton=document.getElementById("getLocation");
+      const locationInput=document.getElementById("liveLocation");
+      const locationStatus=document.getElementById("locationStatus");
+      let coordinates=null;
+      locationButton.addEventListener("click",function(){
+        locationStatus.className="location-status";
+        if(!navigator.geolocation){
+          locationStatus.textContent="This browser does not support location sharing. Please open the page in an up-to-date browser.";
+          locationStatus.classList.add("error");return;
+        }
+        locationButton.disabled=true;
+        locationButton.textContent="Finding location…";
+        locationStatus.textContent="Waiting for your browser's location permission.";
+        navigator.geolocation.getCurrentPosition(function(position){
+          coordinates={latitude:position.coords.latitude,longitude:position.coords.longitude,accuracy:position.coords.accuracy};
+          locationInput.value="Location shared ("+coordinates.latitude.toFixed(5)+", "+coordinates.longitude.toFixed(5)+")";
+          locationInput.setCustomValidity("");
+          locationStatus.textContent="Location captured. Accuracy is approximately "+Math.round(coordinates.accuracy)+" metres. Confirm your source address is also correct.";
+          locationStatus.classList.add("success");
+          locationButton.disabled=false;
+          locationButton.innerHTML='<svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Location Shared';
+        },function(error){
+          coordinates=null;locationInput.value="";
+          const messages={1:"Location permission was denied. Allow location access in your browser settings and try again.",2:"Your location could not be determined. Check your device location setting and try again.",3:"The location request timed out. Please try again."};
+          locationStatus.textContent=messages[error.code]||"Location could not be captured. Please try again.";
+          locationStatus.classList.add("error");
+          locationButton.disabled=false;
+          locationButton.innerHTML='<svg class="icon" aria-hidden="true"><use href="#i-location"/></svg> Try Again';
+        },{enableHighAccuracy:true,timeout:15000,maximumAge:60000});
+      });
+
+      const form=document.getElementById("requestForm");
+      const status=document.getElementById("formStatus");
+      form.addEventListener("submit",function(event){
+        event.preventDefault();
+        status.className="status-message";
+        if(!form.reportValidity())return;
+        if(!coordinates){
+          status.textContent="Please share your current location before reviewing the request.";
+          status.classList.add("show","error");
+          locationButton.scrollIntoView({behavior:"smooth",block:"center"});
+          return;
+        }
+        const d=new FormData(form);
+        const chosenService=d.get("serviceCategory")==="Other — please specify"?String(d.get("otherService")||"Other service"):String(d.get("serviceCategory")||"");
+        const message=[
+          "CIVICBIRD SERVICE REQUEST",
+          "",
+          "Customer: "+String(d.get("customerName")||""),
+          "Mobile: "+String(d.get("customerPhone")||""),
+          "Email: "+String(d.get("customerEmail")||"Not provided"),
+          "Service category: "+chosenService,
+          "Task details: "+String(d.get("workDescription")||""),
+          "Preferred date: "+String(d.get("preferredDate")||""),
+          "Preferred time: "+String(d.get("preferredTime")||""),
+          "Source / current location: "+String(d.get("sourceAddress")||""),
+          "Destination / office: "+String(d.get("destinationAddress")||""),
+          "Customer coordinates: "+coordinates.latitude+", "+coordinates.longitude,
+          "Service fee: INR 300.00",
+          "GST (18%): INR 54.00",
+          "Service fee total: INR 354.00",
+          "",
+          "Please review availability, task scope and any additional charges before confirming."
+        ].join("\n");
+        const subject="CivicBird service request — "+chosenService;
+        status.textContent="Your request details are ready. Your email app will open so you can review and send the request to CivicBird. The request is not confirmed until CivicBird replies.";
+        status.classList.add("show");
+        const mailto="mailto:civicbird7@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(message);
+        window.location.href=mailto;
+      });
+    })();
+  </script>
+</body>
+</html>

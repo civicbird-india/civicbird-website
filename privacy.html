@@ -81,7 +81,24 @@
     .footer-bottom p{margin:0}
     @media(max-width:900px){.nav{padding:13px 0;align-items:flex-start;flex-direction:column}.nav-links{justify-content:flex-start;gap:12px 15px}.layout{grid-template-columns:1fr}.toc{position:static}.toc nav{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-grid{grid-template-columns:1fr 1fr}}
     @media(max-width:600px){.container{width:min(100% - 28px,1120px)}.topbar-inner{font-size:10px}.nav-links{gap:10px 12px}.nav-links a{font-size:11px}.hero{padding:51px 0}.section{padding:40px 0 52px}.toc nav{grid-template-columns:1fr 1fr}.policy h2{font-size:19px}.bottom-cta{align-items:flex-start;flex-direction:column}.footer-grid{grid-template-columns:1fr}}
-  </style>
+  
+/* CivicBird brand and navigation consistency */
+.brand img { width: 56px !important; height: 56px !important; min-width: 56px; object-fit: contain !important; flex: 0 0 56px; }
+.brand { gap: 12px !important; flex-shrink: 0; }
+.brand-tag, .brand small, .brand-name span { max-width: 190px; line-height: 1.35; }
+.site-header, header { position: relative; }
+.nav-wrap, .nav, .nav-inner { align-items: center; }
+.nav-links, .links { align-items: center; flex-wrap: wrap; row-gap: 8px; }
+@media (max-width: 1100px) {
+  .brand img { width: 52px !important; height: 52px !important; min-width: 52px; flex-basis: 52px; }
+  .nav-links, .links { gap: 10px !important; }
+}
+@media (max-width: 760px) {
+  .brand img { width: 48px !important; height: 48px !important; min-width: 48px; flex-basis: 48px; }
+  .brand-tag, .brand small, .brand-name span { font-size: 10px !important; max-width: 155px; }
+}
+
+</style>
 <style>.civicbird-audit-footer{display:flex;flex-wrap:wrap;gap:10px 18px;margin:18px 0;padding-top:12px;border-top:1px solid rgba(130,150,175,.35)}.civicbird-audit-footer a{font-size:13px;text-decoration:none;color:inherit}.civicbird-audit-footer a:hover{text-decoration:underline}.civicbird-common-tagline{font-size:.68rem;font-weight:750;letter-spacing:.04em}.civicbird-upload-disabled{padding:12px 14px;border:1px solid #e7c77c;background:#fff8e8;color:#654b16;border-radius:9px;font-size:12px}</style>
 </head>
 <body>
@@ -95,7 +112,7 @@
     <div class="container nav">
       <a class="brand" href="index.html" aria-label="CivicBird home">
         <img src="logo.png" alt="CivicBird logo" onerror="this.style.display='none'">
-        <span class="brand-name">CivicBird<span>CITIZEN ASSISTANCE</span></span>
+        <span class="brand-name">CivicBird<span>KAAM AAP KA SAATH HAMARA</span></span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="index.html">Home</a>

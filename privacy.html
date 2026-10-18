@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102b50">
+  <meta name="description" content="Read the CivicBird Privacy Policy to understand how information is handled when you use our citizen assistance website and services.">
+  <title>Privacy Policy | CivicBird</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#102b50;--navy-dark:#0b1e38;--saffron:#f4a51c;--ink:#18263a;--muted:#66758a;--line:#e4e9f0;--surface:#f5f8fc;--white:#fff;--radius:18px;--shadow:0 14px 38px rgba(16,43,80,.08)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:100px}
+    body{margin:0;font-family:"Poppins",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.7}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,calc(100% - 40px));margin:0 auto}
+    .topbar{background:var(--navy-dark);color:#fff;font-size:12px}
+    .topbar-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:9px 0}
+    .topbar a{color:#fff}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:flex;align-items:center;gap:10px;min-width:170px}
+    .brand img{width:44px;height:44px;object-fit:contain}
+    .brand-name{font-size:21px;font-weight:800;letter-spacing:-.7px;color:var(--navy);line-height:1.15}
+    .brand-name span{display:block;margin-top:3px;font-size:9px;letter-spacing:2px;color:var(--muted);font-weight:600}
+    .nav-links{display:flex;align-items:center;justify-content:flex-end;gap:18px;flex-wrap:wrap}
+    .nav-links a{font-size:12px;font-weight:600;color:#33445b}
+    .nav-links a:hover,.nav-links a[aria-current=page]{color:#a66a00}
+    .nav-cta{background:var(--navy);color:#fff!important;padding:11px 15px;border-radius:10px}
+    .hero{background:linear-gradient(125deg,#102b50,#214c79);color:#fff;padding:66px 0 60px;position:relative;overflow:hidden}
+    .hero:after{content:"";position:absolute;width:340px;height:340px;border:1px solid rgba(255,255,255,.15);border-radius:50%;right:-100px;top:-150px;box-shadow:0 0 0 42px rgba(255,255,255,.025),0 0 0 85px rgba(255,255,255,.02)}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#ffd17a}
+    .eyebrow:before{content:"";width:25px;height:2px;background:var(--saffron)}
+    h1{font-size:clamp(34px,5vw,54px);line-height:1.15;letter-spacing:-1.7px;margin:16px 0}
+    .hero p{color:#d9e5f3;font-size:14px;max-width:720px;margin:0}
+    .updated{display:inline-block;margin-top:19px;padding:7px 11px;border:1px solid rgba(255,255,255,.25);border-radius:8px;color:#d9e5f3;font-size:11px}
+    .section{padding:55px 0 72px}
+    .layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:35px;align-items:start}
+    .toc{position:sticky;top:105px;border:1px solid var(--line);border-radius:15px;padding:20px;background:var(--surface)}
+    .toc h2{font-size:14px;color:var(--navy);margin:0 0 12px}
+    .toc nav{display:grid;gap:5px}
+    .toc a{font-size:11px;color:#53647a;padding:7px 9px;border-radius:7px}
+    .toc a:hover{background:#fff0d1;color:#785000}
+    .policy{min-width:0}
+    .intro-box{border:1px solid #f0d9a4;background:#fff8e9;padding:20px 22px;border-radius:13px;margin-bottom:27px}
+    .intro-box strong{color:var(--navy)}
+    .intro-box p{margin:5px 0 0;font-size:12px;color:#66583e}
+    .policy section{padding:0 0 25px;margin:0 0 25px;border-bottom:1px solid var(--line);scroll-margin-top:110px}
+    .policy section:last-child{border-bottom:0}
+    .policy h2{font-size:21px;line-height:1.35;color:var(--navy);margin:0 0 12px;letter-spacing:-.4px}
+    .policy h3{font-size:14px;color:var(--navy);margin:18px 0 7px}
+    .policy p,.policy li{font-size:12px;color:#58677a}
+    .policy p{margin:0 0 11px}
+    .policy ul{padding-left:20px;margin:8px 0 13px}
+    .policy li{padding:3px 0}
+    .policy a.inline{color:#8a5a00;text-decoration:underline;text-underline-offset:3px}
+    .callout{padding:15px 17px;border-left:3px solid var(--saffron);background:var(--surface);border-radius:0 9px 9px 0;margin:15px 0}
+    .callout p{margin:0}
+    .contact-card{background:var(--navy);color:#fff;border-radius:15px;padding:22px;margin-top:15px}
+    .contact-card h3{color:#fff;margin:0 0 7px}
+    .contact-card p,.contact-card a{color:#d9e5f3}
+    .contact-card a{overflow-wrap:anywhere;text-decoration:underline}
+    .bottom-cta{background:#fff4dc;border:1px solid #f5dfad;border-radius:16px;padding:25px;display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:20px}
+    .bottom-cta h3{margin:0 0 5px;color:var(--navy);font-size:18px}
+    .bottom-cta p{margin:0;color:#6e6044;font-size:12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;background:var(--saffron);color:#1d2a3c;padding:12px 17px;border-radius:9px;font-size:12px;font-weight:700;white-space:nowrap}
+    footer{background:#0b1e38;color:#fff;padding:43px 0 20px}
+    .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;padding-bottom:27px}
+    .footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+    .footer-brand img{width:39px;height:39px;object-fit:contain;background:#fff;border-radius:8px;padding:3px}
+    .footer-brand strong{font-size:19px}
+    footer p,footer a{font-size:11px;color:#c0ccdc}
+    footer p{max-width:360px}
+    footer h4{font-size:12px;margin:3px 0 12px;color:#fff}
+    .footer-links{display:grid;gap:8px}
+    .footer-links a:hover{color:#ffd17a}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .footer-bottom p{margin:0}
+    @media(max-width:900px){.nav{padding:13px 0;align-items:flex-start;flex-direction:column}.nav-links{justify-content:flex-start;gap:12px 15px}.layout{grid-template-columns:1fr}.toc{position:static}.toc nav{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.container{width:min(100% - 28px,1120px)}.topbar-inner{font-size:10px}.nav-links{gap:10px 12px}.nav-links a{font-size:11px}.hero{padding:51px 0}.section{padding:40px 0 52px}.toc nav{grid-template-columns:1fr 1fr}.policy h2{font-size:19px}.bottom-cta{align-items:flex-start;flex-direction:column}.footer-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Citizen assistance, made simpler</span>
+      <span>Bhagalpur, Bihar · <a href="mailto:civicbird7@gmail.com">civicbird7@gmail.com</a></span>
+    </div>
+  </div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="CivicBird home">
+        <img src="logo.png" alt="CivicBird logo" onerror="this.style.display='none'">
+        <span class="brand-name">CivicBird<span>CITIZEN ASSISTANCE</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="safety.html">Safety</a>
+        <a href="about.html">About</a>
+        <a href="help.html">Help &amp; Support</a>
+        <a href="privacy.html" aria-current="page">Privacy</a>
+        <a class="nav-cta" href="services.html">Request a Service</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Your information matters</span>
+        <h1>Privacy Policy</h1>
+        <p>This policy explains how CivicBird intends to handle information when you visit our website, contact us, request assistance or apply to join as a Bird. It also identifies features that may not yet be connected to a live system.</p>
+        <span class="updated">Policy version: 1.0 · Last updated: 19 October 2026</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container layout">
+        <aside class="toc">
+          <h2>On this page</h2>
+          <nav aria-label="Privacy policy sections">
+            <a href="#who-we-are">1. Who we are</a>
+            <a href="#information">2. Information we may collect</a>
+            <a href="#use">3. How information is used</a>
+            <a href="#sharing">4. Sharing and disclosure</a>
+            <a href="#documents">5. Identity documents</a>
+            <a href="#payments">6. Payments</a>
+            <a href="#cookies">7. Cookies and analytics</a>
+            <a href="#security">8. Security and retention</a>
+            <a href="#rights">9. Your choices and rights</a>
+            <a href="#children">10. Children's privacy</a>
+            <a href="#third-party">11. Third-party services</a>
+            <a href="#changes">12. Policy updates</a>
+            <a href="#contact">13. Contact us</a>
+          </nav>
+        </aside>
+
+        <article class="policy">
+          <div class="intro-box">
+            <strong>Please read this carefully</strong>
+            <p>This page is a website policy draft for CivicBird and should be reviewed against the actual data flows, vendor contracts and applicable law before launch. A privacy notice does not itself make an unconnected form, payment gateway or verification process operational.</p>
+          </div>
+
+          <section id="who-we-are">
+            <h2>1. Who we are</h2>
+            <p>CivicBird is a citizen-assistance initiative intended to help people navigate selected government-office and private-sector tasks. Its initial service area is Bhagalpur, Bihar, India.</p>
+            <p>For questions about this policy or information associated with a CivicBird enquiry, contact <a class="inline" href="mailto:civicbird7@gmail.com">civicbird7@gmail.com</a> or call <a class="inline" href="tel:+919065760751">+91 90657 60751</a>.</p>
+            <p>In this policy, “CivicBird”, “we”, “us” and “our” refer to the CivicBird service. “You” refers to a website visitor, customer, prospective customer or person applying to join as a Bird.</p>
+          </section>
+
+          <section id="information">
+            <h2>2. Information we may collect</h2>
+            <p>The information involved depends on which feature you choose to use and whether that feature has been activated. Information may include:</p>
+            <ul>
+              <li><strong>Contact details:</strong> name, phone number, email address and the address or area relevant to a requested task.</li>
+              <li><strong>Service details:</strong> the type of assistance requested, task description, source and destination, preferred timing, messages and relevant booking references.</li>
+              <li><strong>Bird application details:</strong> contact details, address, photograph and identity or address documents if these are specifically requested in the application process.</li>
+              <li><strong>Payment records:</strong> transaction reference, amount, payment status and limited billing information needed to reconcile a transaction.</li>
+              <li><strong>Technical information:</strong> browser, device, approximate usage data, error logs or cookies, where these are collected by the website or its hosting and third-party services.</li>
+              <li><strong>Support communications:</strong> the information you provide when contacting us about a question, complaint, safety concern or service issue.</li>
+            </ul>
+            <div class="callout"><p><strong>Current website forms:</strong> where a page clearly states that it only prepares a draft in your browser, the information entered in that form is not sent to or stored by a CivicBird server through that form. This may change only when a connected backend is introduced and the relevant notice is updated.</p></div>
+          </section>
+
+          <section id="use">
+            <h2>3. How information may be used</h2>
+            <p>Where the relevant service or system is active, information may be used to:</p>
+            <ul>
+              <li>respond to enquiries and communicate about requested assistance;</li>
+              <li>review service availability, task requirements and relevant locations;</li>
+              <li>coordinate a Bird or other service representative for a confirmed task;</li>
+              <li>process or reconcile payments and prepare invoices or receipts;</li>
+              <li>review applications, conduct checks and maintain service safety;</li>
+              <li>investigate complaints, prevent misuse, protect users and maintain records;</li>
+              <li>maintain, troubleshoot and improve the website; and</li>
+              <li>meet legal, tax, accounting or regulatory obligations where applicable.</li>
+            </ul>
+            <p>We should not use personal information for a materially different purpose without an appropriate legal basis or notice where required.</p>
+          </section>
+
+          <section id="sharing">
+            <h2>4. Sharing and disclosure</h2>
+            <p>Information may be shared only where reasonably necessary for a disclosed service purpose, with appropriate safeguards and subject to applicable law. Depending on the active service, recipients may include:</p>
+            <ul>
+              <li>an assigned Bird or service representative, limited to details needed to perform the task;</li>
+              <li>payment providers, hosting providers or technical vendors that support an enabled feature;</li>
+              <li>professional advisers or service partners who need the information to support CivicBird operations; and</li>
+              <li>public authorities or other parties when required by law, legal process or a legitimate safety need.</li>
+            </ul>
+            <p>We do not intend to sell personal information. Before enabling a third-party integration, CivicBird should review what data it receives, what the provider retains, and the provider's applicable terms and privacy notice.</p>
+          </section>
+
+          <section id="documents">
+            <h2>5. Identity documents and Bird applications</h2>
+            <p>A Bird application may ask for a photograph, address information and identity or address documents for verification. Only submit documents through an official CivicBird application channel after checking that the channel is genuine and reviewing the purpose for collection.</p>
+            <ul>
+              <li>Do not post identity documents publicly or send them to an unverified individual.</li>
+              <li>Do not share OTPs, passwords, PINs or bank-card security codes.</li>
+              <li>Where documents are collected, access should be restricted to authorised personnel and retention should be limited to a defined purpose and period, subject to legal requirements.</li>
+            </ul>
+            <p>This policy does not, by itself, confirm that any particular applicant has been verified or that document-upload storage and deletion controls are already operational. Do not assume a verification process is complete unless CivicBird explicitly confirms it through an official channel.</p>
+          </section>
+
+          <section id="payments">
+            <h2>6. Payments and billing</h2>
+            <p>CivicBird's published standard service fee is ₹300 plus 18% GST (₹54), totalling ₹354 for one task, subject to the applicable service terms. Any other applicable charge should be disclosed before confirmation.</p>
+            <p>If an online payment provider is connected, payment details may be processed directly by that provider under its own terms and privacy policy. CivicBird should retain only the transaction information necessary for payment reconciliation, customer support, accounting and legal compliance.</p>
+            <p>Do not send full card details, banking passwords, UPI PINs or OTPs through a support form or email. The presence of this policy page does not mean that a payment gateway is currently connected or that a transaction has been completed.</p>
+          </section>
+
+          <section id="cookies">
+            <h2>7. Cookies, hosting and analytics</h2>
+            <p>The website may use essential technical functions provided by its hosting platform or third-party tools. If analytics, advertising, authentication or other optional tracking tools are enabled later, this policy should be updated to describe the tools, information collected, purposes, choices and relevant third-party policies.</p>
+            <p>This page does not claim that a particular analytics or advertising tool is currently installed. Your browser settings may allow you to control or delete cookies, although disabling some cookies can affect website functionality.</p>
+          </section>
+
+          <section id="security">
+            <h2>8. Information security and retention</h2>
+            <p>Reasonable technical and organisational safeguards should be used to protect personal information against unauthorised access, loss, misuse or disclosure. No website or electronic transmission can be guaranteed to be completely secure.</p>
+            <p>Information should be retained only for as long as needed for the purpose for which it was collected, including service delivery, dispute resolution, accounting and legal obligations. Retention periods and deletion processes should be documented before live collection begins.</p>
+            <p>If you believe your information has been exposed or misused, contact CivicBird promptly using the details below. Do not include passwords, OTPs or complete identity-document numbers in your first message.</p>
+          </section>
+
+          <section id="rights">
+            <h2>9. Your choices and rights</h2>
+            <p>Depending on applicable law and the circumstances, you may be able to request access to, correction of or deletion of personal information, withdraw consent where processing relies on consent, or raise a concern about how information is handled.</p>
+            <p>To make a privacy-related request, contact <a class="inline" href="mailto:civicbird7@gmail.com">civicbird7@gmail.com</a> and describe the request without including unnecessary sensitive information. We may need to verify your identity before acting on a request and may need to retain certain records where the law requires it.</p>
+            <p>The exact rights and response process depend on the laws applicable to the particular processing. This page does not replace any statutory rights you may have.</p>
+          </section>
+
+          <section id="children">
+            <h2>10. Children's privacy</h2>
+            <p>CivicBird's website and services are not designed to knowingly collect personal information from children without any required authorisation. A parent or lawful guardian should contact us if they believe a child has provided personal information inappropriately.</p>
+          </section>
+
+          <section id="third-party">
+            <h2>11. Third-party websites and services</h2>
+            <p>The website may link to third-party websites or services. Those providers operate under their own policies and terms. CivicBird is not responsible for the privacy practices of an external website, so review its policy before submitting information or making a payment.</p>
+          </section>
+
+          <section id="changes">
+            <h2>12. Changes to this policy</h2>
+            <p>We may update this policy when our services, website features, legal requirements or data practices change. The “last updated” date at the top should be revised whenever a material update is published. If a change requires notice or consent, we should provide it as required by applicable law.</p>
+          </section>
+
+          <section id="contact">
+            <h2>13. Contact CivicBird about privacy</h2>
+            <p>For privacy questions, requests or concerns, use the contact details below. Please state “Privacy Request” in the subject line and include only the minimum information needed to understand your request.</p>
+            <div class="contact-card">
+              <h3>Privacy contact</h3>
+              <p>Email: <a href="mailto:civicbird7@gmail.com?subject=Privacy%20Request">civicbird7@gmail.com</a></p>
+              <p>Phone: <a href="tel:+919065760751">+91 90657 60751</a></p>
+              <p>Service area: Bhagalpur, Bihar, India</p>
+            </div>
+          </section>
+
+          <div class="bottom-cta">
+            <div><h3>Need help with CivicBird?</h3><p>Visit our support page for FAQs and ways to contact us.</p></div>
+            <a class="btn" href="help.html">Help &amp; Support</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><img src="logo.png" alt="CivicBird logo" onerror="this.style.display='none'"><strong>CivicBird</strong></div>
+          <p>Citizen assistance designed to make everyday office-related tasks easier to navigate. Initial service area: Bhagalpur, Bihar.</p>
+        </div>
+        <div><h4>Explore</h4><div class="footer-links">
+          <a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="how-it-works.html">How It Works</a><a href="safety.html">Safety</a>
+        </div></div>
+        <div><h4>Company &amp; support</h4><div class="footer-links">
+          <a href="about.html">About Us</a><a href="help.html">Help &amp; Support</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a><a href="mailto:civicbird7@gmail.com">Email CivicBird</a>
+        </div></div>
+      </div>
+      <div class="footer-bottom"><p>© <span id="year"></span> CivicBird. All rights reserved.</p><p>Built for clarity, care and transparency.</p></div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102b50"><meta name="description" content="Create a CivicBird customer account.">
+<title>Customer Signup | CivicBird</title><link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#102b50;--navy-dark:#0b1e38;--saffron:#f4a51c;--ink:#18263a;--muted:#66758a;--line:#e4e9f0;--surface:#f5f8fc;--white:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:"Poppins",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.65}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
+.container{width:min(1120px,calc(100% - 36px));margin:auto}.topbar{background:var(--navy-dark);color:#fff;font-size:11px;padding:8px 0}.topbar .container{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.topbar a{color:#fff}
+header{background:#fff;border-bottom:1px solid var(--line)}.nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:10px 0}.brand{display:flex;align-items:center;gap:10px}.brand img{width:42px;height:42px;object-fit:contain}.brand strong{font-size:21px;color:var(--navy);letter-spacing:-.5px}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:1.7px}.links{display:flex;gap:17px;align-items:center;flex-wrap:wrap}.links a{font-size:12px;font-weight:600;color:#33445b}.links a:hover{color:#9a6500}
+.hero{background:linear-gradient(125deg,#102b50,#214c79);color:#fff;padding:45px 0}.hero h1{font-size:clamp(29px,4vw,43px);line-height:1.2;letter-spacing:-1px;margin:0 0 10px}.hero p{font-size:13px;color:#d9e5f3;max-width:700px;margin:0}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:1.8px;color:#ffd17a;font-weight:700;display:block;margin-bottom:10px}
+main{padding:42px 0 60px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:25px;align-items:start}.panel{border:1px solid var(--line);border-radius:16px;padding:25px;background:#fff;box-shadow:0 10px 30px rgba(16,43,80,.055)}.panel h2{font-size:20px;color:var(--navy);margin:0 0 6px}.sub{font-size:12px;color:var(--muted);margin:0 0 22px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:6px}.full{grid-column:1/-1}label{font-size:11px;font-weight:700;color:#35445a}input,select,textarea{width:100%;border:1px solid #d6dee9;border-radius:9px;padding:12px;background:#fff;color:var(--ink);font-size:12px;outline:none}input:focus,select:focus,textarea:focus{border-color:#416b9d;box-shadow:0 0 0 3px rgba(65,107,157,.12)}textarea{min-height:95px;resize:vertical}.hint{font-size:10px;color:var(--muted)}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:9px;background:var(--saffron);color:#1b2a3c;padding:13px 17px;font-size:12px;font-weight:700;cursor:pointer}.btn:hover{filter:brightness(.97)}.btn-block{width:100%;margin-top:17px}.btn-outline{background:#fff;border:1px solid var(--line);color:var(--navy)}.rowlinks{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:15px;font-size:11px}.rowlinks a{color:#805600;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.aside{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}.aside h3{font-size:16px;color:var(--navy);margin:0 0 10px}.aside p,.aside li{font-size:11px;color:var(--muted)}.aside ul{padding-left:18px}.aside li{margin:7px 0}.notice{border-left:3px solid var(--saffron);padding:12px 14px;background:#fff7e6;border-radius:0 9px 9px 0;color:#655333;font-size:11px;margin:17px 0 0}
+.checkline{display:flex;gap:9px;align-items:flex-start;font-size:10px;color:var(--muted)}.checkline input{width:15px;margin-top:3px;flex-shrink:0}.status{display:none;margin-top:17px;padding:13px;border-radius:10px;background:#fff7e6;border:1px solid #f0d9a4;color:#5d490f;font-size:11px}.preview{display:none;margin-top:10px;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:11px;color:var(--muted)}.preview img{max-width:100%;max-height:180px;display:block;margin-top:8px;border-radius:8px}
+footer{background:#0b1e38;color:#fff;padding:28px 0 18px}footer .container{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}footer p,footer a{font-size:10px;color:#c0ccdc;margin:0}footer .footlinks{display:flex;gap:14px;flex-wrap:wrap}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.aside{order:2}.links{gap:11px}.nav{align-items:flex-start;flex-direction:column}}
+@media(max-width:560px){.container{width:calc(100% - 26px)}.grid{grid-template-columns:1fr}.full{grid-column:auto}.panel{padding:19px}.hero{padding:35px 0}.links a{font-size:11px}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="container"><span>Citizen assistance, made simpler</span><span>Bhagalpur, Bihar · <a href="mailto:civicbird7@gmail.com">civicbird7@gmail.com</a></span></div></div>
+<header><div class="container nav">
+<a class="brand" href="index.html"><img src="logo.png" alt="CivicBird logo" onerror="this.style.display='none'"><span><strong>CivicBird</strong><small>CITIZEN ASSISTANCE</small></span></a>
+<nav class="links" aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="help.html">Help &amp; Support</a><a href="join-as-bird.html">Join as a Bird</a><a href="login.html">Customer Login</a></nav>
+</div></header>
+<section class="hero"><div class="container"><span class="eyebrow">Create your account</span><h1>Join CivicBird as a customer</h1><p>Create an account to prepare for managing service requests, booking references and billing details in one place.</p></div></section>
+<main><div class="container layout">
+<section class="panel"><h2>Customer signup</h2><p class="sub">Use your own contact information. Required fields are marked *.</p>
+<form id="signupForm"><div class="grid">
+<div class="field"><label for="name">Full name *</label><input id="name" required autocomplete="name" maxlength="100" placeholder="Your full name"></div>
+<div class="field"><label for="mobile">Mobile number *</label><input id="mobile" type="tel" required inputmode="tel" pattern="[0-9+() -]{10,18}" maxlength="18" autocomplete="tel" placeholder="Active mobile number"></div>
+<div class="field full"><label for="email">Email address *</label><input id="email" type="email" required autocomplete="email" maxlength="150" placeholder="you@example.com"></div>
+<div class="field"><label for="password">Create password *</label><input id="password" type="password" required minlength="8" maxlength="128" autocomplete="new-password" placeholder="At least 8 characters"><span class="hint">Use a unique password. Never reuse a banking password.</span></div>
+<div class="field"><label for="confirmPassword">Confirm password *</label><input id="confirmPassword" type="password" required minlength="8" maxlength="128" autocomplete="new-password" placeholder="Re-enter password"></div>
+<div class="field full"><label class="checkline"><input id="terms" type="checkbox" required><span>I agree to the <a href="terms.html" style="text-decoration:underline">Terms &amp; Conditions</a> and acknowledge the <a href="privacy.html" style="text-decoration:underline">Privacy Policy</a>.</span></label></div>
+</div><button class="btn btn-block" type="submit">Create account</button><div class="status" id="status" role="status" aria-live="polite"></div></form>
+<div class="rowlinks"><a href="login.html">Already have an account? Sign in</a><a href="forgot-password.html">Forgot password?</a></div>
+<div class="notice">Important: account creation, mobile OTP verification and email verification are not active yet. This page does not transmit or store your details.</div>
+</section>
+<aside class="aside"><h3>Account security</h3><ul><li>Use a strong, unique password.</li><li>Never share a one-time password or account recovery link.</li><li>Only provide location permission when the actual service feature explains why it is needed.</li><li>Do not enter sensitive information into a demo form.</li></ul><p>After the authentication backend is connected, the signup flow can be configured for email verification and mobile OTP where supported.</p></aside>
+</div></main>
+<footer><div class="container"><p>© <span id="year"></span> CivicBird. All rights reserved.</p><div class="footlinks"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a><a href="help.html">Help &amp; Support</a></div></div></footer>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+<script>
+const signupForm=document.getElementById("signupForm");
+signupForm.addEventListener("submit",e=>{
+ e.preventDefault();if(!signupForm.reportValidity())return;
+ const p=document.getElementById("password").value, cp=document.getElementById("confirmPassword").value, s=document.getElementById("status");
+ if(p!==cp){s.style.display="block";s.textContent="The passwords do not match. Please enter the same password in both fields.";document.getElementById("confirmPassword").focus();return;}
+ s.style.display="block";s.textContent="Signup is not connected yet. Your details have not been sent, no account was created, and no OTP or verification email was sent. Connect a secure authentication backend before enabling registration.";
+});
+</script>
+</body></html>

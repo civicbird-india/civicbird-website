@@ -182,7 +182,7 @@
     input:focus, select:focus, textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(36,104,189,.12); }
     .form-note { font-size: .8rem; margin: 12px 0 18px; }
     .form-status { margin-top: 14px; padding: 12px; border-radius: 9px; display: none; font-size: .9rem; }
-    .form-status.show { display: block; background: #e8f7ef; color: #176744; }
+    .form-status.show { display: block; background: #eef4ff; color: #173d6b; border: 1px solid #cbdcf4; }
     .site-footer { background: #0b1e36; color: white; padding: 58px 0 22px; }
     .footer-grid { display: grid; grid-template-columns: 1.4fr .7fr .7fr 1fr; gap: 35px; padding-bottom: 38px; }
     .footer-brand .brand-name { color: white; }
@@ -269,7 +269,7 @@
   </style>
 </head>
 <body>
-  <!-- Reusable inline SVG icons. No emoji characters are used as icons. -->
+  <!-- CivicBird homepage navigation fixes v2. All standalone page links are explicit. -->\n  <!-- Reusable inline SVG icons. No emoji characters are used as icons. -->
   <svg class="sr-only" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -306,14 +306,14 @@
       </a>
       <nav class="nav-links" id="mainNav" aria-label="Main navigation">
         <a href="services.html">Services</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#pricing.html">Pricing</a>
-        <a href="#safety">Safety</a>
-        <a href="#about">About Us</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="safety.html">Safety</a>
+        <a href="about.html">About Us</a>
         <a href="#contact">Contact</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn btn-outline" href="#contact">Talk to Us</a>
+        <a class="btn btn-outline" href="help.html">Talk to Us</a>
         <a class="btn btn-primary" href="services.html">Get Started <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
           <svg class="icon" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
@@ -331,7 +331,7 @@
           <p>CivicBird helps you navigate everyday civic and documentation tasks with a clear process, transparent service pricing and a support team to guide you along the way.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="services.html">Explore Services <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="btn btn-outline" href="#how-it-works">See How It Works</a>
+            <a class="btn btn-outline" href="how-it-works.html">See How It Works</a>
           </div>
           <div class="hero-proof">
             <span class="proof-item"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Clear service process</span>
@@ -356,7 +356,7 @@
               <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></div>
               <div><strong>Assistance from a Bird</strong><span>Request help with a task and its details</span></div>
             </div>
-            <div class="visual-bottom"><div><span>Standard service fee</span><strong>₹300 + GST</strong></div><a class="text-link" href="#pricing.html">View pricing <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            <div class="visual-bottom"><div><span>Standard service fee</span><strong>₹300 + GST</strong></div><a class="text-link" href="pricing.html">View pricing <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
           </div>
         </div>
       </div>
@@ -383,37 +383,37 @@
             <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></div>
             <h3>Documentation Assistance</h3>
             <p>Get help understanding forms, document checklists, application steps and where to submit your request.</p>
-            <a class="text-link service-select" href="#contact" data-service="Documentation assistance">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="text-link service-select" href="services.html" data-service="Documentation assistance">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </article>
           <article class="service-card">
             <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-landmark"/></svg></div>
             <h3>Civic & Public Services</h3>
             <p>Get guidance for selected civic tasks, public-service applications and administrative processes.</p>
-            <a class="text-link service-select" href="#contact" data-service="Civic and public services">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="text-link service-select" href="services.html" data-service="Civic and public services">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </article>
           <article class="service-card">
             <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-location"/></svg></div>
             <h3>Local Task Assistance</h3>
             <p>Describe the work, where it needs to happen and the destination or office involved so the request can be reviewed.</p>
-            <a class="text-link service-select" href="#contact" data-service="Local task assistance">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="text-link service-select" href="services.html" data-service="Local task assistance">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </article>
           <article class="service-card">
             <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"/></svg></div>
             <h3>Form & Application Guidance</h3>
             <p>Understand the information typically requested on a form and identify the next step before you apply.</p>
-            <a class="text-link service-select" href="#contact" data-service="Form and application guidance">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="text-link service-select" href="services.html" data-service="Form and application guidance">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </article>
           <article class="service-card">
             <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></div>
             <h3>Assistance from a Bird</h3>
             <p>Send the details of your task and preferred location. Availability and scope will need to be confirmed before work begins.</p>
-            <a class="text-link service-select" href="#contact" data-service="Assistance from a Bird">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="text-link service-select" href="services.html" data-service="Assistance from a Bird">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </article>
           <article class="service-card">
             <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg></div>
             <h3>Not Sure Where to Start?</h3>
             <p>Tell us what you are trying to complete. We can help you identify the right service category or next question.</p>
-            <a class="text-link service-select" href="#contact" data-service="Help me choose a service">Get guidance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="text-link service-select" href="services.html" data-service="Help me choose a service">Get guidance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </article>
         </div>
         <div class="service-note"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><p><strong>Important:</strong> CivicBird provides assistance and process guidance. Government decisions, eligibility, official charges and approval timelines remain with the relevant authority. We do not promise or guarantee approvals.</p></div>
@@ -455,7 +455,7 @@
               <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Total service fee including GST: ₹354</strong></span></li>
               <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Any official department fees are separate unless expressly stated otherwise.</span></li>
             </ul>
-            <a class="btn btn-white btn-block" href="#contact">Ask About a Service <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-white btn-block" href="services.html">Ask About a Service <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             <p class="price-fineprint">The final amount and scope must be confirmed before a service is accepted.</p>
           </article>
           <article class="price-card">
@@ -483,7 +483,7 @@
           <span class="eyebrow" style="color:#b7d5ff">Safety comes first</span>
           <h3>Trust should be built through checks, not just promises.</h3>
           <p>CivicBird's intended onboarding standard is to complete identity and applicable police-verification checks before a Bird is activated for work.</p>
-          <a class="btn btn-white" href="#contact">Ask a Safety Question <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-white" href="safety.html">Ask a Safety Question <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
         <div>
           <div class="section-heading">
@@ -531,7 +531,7 @@
           <div class="founder-role">M. S. Umam — Founder &amp; CEO</div>
           <blockquote class="founder-quote">“Kaam Aapka, Saath Hamara.”</blockquote>
           <p>We believe good service starts with clear communication, responsible handling of information and respect for every customer's time.</p>
-          <a class="btn btn-outline" href="#contact">Connect with CivicBird <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-outline" href="help.html">Connect with CivicBird <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
     </section>
@@ -542,7 +542,7 @@
           <span class="eyebrow">Helpful answers</span>
           <h2>Frequently asked questions.</h2>
           <p>Need more details? Send us your question through the contact form.</p>
-          <a class="btn btn-outline" href="#contact">Contact Support <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-outline" href="help.html">Contact Support <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
         <div class="faq-list">
           <details><summary>What is CivicBird?</summary><p>CivicBird is a planned assistance service intended to help people navigate selected civic, documentation and local task requests. Available services and coverage should be confirmed before booking.</p></details>
@@ -561,7 +561,7 @@
         <div class="section-heading">
           <span class="eyebrow">Contact and enquiries</span>
           <h2>Tell us what you need help with.</h2>
-          <p>Share a few details and we will prepare an enquiry message for you. This standalone page does not store or transmit the information to a server.</p>
+          <p>Share a few details to review your enquiry on this page. Online submission will be connected after the CivicBird backend is ready.</p>
         </div>
         <div class="contact-grid">
           <div class="contact-card">
@@ -584,7 +584,7 @@
               <div class="field"><label for="destinationLocation">Destination / office (optional)</label><input id="destinationLocation" name="destinationLocation" maxlength="180" placeholder="Area, town or office"></div>
             </div>
             <p class="form-note">By continuing, you agree that the details you provide may be used to respond to this enquiry. Do not submit sensitive personal data through this demonstration form.</p>
-            <button class="btn btn-primary btn-block" type="submit">Prepare Enquiry Email <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <button class="btn btn-primary btn-block" type="submit">Review Enquiry Details <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
             <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
           </form>
         </div>
@@ -602,8 +602,8 @@
           </a>
           <p>Everyday civic and documentation assistance, designed around clear communication, transparent service expectations and responsible support.</p>
         </div>
-        <div><div class="footer-title">Explore</div><div class="footer-links"><a href="services.html">Services</a><a href="#how-it-works">How It Works</a><a href="#pricing.html">Pricing</a><a href="#safety">Safety</a></div></div>
-        <div><div class="footer-title">CivicBird</div><div class="footer-links"><a href="#about">About Us</a><a href="#be-a-bird">Become a Bird</a><a href="#faq">FAQs</a><a href="#contact">Contact</a></div></div>
+        <div><div class="footer-title">Explore</div><div class="footer-links"><a href="services.html">Services</a><a href="how-it-works.html">How It Works</a><a href="pricing.html">Pricing</a><a href="safety.html">Safety</a></div></div>
+        <div><div class="footer-title">CivicBird</div><div class="footer-links"><a href="about.html">About Us</a><a href="#be-a-bird">Become a Bird</a><a href="#faq">FAQs</a><a href="#contact">Contact</a></div></div>
         <div><div class="footer-title">Get in touch</div><div class="footer-links"><a href="tel:+919065760751">+91 90657 60751</a><a href="mailto:civicbird7@gmail.com">civicbird7@gmail.com</a><a href="#contact">Send an enquiry</a></div></div>
       </div>
       <div class="footer-bottom">
@@ -638,17 +638,6 @@
 
       document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-      document.querySelectorAll(".service-select").forEach(function (link) {
-        link.addEventListener("click", function () {
-          const service = link.getAttribute("data-service");
-          const select = document.getElementById("serviceType");
-          if (select && service) {
-            select.value = service;
-            document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
-          }
-        });
-      });
-
       document.querySelectorAll("[data-prefill]").forEach(function (link) {
         link.addEventListener("click", function () {
           const select = document.getElementById("serviceType");
@@ -664,22 +653,47 @@
           if (!form.reportValidity()) return;
 
           const data = new FormData(form);
-          const subject = "CivicBird enquiry — " + String(data.get("serviceType") || "General enquiry");
-          const lines = [
-            "CivicBird enquiry",
-            "",
-            "Name: " + String(data.get("fullName") || ""),
-            "Phone: " + String(data.get("phoneNumber") || ""),
-            "Email: " + String(data.get("emailAddress") || "Not provided"),
-            "Service: " + String(data.get("serviceType") || ""),
-            "Task details: " + String(data.get("taskDetails") || ""),
-            "Source / current location: " + String(data.get("sourceLocation") || "Not provided"),
-            "Destination / office: " + String(data.get("destinationLocation") || "Not provided")
-          ];
-          const mailto = "mailto:civicbird7@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
-          status.textContent = "Your email app should open with the enquiry prepared. Review the message before sending. This page does not submit or store your details.";
+          status.replaceChildren();
           status.classList.add("show");
-          window.location.href = mailto;
+          status.style.background = "#eef4ff";
+          status.style.color = "#173d6b";
+          status.style.whiteSpace = "pre-wrap";
+          status.style.lineHeight = "1.65";
+
+          const heading = document.createElement("strong");
+          heading.textContent = "Review your enquiry";
+          status.appendChild(heading);
+
+          const details = document.createElement("div");
+          details.style.marginTop = "8px";
+          const fields = [
+            ["Name", data.get("fullName")],
+            ["Phone", data.get("phoneNumber")],
+            ["Email", data.get("emailAddress") || "Not provided"],
+            ["Service", data.get("serviceType")],
+            ["Task details", data.get("taskDetails")],
+            ["Source / current location", data.get("sourceLocation") || "Not provided"],
+            ["Destination / office", data.get("destinationLocation") || "Not provided"]
+          ];
+          fields.forEach(function (item) {
+            const row = document.createElement("p");
+            row.style.margin = "5px 0";
+            row.style.color = "inherit";
+            const label = document.createElement("strong");
+            label.textContent = item[0] + ": ";
+            const value = document.createElement("span");
+            value.textContent = String(item[1] || "");
+            row.append(label, value);
+            details.appendChild(row);
+          });
+          status.appendChild(details);
+
+          const note = document.createElement("p");
+          note.style.margin = "12px 0 0";
+          note.style.color = "inherit";
+          note.textContent = "This is a local review only. Your enquiry has not been sent or saved. Online submission will be enabled after the CivicBird backend is connected.";
+          status.appendChild(note);
+          status.scrollIntoView({ behavior: "smooth", block: "nearest" });
         });
       }
     })();

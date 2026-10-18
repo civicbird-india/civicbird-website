@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="#102b50" name="theme-color"/><meta content="Create a CivicBird customer account." name="description"/>
-<title>Customer Signup | CivicBird</title><link href="logo.png" rel="icon" type="image/png"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102b50"><meta name="description" content="Create a CivicBird customer account.">
+<title>Customer Signup | CivicBird</title><link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#102b50;--navy-dark:#0b1e38;--saffron:#f4a51c;--ink:#18263a;--muted:#66758a;--line:#e4e9f0;--surface:#f5f8fc;--white:#fff}
 *{box-sizing:border-box}body{margin:0;font-family:"Poppins",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.65}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
@@ -21,31 +20,31 @@ footer{background:#0b1e38;color:#fff;padding:28px 0 18px}footer .container{displ
 @media(max-width:850px){.layout{grid-template-columns:1fr}.aside{order:2}.links{gap:11px}.nav{align-items:flex-start;flex-direction:column}}
 @media(max-width:560px){.container{width:calc(100% - 26px)}.grid{grid-template-columns:1fr}.full{grid-column:auto}.panel{padding:19px}.hero{padding:35px 0}.links a{font-size:11px}}
 </style>
-<style>
-.civicbird-header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:20px;padding:12px 20px;box-sizing:border-box}.civicbird-header-inner .brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:0 0 auto}.civicbird-header-inner .brand img{width:48px;height:48px;object-fit:contain}.civicbird-brand-text{display:flex;flex-direction:column;line-height:1.2}.civicbird-brand-text strong{font-weight:800;font-size:20px;color:#12335e}.civicbird-brand-text small{font-size:10px;letter-spacing:.04em;font-weight:700;color:#52647d;margin-top:4px;white-space:nowrap}.civicbird-main-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(10px,1.4vw,22px);margin-left:auto;flex-wrap:wrap}.civicbird-main-nav a,.civicbird-footer-links a{font-size:14px;text-decoration:none;color:#20344f;font-weight:600}.civicbird-main-nav a:hover,.civicbird-footer-links a:hover{text-decoration:underline}.civicbird-menu-toggle{display:none;border:1px solid #d8e1ec;background:#fff;border-radius:8px;padding:8px 12px;color:#12335e;font-weight:700}.civicbird-footer-inner{max-width:1200px;margin:0 auto;padding:28px 20px}.civicbird-footer-brand a{font-size:20px;font-weight:800;color:#12335e;text-decoration:none}.civicbird-footer-brand p{font-size:12px;font-weight:700;letter-spacing:.04em;color:#52647d}.civicbird-footer-links{display:flex;gap:12px 20px;flex-wrap:wrap;margin:18px 0}.civicbird-copyright{font-size:12px;color:#66758a;margin-top:20px}.secure-upload-note{margin:0 auto 16px;padding:12px 16px;background:#fff7e6;border:1px solid #f1d39a;border-radius:8px;color:#6e4a00;max-width:1100px;font-size:14px}
-@media(max-width:900px){.civicbird-header-inner{flex-wrap:wrap}.civicbird-menu-toggle{display:block;margin-left:auto}.civicbird-main-nav{display:none;width:100%;margin:0;justify-content:flex-start;align-items:stretch;flex-direction:column;gap:0}.civicbird-main-nav.is-open{display:flex}.civicbird-main-nav a{padding:10px 4px;border-top:1px solid #e7edf4}.civicbird-brand-text small{white-space:normal}}
-</style><script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.civicbird-current-year').forEach(function(el){el.textContent=new Date().getFullYear()});var b=document.querySelector('.civicbird-menu-toggle'),n=document.getElementById('civicbird-main-nav');if(b&&n)b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(open));n.classList.toggle('is-open',open);b.textContent=open?'Close menu':'Menu'});});</script>
+<style>.civicbird-audit-footer{display:flex;flex-wrap:wrap;gap:10px 18px;margin:18px 0;padding-top:12px;border-top:1px solid rgba(130,150,175,.35)}.civicbird-audit-footer a{font-size:13px;text-decoration:none;color:inherit}.civicbird-audit-footer a:hover{text-decoration:underline}.civicbird-common-tagline{font-size:.68rem;font-weight:750;letter-spacing:.04em}.civicbird-upload-disabled{padding:12px 14px;border:1px solid #e7c77c;background:#fff8e8;color:#654b16;border-radius:9px;font-size:12px}</style>
 </head>
 <body>
 <div class="topbar"><div class="container"><span>Citizen assistance, made simpler</span><span>Bhagalpur, Bihar · <a href="mailto:civicbird7@gmail.com">civicbird7@gmail.com</a></span></div></div>
-<header class="site-header"><div class="container civicbird-header-inner"><a aria-label="CivicBird home" class="brand" href="index.html"><img alt="CivicBird logo" height="48" src="logo.png" width="48"/><span class="civicbird-brand-text"><strong>CIVICBIRD</strong><small>KAAM AAP KA SAATH HAMARA</small></span></a><button aria-controls="civicbird-main-nav" aria-expanded="false" class="civicbird-menu-toggle" type="button">Menu</button><nav aria-label="Main navigation" class="civicbird-main-nav" id="civicbird-main-nav"><a href="index.html">Home</a><a href="services.html">Services</a><a href="how-it-works.html">How It Works</a><a href="pricing.html">Pricing</a><a href="safety.html">Safety</a><a href="about.html">About Us</a><a href="help.html">Help</a><a href="join-as-bird.html">Join as a Bird</a><a href="login.html">Login</a><a aria-current="page" href="signup.html">Sign Up</a></nav></div></header>
+<header><div class="container nav">
+<a class="brand" href="index.html"><img src="logo.png" alt="CivicBird logo" onerror="this.style.display='none'"><span><strong>CivicBird</strong><small>CITIZEN ASSISTANCE</small></span></a>
+<nav class="links" aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="help.html">Help &amp; Support</a><a href="join-as-bird.html">Join as a Bird</a><a href="login.html">Customer Login</a><a href="how-it-works.html">How It Works</a><a href="safety.html">Safety</a><a href="about.html">About Us</a><a href="signup.html">Sign Up</a><a href="forgot-password.html">Forgot Password</a></nav>
+</div></header>
 <section class="hero"><div class="container"><span class="eyebrow">Create your account</span><h1>Join CivicBird as a customer</h1><p>Create an account to prepare for managing service requests, booking references and billing details in one place.</p></div></section>
 <main><div class="container layout">
 <section class="panel"><h2>Customer signup</h2><p class="sub">Use your own contact information. Required fields are marked *.</p>
 <form id="signupForm"><div class="grid">
-<div class="field"><label for="name">Full name *</label><input autocomplete="name" id="name" maxlength="100" placeholder="Your full name" required=""/></div>
-<div class="field"><label for="mobile">Mobile number *</label><input autocomplete="tel" id="mobile" inputmode="tel" maxlength="18" pattern="[0-9+() -]{10,18}" placeholder="Active mobile number" required="" type="tel"/></div>
-<div class="field full"><label for="email">Email address *</label><input autocomplete="email" id="email" maxlength="150" placeholder="you@example.com" required="" type="email"/></div>
-<div class="field"><label for="password">Create password *</label><input autocomplete="new-password" id="password" maxlength="128" minlength="8" placeholder="At least 8 characters" required="" type="password"/><span class="hint">Use a unique password. Never reuse a banking password.</span></div>
-<div class="field"><label for="confirmPassword">Confirm password *</label><input autocomplete="new-password" id="confirmPassword" maxlength="128" minlength="8" placeholder="Re-enter password" required="" type="password"/></div>
-<div class="field full"><label class="checkline"><input id="terms" required="" type="checkbox"/><span>I agree to the <a href="terms.html" style="text-decoration:underline">Terms &amp; Conditions</a> and acknowledge the <a href="privacy.html" style="text-decoration:underline">Privacy Policy</a>.</span></label></div>
-</div><button class="btn btn-block" type="submit">Create account</button><div aria-live="polite" class="status" id="status" role="status"></div></form>
+<div class="field"><label for="name">Full name *</label><input id="name" required autocomplete="name" maxlength="100" placeholder="Your full name"></div>
+<div class="field"><label for="mobile">Mobile number *</label><input id="mobile" type="tel" required inputmode="tel" pattern="[0-9+() -]{10,18}" maxlength="18" autocomplete="tel" placeholder="Active mobile number"></div>
+<div class="field full"><label for="email">Email address *</label><input id="email" type="email" required autocomplete="email" maxlength="150" placeholder="you@example.com"></div>
+<div class="field"><label for="password">Create password *</label><input id="password" type="password" required minlength="8" maxlength="128" autocomplete="new-password" placeholder="At least 8 characters"><span class="hint">Use a unique password. Never reuse a banking password.</span></div>
+<div class="field"><label for="confirmPassword">Confirm password *</label><input id="confirmPassword" type="password" required minlength="8" maxlength="128" autocomplete="new-password" placeholder="Re-enter password"></div>
+<div class="field full"><label class="checkline"><input id="terms" type="checkbox" required><span>I agree to the <a href="terms.html" style="text-decoration:underline">Terms &amp; Conditions</a> and acknowledge the <a href="privacy.html" style="text-decoration:underline">Privacy Policy</a>.</span></label></div>
+</div><button class="btn btn-block" type="submit">Create account</button><div class="status" id="status" role="status" aria-live="polite"></div></form>
 <div class="rowlinks"><a href="login.html">Already have an account? Sign in</a><a href="forgot-password.html">Forgot password?</a></div>
 <div class="notice">Important: account creation, mobile OTP verification and email verification are not active yet. This page does not transmit or store your details.</div>
 </section>
 <aside class="aside"><h3>Account security</h3><ul><li>Use a strong, unique password.</li><li>Never share a one-time password or account recovery link.</li><li>Only provide location permission when the actual service feature explains why it is needed.</li><li>Do not enter sensitive information into a demo form.</li></ul><p>After the authentication backend is connected, the signup flow can be configured for email verification and mobile OTP where supported.</p></aside>
 </div></main>
-<footer class="site-footer"><div class="container civicbird-footer-inner"><div class="civicbird-footer-brand"><a href="index.html">CIVICBIRD</a><p>KAAM AAP KA SAATH HAMARA</p></div><nav aria-label="Footer navigation" class="civicbird-footer-links"><a href="services.html">Services</a><a href="how-it-works.html">How It Works</a><a href="pricing.html">Pricing</a><a href="safety.html">Safety</a><a href="about.html">About Us</a><a href="index.html#contact">Contact</a><a href="help.html">Help</a><a href="join-as-bird.html">Join as a Bird</a><a href="login.html">Login</a><a href="signup.html">Sign Up</a><a href="forgot-password.html">Forgot Password</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></nav><p class="civicbird-copyright">© <span class="civicbird-current-year">2026</span> CivicBird. All rights reserved.</p></div></footer>
+<footer><div class="container"><p>© <span id="year"></span> CivicBird. All rights reserved.</p><div class="footlinks"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a><a href="help.html">Help &amp; Support</a></div></div><nav class="civicbird-audit-footer" aria-label="Website links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="how-it-works.html">How It Works</a><a href="pricing.html">Pricing</a><a href="safety.html">Safety</a><a href="about.html">About Us</a><a href="help.html">Help</a><a href="join-as-bird.html">Join as a Bird</a><a href="login.html">Login</a><a href="signup.html">Sign Up</a><a href="forgot-password.html">Forgot Password</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="index.html#contact">Contact</a></nav></footer>
 <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
 <script>
 const signupForm=document.getElementById("signupForm");
@@ -56,4 +55,4 @@ signupForm.addEventListener("submit",e=>{
  s.style.display="block";s.textContent="Signup is not connected yet. Your details have not been sent, no account was created, and no OTP or verification email was sent. Connect a secure authentication backend before enabling registration.";
 });
 </script>
-<script>document.querySelectorAll(".current-year").forEach(function(el){el.textContent=new Date().getFullYear();});</script></body></html>
+</body></html>

@@ -1,703 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#123b72">
-  <meta name="description" content="CivicBird helps people get everyday civic and documentation work done with a clear process, transparent pricing and support. KAAM AAP KA SAATH HAMARA">
-  <meta name="keywords" content="CivicBird, civic assistance, documentation assistance, citizen services, local assistance, India">
-  <meta property="og:title" content="CivicBird — KAAM AAP KA SAATH HAMARA">
-  <meta property="og:description" content="Get help with everyday documentation and civic tasks through a clear, supported process.">
-  <meta property="og:type" content="website">
-  <title>CIVICBIRD — KAAM AAP KA SAATH HAMARA</title>
-  <style>
-    :root {
-      --navy: #123b72;
-      --navy-dark: #0b2850;
-      --blue: #2468bd;
-      --sky: #eaf3ff;
-      --ink: #172337;
-      --muted: #607086;
-      --line: #dce4ee;
-      --paper: #ffffff;
-      --soft: #f6f9fd;
-      --green: #18794e;
-      --radius: 18px;
-      --shadow: 0 16px 45px rgba(18, 59, 114, .10);
-      --max: 1160px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-    body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: var(--paper); line-height: 1.6; }
-    body, button, input, select, textarea { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-    button, input, select, textarea { font: inherit; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    button { cursor: pointer; }
-    .container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
-    .section { padding: 88px 0; }
-    .section-soft { background: var(--soft); }
-    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--blue); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; font-size: .76rem; }
-    .eyebrow::before { content: ""; width: 24px; height: 2px; background: currentColor; border-radius: 9px; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1, h2, h3 { line-height: 1.14; letter-spacing: -.035em; }
-    h1 { font-size: clamp(2.5rem, 6vw, 4.65rem); margin-bottom: 22px; }
-    h2 { font-size: clamp(2rem, 4vw, 3.15rem); margin-bottom: 16px; }
-    h3 { font-size: 1.25rem; margin-bottom: 10px; }
-    p { color: var(--muted); }
-    .section-heading { max-width: 720px; margin-bottom: 38px; }
-    .section-heading p { font-size: 1.06rem; margin-bottom: 0; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 12px 20px; border: 1px solid transparent; border-radius: 10px; font-weight: 750; line-height: 1.2; transition: transform .18s ease, background .18s ease, border-color .18s ease; }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary { color: white; background: var(--navy); box-shadow: 0 8px 20px rgba(18,59,114,.16); }
-    .btn-primary:hover { background: var(--navy-dark); }
-    .btn-outline { color: var(--navy); background: white; border-color: #c9d8eb; }
-    .btn-outline:hover { background: var(--sky); border-color: #9ebce1; }
-    .btn-white { color: var(--navy); background: white; }
-    .btn-block { width: 100%; }
-    .icon { width: 25px; height: 25px; flex: 0 0 25px; color: currentColor; }
-    .icon-box { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 15px; background: var(--sky); color: var(--navy); margin-bottom: 20px; }
-    .icon-box .icon { width: 28px; height: 28px; }
-    .announcement { background: var(--navy-dark); color: #fff; font-size: .86rem; }
-    .announcement-inner { min-height: 36px; display: flex; justify-content: center; align-items: center; text-align: center; gap: 9px; padding: 6px 0; }
-    .announcement strong { color: #fff; }
-    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.96); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(220,228,238,.9); }
-    .nav-wrap { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
-    .brand { display: inline-flex; align-items: center; gap: 11px; min-width: 170px; }
-    .brand img { width: 46px; height: 46px; object-fit: contain; border-radius: 9px; }
-    .brand-name { font-size: 1.35rem; font-weight: 900; letter-spacing: -.045em; color: var(--navy); line-height: 1; }
-    .brand-tag { display: block; font-size: .65rem; color: var(--muted); letter-spacing: .035em; margin-top: 5px; font-weight: 650; }
-    .nav-links { display: flex; align-items: center; gap: 25px; }
-    .nav-links a { font-size: .92rem; font-weight: 700; color: #34465c; }
-    .nav-links a:hover { color: var(--blue); }
-    .nav-actions { display: flex; align-items: center; gap: 10px; }
-    .menu-toggle { display: none; width: 44px; height: 44px; border: 1px solid var(--line); background: white; border-radius: 10px; color: var(--navy); }
-    .hero { position: relative; overflow: hidden; padding: 76px 0 72px; background: radial-gradient(circle at 86% 16%, #d9eaff 0, transparent 27%), linear-gradient(120deg, #f8fbff 0%, #fff 52%, #edf5ff 100%); }
-    .hero::after { content: ""; position: absolute; width: 360px; height: 360px; right: -170px; bottom: -220px; border: 1px solid rgba(36,104,189,.16); border-radius: 50%; box-shadow: 0 0 0 36px rgba(36,104,189,.035), 0 0 0 72px rgba(36,104,189,.025); pointer-events: none; }
-    .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 56px; position: relative; z-index: 1; }
-    .hero-copy .eyebrow { margin-bottom: 20px; }
-    .hero h1 span { color: var(--blue); }
-    .hero-copy > p { max-width: 610px; font-size: 1.12rem; line-height: 1.8; margin-bottom: 28px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
-    .hero-proof { display: flex; flex-wrap: wrap; gap: 18px; color: #465970; font-size: .88rem; font-weight: 650; }
-    .proof-item { display: inline-flex; align-items: center; gap: 8px; }
-    .proof-item .icon { width: 18px; height: 18px; color: var(--green); }
-    .hero-visual { min-height: 420px; display: grid; place-items: center; position: relative; }
-    .visual-card { width: min(100%, 450px); padding: 30px; border: 1px solid rgba(255,255,255,.85); background: rgba(255,255,255,.88); border-radius: 26px; box-shadow: 0 30px 80px rgba(18,59,114,.16); position: relative; }
-    .visual-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 25px; }
-    .visual-top small { color: var(--muted); font-weight: 700; }
-    .status-pill { display: inline-flex; align-items: center; gap: 7px; padding: 7px 10px; background: #e8f7ef; color: #176744; border-radius: 999px; font-size: .72rem; font-weight: 800; }
-    .status-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #1e9a62; }
-    .visual-title { font-size: 1.5rem; font-weight: 850; letter-spacing: -.04em; margin-bottom: 7px; }
-    .visual-desc { font-size: .9rem; margin-bottom: 22px; }
-    .task-row { display: flex; align-items: center; gap: 13px; padding: 14px 0; border-top: 1px solid var(--line); }
-    .task-row .icon-box { margin: 0; width: 44px; height: 44px; border-radius: 12px; }
-    .task-row .icon { width: 23px; height: 23px; }
-    .task-row strong { display: block; font-size: .92rem; }
-    .task-row span { display: block; color: var(--muted); font-size: .79rem; margin-top: 2px; }
-    .visual-bottom { margin-top: 15px; padding: 16px; border-radius: 14px; background: var(--soft); display: flex; justify-content: space-between; gap: 12px; align-items: center; }
-    .visual-bottom span { font-size: .82rem; color: var(--muted); }
-    .visual-bottom strong { display: block; color: var(--navy); font-size: 1.18rem; }
-    .trust-strip { border-bottom: 1px solid var(--line); background: #fff; }
-    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 24px 0; }
-    .trust-item { display: flex; align-items: center; justify-content: center; gap: 12px; text-align: left; }
-    .trust-item .icon { color: var(--blue); }
-    .trust-item strong { display: block; font-size: .9rem; }
-    .trust-item span { display: block; color: var(--muted); font-size: .77rem; }
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .service-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 27px; background: #fff; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; display: flex; flex-direction: column; }
-    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: #b5cbe6; }
-    .service-card p { font-size: .93rem; flex: 1; margin-bottom: 20px; }
-    .text-link { display: inline-flex; align-items: center; gap: 7px; color: var(--blue); font-weight: 800; font-size: .91rem; }
-    .text-link .icon { width: 18px; height: 18px; }
-    .service-note { margin-top: 26px; padding: 18px 20px; border-radius: 13px; background: var(--sky); display: flex; gap: 12px; align-items: flex-start; color: var(--navy); }
-    .service-note .icon { flex: 0 0 22px; margin-top: 2px; }
-    .service-note p { margin: 0; color: #3f5876; font-size: .91rem; }
-    .how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; counter-reset: step; }
-    .step-card { padding: 26px 23px; border: 1px solid var(--line); border-radius: var(--radius); background: white; counter-increment: step; }
-    .step-number { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: var(--navy); color: white; font-weight: 900; margin-bottom: 21px; }
-    .step-card p { font-size: .9rem; margin-bottom: 0; }
-    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
-    .price-card { padding: 34px; border-radius: 22px; border: 1px solid var(--line); background: white; }
-    .price-card.featured { background: var(--navy); color: white; border-color: var(--navy); box-shadow: var(--shadow); }
-    .price-card.featured p, .price-card.featured .price-caption { color: #d4e3f7; }
-    .price-label { font-weight: 800; font-size: .85rem; text-transform: uppercase; letter-spacing: .1em; color: var(--blue); }
-    .featured .price-label { color: #b7d5ff; }
-    .price-amount { font-size: clamp(2.8rem, 5vw, 4rem); font-weight: 900; letter-spacing: -.06em; margin: 12px 0 3px; line-height: 1.1; }
-    .price-caption { font-size: .91rem; color: var(--muted); }
-    .price-divider { height: 1px; background: var(--line); margin: 24px 0; }
-    .featured .price-divider { background: rgba(255,255,255,.2); }
-    .price-list { display: grid; gap: 14px; margin: 0 0 28px; padding: 0; list-style: none; }
-    .price-list li { display: flex; gap: 10px; align-items: flex-start; font-size: .94rem; }
-    .price-list .icon { width: 19px; height: 19px; color: var(--green); flex: 0 0 19px; margin-top: 2px; }
-    .featured .price-list .icon { color: #9de0bf; }
-    .price-fineprint { font-size: .82rem; margin: 17px 0 0; }
-    .safety-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 54px; align-items: center; }
-    .safety-panel { background: var(--navy); color: white; border-radius: 24px; padding: 35px; position: relative; overflow: hidden; }
-    .safety-panel::after { content: ""; position: absolute; right: -55px; bottom: -90px; width: 220px; height: 220px; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; box-shadow: 0 0 0 28px rgba(255,255,255,.04), 0 0 0 56px rgba(255,255,255,.03); }
-    .safety-panel h3 { font-size: 1.65rem; max-width: 330px; }
-    .safety-panel p { color: #d4e3f7; }
-    .safety-panel .icon-box { background: rgba(255,255,255,.13); color: white; }
-    .safety-list { display: grid; gap: 23px; }
-    .safety-row { display: grid; grid-template-columns: 45px 1fr; gap: 15px; }
-    .safety-row .icon-box { width: 45px; height: 45px; margin: 0; border-radius: 12px; }
-    .safety-row .icon { width: 23px; height: 23px; }
-    .safety-row p { font-size: .92rem; margin-bottom: 0; }
-    .safety-row h3 { font-size: 1.06rem; margin-bottom: 6px; }
-    .bird-cta { padding: 0 0 88px; }
-    .bird-banner { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; padding: 45px; border-radius: 24px; background: linear-gradient(115deg, #eaf3ff, #f7fbff); border: 1px solid #d9e8fa; }
-    .bird-banner h2 { font-size: clamp(1.8rem, 3.5vw, 2.7rem); max-width: 650px; }
-    .bird-banner p { max-width: 670px; margin-bottom: 0; }
-    .bird-banner-actions { display: flex; flex-direction: column; gap: 10px; min-width: 190px; }
-    .founder-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 48px; align-items: center; }
-    .founder-image-wrap { background: var(--sky); border-radius: 22px; padding: 18px; max-width: 360px; }
-    .founder-image-wrap img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 15px; background: #dce8f6; }
-    .founder-placeholder { display: none; aspect-ratio: 4 / 5; align-items: center; justify-content: center; flex-direction: column; text-align: center; padding: 20px; color: var(--navy); background: #dce8f6; border-radius: 15px; }
-    .founder-placeholder .icon { width: 56px; height: 56px; margin-bottom: 12px; }
-    .founder-role { color: var(--blue); font-weight: 800; margin-bottom: 18px; }
-    .founder-quote { border-left: 3px solid var(--blue); padding-left: 18px; color: #43566e; font-size: 1.08rem; }
-    .faq-grid { display: grid; grid-template-columns: .72fr 1.28fr; gap: 50px; }
-    .faq-list { display: grid; gap: 12px; }
-    details { border: 1px solid var(--line); border-radius: 13px; background: white; padding: 0 18px; }
-    summary { cursor: pointer; list-style: none; padding: 19px 32px 19px 0; position: relative; font-weight: 800; }
-    summary::-webkit-details-marker { display: none; }
-    summary::after { content: "+"; position: absolute; right: 0; top: 15px; font-size: 1.5rem; color: var(--blue); font-weight: 500; }
-    details[open] summary::after { content: "−"; }
-    details p { font-size: .92rem; margin: 0; padding: 0 0 19px; }
-    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 40px; }
-    .contact-card { background: var(--navy); border-radius: 22px; padding: 32px; color: white; }
-    .contact-card p { color: #d4e3f7; }
-    .contact-line { display: flex; align-items: flex-start; gap: 13px; padding: 15px 0; border-top: 1px solid rgba(255,255,255,.16); }
-    .contact-line .icon { width: 21px; height: 21px; margin-top: 2px; color: #b7d5ff; }
-    .contact-line strong { display: block; font-size: .91rem; }
-    .contact-line span, .contact-line a { color: #d4e3f7; font-size: .9rem; overflow-wrap: anywhere; }
-    .contact-form { border: 1px solid var(--line); border-radius: 22px; padding: 30px; background: white; }
-    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .field { display: grid; gap: 7px; }
-    .field.full { grid-column: 1 / -1; }
-    label { font-size: .87rem; font-weight: 750; color: #33465e; }
-    input, select, textarea { width: 100%; min-height: 48px; padding: 12px 13px; border: 1px solid #cbd6e4; border-radius: 9px; background: #fff; color: var(--ink); outline: none; }
-    textarea { min-height: 110px; resize: vertical; }
-    input:focus, select:focus, textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(36,104,189,.12); }
-    .form-note { font-size: .8rem; margin: 12px 0 18px; }
-    .form-status { margin-top: 14px; padding: 12px; border-radius: 9px; display: none; font-size: .9rem; }
-    .form-status.show { display: block; background: #eef4ff; color: #173d6b; border: 1px solid #cbdcf4; }
-    .site-footer { background: #0b1e36; color: white; padding: 58px 0 22px; }
-    .footer-grid { display: grid; grid-template-columns: 1.4fr .7fr .7fr 1fr; gap: 35px; padding-bottom: 38px; }
-    .footer-brand .brand-name { color: white; }
-    .footer-brand .brand-tag { color: #b7c6d9; }
-    .footer-brand p { color: #b7c6d9; font-size: .9rem; max-width: 330px; margin-top: 18px; }
-    .footer-title { font-size: .92rem; font-weight: 850; margin-bottom: 16px; }
-    .footer-links { display: grid; gap: 11px; }
-    .footer-links a { color: #b7c6d9; font-size: .88rem; }
-    .footer-links a:hover { color: white; }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,.15); padding-top: 20px; display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; color: #9eb0c6; font-size: .8rem; }
-    .disclaimer { max-width: 800px; color: #9eb0c6; font-size: .78rem; margin-top: 16px; }
-    .mobile-sticky { display: none; }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-    @media (max-width: 1000px) {
-      .nav-links { gap: 15px; }
-      .nav-links a { font-size: .86rem; }
-      .hero-grid { gap: 30px; }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .how-grid { grid-template-columns: repeat(2, 1fr); }
-      .trust-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; }
-      .footer-brand { grid-column: 1 / -1; }
-    }
-    @media (max-width: 760px) {
-      .container { width: min(var(--max), calc(100% - 30px)); }
-      .section { padding: 66px 0; }
-      .announcement { font-size: .77rem; }
-      .nav-wrap { min-height: 68px; }
-      .brand { min-width: 0; }
-      .brand img { width: 40px; height: 40px; }
-      .brand-name { font-size: 1.2rem; }
-      .brand-tag { font-size: .6rem; }
-      .menu-toggle { display: grid; place-items: center; }
-      .nav-links { display: none; position: absolute; top: 68px; left: 0; right: 0; padding: 16px 22px 22px; background: white; border-bottom: 1px solid var(--line); box-shadow: 0 15px 25px rgba(18,59,114,.08); align-items: stretch; gap: 0; }
-      .nav-links.open { display: flex; flex-direction: column; }
-      .nav-links a { padding: 13px 2px; border-bottom: 1px solid #edf1f6; font-size: .95rem; }
-      .nav-actions .btn-outline { display: none; }
-      .nav-actions .btn-primary { min-height: 42px; padding: 10px 13px; font-size: .82rem; }
-      .hero { padding: 56px 0 48px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 25px; }
-      .hero-copy > p { font-size: 1rem; }
-      .hero-visual { min-height: 0; }
-      .visual-card { padding: 23px; border-radius: 20px; }
-      .trust-grid { gap: 18px 10px; padding: 20px 0; }
-      .trust-item { justify-content: flex-start; gap: 8px; }
-      .trust-item .icon { width: 21px; height: 21px; }
-      .trust-item strong { font-size: .82rem; }
-      .trust-item span { font-size: .72rem; }
-      .services-grid, .pricing-grid, .safety-grid, .founder-grid, .faq-grid, .contact-grid { grid-template-columns: 1fr; }
-      .service-card { padding: 23px; }
-      .how-grid { gap: 12px; }
-      .step-card { padding: 20px 17px; }
-      .step-card h3 { font-size: 1.05rem; }
-      .step-card p { font-size: .84rem; }
-      .price-card { padding: 26px; }
-      .safety-grid, .founder-grid, .faq-grid, .contact-grid { gap: 28px; }
-      .safety-panel { padding: 28px; }
-      .bird-cta { padding-bottom: 66px; }
-      .bird-banner { grid-template-columns: 1fr; padding: 28px; gap: 23px; }
-      .bird-banner-actions { flex-direction: row; flex-wrap: wrap; }
-      .founder-image-wrap { max-width: 300px; }
-      .contact-form { padding: 22px; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
-      .footer-brand { grid-column: 1 / -1; }
-      .mobile-sticky { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 45; padding: 10px 15px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.96); backdrop-filter: blur(12px); border-top: 1px solid var(--line); }
-      .mobile-sticky .btn { width: 100%; }
-      .site-footer { padding-bottom: 95px; }
-    }
-    @media (max-width: 430px) {
-      .hero-actions { display: grid; grid-template-columns: 1fr; }
-      .hero-actions .btn { width: 100%; }
-      .hero-proof { gap: 10px 15px; }
-      .how-grid { grid-template-columns: 1fr 1fr; }
-      .form-grid { grid-template-columns: 1fr; }
-      .field.full { grid-column: auto; }
-      .bird-banner-actions { flex-direction: column; }
-      .bird-banner-actions .btn { width: 100%; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
-    }
-  </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102b50"><meta name="description" content="Apply to join the CivicBird representative network in Bhagalpur, Bihar.">
+<title>Join Us as a Bird | CivicBird</title><link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#102b50;--navy-dark:#0b1e38;--saffron:#f4a51c;--ink:#18263a;--muted:#66758a;--line:#e4e9f0;--surface:#f5f8fc;--white:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:"Poppins",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.65}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
+.container{width:min(1120px,calc(100% - 36px));margin:auto}.topbar{background:var(--navy-dark);color:#fff;font-size:11px;padding:8px 0}.topbar .container{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.topbar a{color:#fff}
+header{background:#fff;border-bottom:1px solid var(--line)}.nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:10px 0}.brand{display:flex;align-items:center;gap:10px}.brand img{width:42px;height:42px;object-fit:contain}.brand strong{font-size:21px;color:var(--navy);letter-spacing:-.5px}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:1.7px}.links{display:flex;gap:17px;align-items:center;flex-wrap:wrap}.links a{font-size:12px;font-weight:600;color:#33445b}.links a:hover{color:#9a6500}
+.hero{background:linear-gradient(125deg,#102b50,#214c79);color:#fff;padding:45px 0}.hero h1{font-size:clamp(29px,4vw,43px);line-height:1.2;letter-spacing:-1px;margin:0 0 10px}.hero p{font-size:13px;color:#d9e5f3;max-width:700px;margin:0}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:1.8px;color:#ffd17a;font-weight:700;display:block;margin-bottom:10px}
+main{padding:42px 0 60px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:25px;align-items:start}.panel{border:1px solid var(--line);border-radius:16px;padding:25px;background:#fff;box-shadow:0 10px 30px rgba(16,43,80,.055)}.panel h2{font-size:20px;color:var(--navy);margin:0 0 6px}.sub{font-size:12px;color:var(--muted);margin:0 0 22px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:6px}.full{grid-column:1/-1}label{font-size:11px;font-weight:700;color:#35445a}input,select,textarea{width:100%;border:1px solid #d6dee9;border-radius:9px;padding:12px;background:#fff;color:var(--ink);font-size:12px;outline:none}input:focus,select:focus,textarea:focus{border-color:#416b9d;box-shadow:0 0 0 3px rgba(65,107,157,.12)}textarea{min-height:95px;resize:vertical}.hint{font-size:10px;color:var(--muted)}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:9px;background:var(--saffron);color:#1b2a3c;padding:13px 17px;font-size:12px;font-weight:700;cursor:pointer}.btn:hover{filter:brightness(.97)}.btn-block{width:100%;margin-top:17px}.btn-outline{background:#fff;border:1px solid var(--line);color:var(--navy)}.rowlinks{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:15px;font-size:11px}.rowlinks a{color:#805600;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.aside{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}.aside h3{font-size:16px;color:var(--navy);margin:0 0 10px}.aside p,.aside li{font-size:11px;color:var(--muted)}.aside ul{padding-left:18px}.aside li{margin:7px 0}.notice{border-left:3px solid var(--saffron);padding:12px 14px;background:#fff7e6;border-radius:0 9px 9px 0;color:#655333;font-size:11px;margin:17px 0 0}
+.checkline{display:flex;gap:9px;align-items:flex-start;font-size:10px;color:var(--muted)}.checkline input{width:15px;margin-top:3px;flex-shrink:0}.status{display:none;margin-top:17px;padding:13px;border-radius:10px;background:#fff7e6;border:1px solid #f0d9a4;color:#5d490f;font-size:11px}.preview{display:none;margin-top:10px;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:11px;color:var(--muted)}.preview img{max-width:100%;max-height:180px;display:block;margin-top:8px;border-radius:8px}
+footer{background:#0b1e38;color:#fff;padding:28px 0 18px}footer .container{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}footer p,footer a{font-size:10px;color:#c0ccdc;margin:0}footer .footlinks{display:flex;gap:14px;flex-wrap:wrap}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.aside{order:2}.links{gap:11px}.nav{align-items:flex-start;flex-direction:column}}
+@media(max-width:560px){.container{width:calc(100% - 26px)}.grid{grid-template-columns:1fr}.full{grid-column:auto}.panel{padding:19px}.hero{padding:35px 0}.links a{font-size:11px}}
+</style>
 <style>.civicbird-audit-footer{display:flex;flex-wrap:wrap;gap:10px 18px;margin:18px 0;padding-top:12px;border-top:1px solid rgba(130,150,175,.35)}.civicbird-audit-footer a{font-size:13px;text-decoration:none;color:inherit}.civicbird-audit-footer a:hover{text-decoration:underline}.civicbird-common-tagline{font-size:.68rem;font-weight:750;letter-spacing:.04em}.civicbird-upload-disabled{padding:12px 14px;border:1px solid #e7c77c;background:#fff8e8;color:#654b16;border-radius:9px;font-size:12px}</style>
 </head>
 <body>
-  <!-- CivicBird homepage navigation fixes v2. All standalone page links are explicit. -->\n  <!-- Reusable inline SVG icons. No emoji characters are used as icons. -->
-  <svg class="sr-only" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M14 2v6h6M8 13h8M8 17h8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
-    <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 21h18M5 21V5l7-3 7 3v16M9 9h.01M15 9h.01M9 13h.01M15 13h.01M10 21v-4h4v4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-location" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
-    <symbol id="i-support" viewBox="0 0 24 24"><path d="M4 13v-2a8 8 0 0 1 16 0v2M4 13a2 2 0 0 0 2 2h1v-5H6a2 2 0 0 0-2 2Zm16 0a2 2 0 0 1-2 2h-1v-5h1a2 2 0 0 1 2 2ZM12 21h3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M10 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM20 8v6M23 11h-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M9 4V2h6v2M8 10h8M8 14h8M8 18h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
-    <symbol id="i-landmark" viewBox="0 0 24 24"><path d="m3 9 9-6 9 6M4 21h16M5 10v8M9 10v8M15 10v8M19 10v8M3 21v-3h18v3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m3 7 9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
-    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.8 2.1Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
-    <symbol id="i-user-check" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M10 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM16 11l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 10V6a4 4 0 1 1 8 0v4M12 14v4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
-    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
-    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M14 4H6a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V9M14 4l2 3h5M12 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  </svg>
-
-  <div class="announcement">
-    <div class="container announcement-inner">
-      <span>Everyday civic assistance, made simpler.</span>
-      <strong>KAAM AAP KA SAATH HAMARA</strong>
-    </div>
-  </div>
-
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#home" aria-label="CivicBird homepage">
-        <img src="logo.png" alt="CivicBird logo" onerror="this.style.display='none'">
-        <span><span class="brand-name">CivicBird</span><span class="brand-tag">KAAM AAP KA SAATH HAMARA</span></span>
-      </a>
-      <nav class="nav-links" id="mainNav" aria-label="Main navigation">
-        <a href="services.html">Services</a>
-        <a href="how-it-works.html">How It Works</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="safety.html">Safety</a>
-        <a href="about.html">About Us</a>
-        <a href="#contact">Contact</a>
-      <a href="help.html">Help</a><a href="join-as-bird.html">Join as a Bird</a><a href="login.html">Login</a><a href="signup.html">Sign Up</a><a href="forgot-password.html">Forgot Password</a></nav>
-      <div class="nav-actions">
-        <a class="btn btn-outline" href="help.html">Talk to Us</a>
-        <a class="btn btn-primary" href="services.html">Get Started <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
-          <svg class="icon" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Your everyday assistance partner</span>
-          <h1>Important work.<br><span>Less confusion.</span><br>More support.</h1>
-          <p>CivicBird helps you navigate everyday civic and documentation tasks with a clear process, transparent service pricing and a support team to guide you along the way.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="services.html">Explore Services <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="btn btn-outline" href="how-it-works.html">See How It Works</a>
-          </div>
-          <div class="hero-proof">
-            <span class="proof-item"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Clear service process</span>
-            <span class="proof-item"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Upfront service fee</span>
-            <span class="proof-item"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Human support</span>
-          </div>
-        </div>
-        <div class="hero-visual" aria-label="Illustration of CivicBird assistance options">
-          <div class="visual-card">
-            <div class="visual-top"><small>CIVICBIRD ASSISTANCE</small><span class="status-pill">A clearer process</span></div>
-            <div class="visual-title">What do you need help with?</div>
-            <p class="visual-desc">Start by choosing the kind of task you want help with.</p>
-            <div class="task-row">
-              <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></div>
-              <div><strong>Documents & applications</strong><span>Understand the steps and required information</span></div>
-            </div>
-            <div class="task-row">
-              <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-landmark"/></svg></div>
-              <div><strong>Civic and public-service tasks</strong><span>Get guidance for your selected task</span></div>
-            </div>
-            <div class="task-row">
-              <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></div>
-              <div><strong>Assistance from a Bird</strong><span>Request help with a task and its details</span></div>
-            </div>
-            <div class="visual-bottom"><div><span>Standard service fee</span><strong>₹300 + GST</strong></div><a class="text-link" href="pricing.html">View pricing <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="trust-strip" aria-label="CivicBird service principles">
-      <div class="container trust-grid">
-        <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"/></svg><div><strong>Clear process</strong><span>Know the next step</span></div></div>
-        <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg><div><strong>Document guidance</strong><span>Prepare the right details</span></div></div>
-        <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><div><strong>Safety-conscious</strong><span>Verification-led onboarding</span></div></div>
-        <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="#i-support"/></svg><div><strong>Support when needed</strong><span>Ask us for help</span></div></div>
-      </div>
-    </section>
-
-    <section class="section" id="services">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">What we help with</span>
-          <h2>Choose the work.<br>We'll help you understand the process.</h2>
-          <p>Start with a service category and share what you need. The exact documents, eligibility, official fees and processing time depend on the service and the relevant authority.</p>
-        </div>
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></div>
-            <h3>Documentation Assistance</h3>
-            <p>Get help understanding forms, document checklists, application steps and where to submit your request.</p>
-            <a class="text-link service-select" href="services.html" data-service="Documentation assistance">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </article>
-          <article class="service-card">
-            <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-landmark"/></svg></div>
-            <h3>Civic & Public Services</h3>
-            <p>Get guidance for selected civic tasks, public-service applications and administrative processes.</p>
-            <a class="text-link service-select" href="services.html" data-service="Civic and public services">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </article>
-          <article class="service-card">
-            <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-location"/></svg></div>
-            <h3>Local Task Assistance</h3>
-            <p>Describe the work, where it needs to happen and the destination or office involved so the request can be reviewed.</p>
-            <a class="text-link service-select" href="services.html" data-service="Local task assistance">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </article>
-          <article class="service-card">
-            <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"/></svg></div>
-            <h3>Form & Application Guidance</h3>
-            <p>Understand the information typically requested on a form and identify the next step before you apply.</p>
-            <a class="text-link service-select" href="services.html" data-service="Form and application guidance">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </article>
-          <article class="service-card">
-            <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></div>
-            <h3>Assistance from a Bird</h3>
-            <p>Send the details of your task and preferred location. Availability and scope will need to be confirmed before work begins.</p>
-            <a class="text-link service-select" href="services.html" data-service="Assistance from a Bird">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </article>
-          <article class="service-card">
-            <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg></div>
-            <h3>Not Sure Where to Start?</h3>
-            <p>Tell us what you are trying to complete. We can help you identify the right service category or next question.</p>
-            <a class="text-link service-select" href="services.html" data-service="Help me choose a service">Get guidance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </article>
-        </div>
-        <div class="service-note"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><p><strong>Important:</strong> CivicBird provides assistance and process guidance. Government decisions, eligibility, official charges and approval timelines remain with the relevant authority. We do not promise or guarantee approvals.</p></div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="how-it-works">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">A simple process</span>
-          <h2>From your request to the next step.</h2>
-          <p>We aim to make the process easy to understand before any task begins.</p>
-        </div>
-        <div class="how-grid">
-          <article class="step-card"><div class="step-number">01</div><h3>Choose a service</h3><p>Select a category or tell us what you need help with.</p></article>
-          <article class="step-card"><div class="step-number">02</div><h3>Share task details</h3><p>Provide your contact details, task description and relevant locations.</p></article>
-          <article class="step-card"><div class="step-number">03</div><h3>Review the request</h3><p>Confirm the scope, availability, applicable fee and any additional official charges before proceeding.</p></article>
-          <article class="step-card"><div class="step-number">04</div><h3>Follow the process</h3><p>Receive guidance on the agreed next steps and contact support if you need clarification.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="pricing">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Transparent pricing</span>
-          <h2>Know the service fee before you begin.</h2>
-          <p>Our planned standard service fee is shown below. Any applicable official fees or separately agreed costs should be disclosed before you proceed.</p>
-        </div>
-        <div class="pricing-grid">
-          <article class="price-card featured">
-            <div class="price-label">Standard service</div>
-            <div class="price-amount">₹300</div>
-            <div class="price-caption">Service fee, plus 18% GST</div>
-            <div class="price-divider"></div>
-            <ul class="price-list">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Standard service fee: ₹300</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>GST at 18%: ₹54</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Total service fee including GST: ₹354</strong></span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Any official department fees are separate unless expressly stated otherwise.</span></li>
-            </ul>
-            <a class="btn btn-white btn-block" href="services.html">Ask About a Service <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <p class="price-fineprint">The final amount and scope must be confirmed before a service is accepted.</p>
-          </article>
-          <article class="price-card">
-            <div class="price-label">Become a Bird</div>
-            <div class="price-amount">₹149</div>
-            <div class="price-caption">Application fee, as planned</div>
-            <div class="price-divider"></div>
-            <ul class="price-list">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Submit your basic profile and contact details.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Provide address details and the requested identity information through a secure process.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Application review and required verification are needed before activation.</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Payment does not guarantee acceptance or assignment of work.</span></li>
-            </ul>
-            <a class="btn btn-primary btn-block" href="join-as-bird.html">Apply to Become a Bird <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <p class="price-fineprint">Confirm the applicable taxes, payment terms and refund policy before collecting or paying this fee.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="safety">
-      <div class="container safety-grid">
-        <div class="safety-panel">
-          <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></div>
-          <span class="eyebrow" style="color:#b7d5ff">Safety comes first</span>
-          <h3>Trust should be built through checks, not just promises.</h3>
-          <p>CivicBird's intended onboarding standard is to complete identity and applicable police-verification checks before a Bird is activated for work.</p>
-          <a class="btn btn-white" href="safety.html">Ask a Safety Question <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </div>
-        <div>
-          <div class="section-heading">
-            <span class="eyebrow">Our safety principles</span>
-            <h2>Know who you are dealing with.</h2>
-            <p>Verification, careful handling of personal information and clear task details are important parts of a safer service experience.</p>
-          </div>
-          <div class="safety-list">
-            <div class="safety-row"><div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-user-check"/></svg></div><div><h3>Identity and verification checks</h3><p>Bird applications should be reviewed and required identity and police-verification checks completed before activation. Do not treat an unverified profile as approved.</p></div></div>
-            <div class="safety-row"><div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg></div><div><h3>Personal information deserves care</h3><p>Share sensitive documents only through an approved, secure process. Avoid sending Aadhaar images or passwords through public comments or unsecured channels.</p></div></div>
-            <div class="safety-row"><div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"/></svg></div><div><h3>Clear scope and charges</h3><p>Review the task, service fee, additional costs and terms before work begins. Ask for clarification if anything is unclear.</p></div></div>
-            <div class="safety-row"><div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-support"/></svg></div><div><h3>Report a concern</h3><p>Contact CivicBird if a profile, request or interaction raises a safety concern. Use official emergency services for immediate danger.</p></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="bird-cta" id="be-a-bird">
-      <div class="container">
-        <div class="bird-banner">
-          <div>
-            <span class="eyebrow">Join the CivicBird network</span>
-            <h2>Become a Bird. Help people get things done.</h2>
-            <p>Apply to join the network of people who assist customers with everyday tasks. Applicants must provide accurate details and complete the required review and verification process.</p>
-          </div>
-          <div class="bird-banner-actions">
-            <a class="btn btn-primary" href="join-as-bird.html">Start Your Application <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <span style="font-size:.82rem;color:var(--muted);text-align:center">Planned application fee: ₹149</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="container founder-grid">
-        <div class="founder-image-wrap">
-          <img id="founderImage" src="founder.png" alt="M. S. Umam, Founder and CEO of CivicBird" onerror="this.style.display='none';document.getElementById('founderPlaceholder').style.display='flex'">
-          <div class="founder-placeholder" id="founderPlaceholder"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><strong>Founder profile</strong><span>Founder photograph unavailable</span></div>
-        </div>
-        <div>
-          <span class="eyebrow">About CivicBird</span>
-          <h2>Built around a simple idea: make everyday tasks easier to navigate.</h2>
-          <p>CivicBird is being developed to help people understand and manage everyday civic, documentation and local assistance tasks with a more organised experience.</p>
-          <p>Our aim is to explain the process clearly, help customers prepare the right information and make service expectations easier to understand.</p>
-          <div class="founder-role">M. S. Umam — Founder &amp; CEO</div>
-          <blockquote class="founder-quote">“KAAM AAP KA SAATH HAMARA”</blockquote>
-          <p>We believe good service starts with clear communication, responsible handling of information and respect for every customer's time.</p>
-          <a class="btn btn-outline" href="help.html">Connect with CivicBird <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="faq">
-      <div class="container faq-grid">
-        <div class="section-heading">
-          <span class="eyebrow">Helpful answers</span>
-          <h2>Frequently asked questions.</h2>
-          <p>Need more details? Send us your question through the contact form.</p>
-          <a class="btn btn-outline" href="help.html">Contact Support <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </div>
-        <div class="faq-list">
-          <details><summary>What is CivicBird?</summary><p>CivicBird is a planned assistance service intended to help people navigate selected civic, documentation and local task requests. Available services and coverage should be confirmed before booking.</p></details>
-          <details><summary>How much does a standard service cost?</summary><p>The planned standard service fee is ₹300 plus 18% GST, which totals ₹354. Official department fees and other agreed charges may be additional and should be disclosed before you proceed.</p></details>
-          <details><summary>Does CivicBird guarantee government approvals?</summary><p>No. Decisions, eligibility, approvals and processing times are determined by the relevant government department or authority. CivicBird cannot guarantee an outcome.</p></details>
-          <details><summary>Are all Birds police verified?</summary><p>The intended policy is to activate Birds only after required identity and police-verification checks are completed. This page alone does not confirm that a particular applicant has been verified. Check a Bird's status through CivicBird before proceeding.</p></details>
-          <details><summary>What do I need to submit a request?</summary><p>Typically, you should describe the task, provide a reachable contact method and share relevant source and destination details. Only submit sensitive documents when they are required and a secure submission method is available.</p></details>
-          <details><summary>Can I apply to become a Bird?</summary><p>Yes, you can express interest using the contact form. The planned application fee is ₹149. The actual application process, applicable taxes, verification and terms must be confirmed before payment.</p></details>
-          <details><summary>Can I pay online on this page?</summary><p>No payment gateway is connected in this standalone homepage file. Do not enter card, UPI or banking details here. Online payments should be enabled only after a secure payment provider is integrated and tested.</p></details>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Contact and enquiries</span>
-          <h2>Tell us what you need help with.</h2>
-          <p>Share a few details to review your enquiry on this page. Online submission will be connected after the CivicBird backend is ready.</p>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>We're here to help you find the next step.</h3>
-            <p>For a service enquiry, application question or general feedback, use the contact details below.</p>
-            <div class="contact-line"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><div><strong>Phone</strong><a href="tel:+919065760751">+91 90657 60751</a></div></div>
-            <div class="contact-line"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><div><strong>Email</strong><a href="mailto:civicbird7@gmail.com">civicbird7@gmail.com</a></div></div>
-            <div class="contact-line"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><div><strong>Service availability</strong><span>Confirm operating hours and local availability before relying on a service.</span></div></div>
-            <p style="font-size:.82rem;margin:18px 0 0">Please do not include passwords, OTPs, full payment details or unnecessary identity documents in an enquiry.</p>
-          </div>
-          <form class="contact-form" id="contactForm">
-            <h3>Send an enquiry</h3>
-            <div class="form-grid">
-              <div class="field"><label for="fullName">Full name *</label><input id="fullName" name="fullName" autocomplete="name" required maxlength="100" placeholder="Enter your name"></div>
-              <div class="field"><label for="phoneNumber">Phone number *</label><input id="phoneNumber" name="phoneNumber" type="tel" autocomplete="tel" required inputmode="tel" pattern="[0-9+() -]{8,18}" maxlength="18" placeholder="Enter your phone number"></div>
-              <div class="field full"><label for="emailAddress">Email address (optional)</label><input id="emailAddress" name="emailAddress" type="email" autocomplete="email" maxlength="150" placeholder="you@example.com"></div>
-              <div class="field full"><label for="serviceType">What do you need? *</label><select id="serviceType" name="serviceType" required><option value="">Choose a category</option><option>Documentation assistance</option><option>Civic and public services</option><option>Local task assistance</option><option>Form and application guidance</option><option>Assistance from a Bird</option><option>Bird application</option><option>Help me choose a service</option><option>General enquiry or feedback</option></select></div>
-              <div class="field full"><label for="taskDetails">Task details *</label><textarea id="taskDetails" name="taskDetails" required maxlength="1500" placeholder="Describe the task and the help you are looking for. Do not include sensitive document numbers."></textarea></div>
-              <div class="field"><label for="sourceLocation">Source / current location (optional)</label><input id="sourceLocation" name="sourceLocation" maxlength="180" placeholder="Area, town or address"></div>
-              <div class="field"><label for="destinationLocation">Destination / office (optional)</label><input id="destinationLocation" name="destinationLocation" maxlength="180" placeholder="Area, town or office"></div>
-            </div>
-            <p class="form-note">By continuing, you agree that the details you provide may be used to respond to this enquiry. Do not submit sensitive personal data through this demonstration form.</p>
-            <button class="btn btn-primary btn-block" type="submit">Review Enquiry Details <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
-            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="brand" href="#home" aria-label="CivicBird homepage">
-            <img src="logo.png" alt="" onerror="this.style.display='none'">
-            <span><span class="brand-name">CivicBird</span><span class="brand-tag">KAAM AAP KA SAATH HAMARA</span></span>
-          </a>
-          <p>Everyday civic and documentation assistance, designed around clear communication, transparent service expectations and responsible support.</p>
-        </div>
-        <div><div class="footer-title">Explore</div><div class="footer-links"><a href="services.html">Services</a><a href="how-it-works.html">How It Works</a><a href="pricing.html">Pricing</a><a href="safety.html">Safety</a></div></div>
-        <div><div class="footer-title">CivicBird</div><div class="footer-links"><a href="about.html">About Us</a><a href="join-as-bird.html">Become a Bird</a><a href="#faq">FAQs</a><a href="#contact">Contact</a></div></div>
-        <div><div class="footer-title">Get in touch</div><div class="footer-links"><a href="tel:+919065760751">+91 90657 60751</a><a href="mailto:civicbird7@gmail.com">civicbird7@gmail.com</a><a href="#contact">Send an enquiry</a></div></div>
-      </div>
-      <div class="footer-bottom">
-        <span>© <span id="currentYear">2026</span> CivicBird. All rights reserved.</span>
-        <span>Made for clearer everyday assistance.</span>
-      </div>
-      <p class="disclaimer">CivicBird is developing a clear, supported service for everyday civic and documentation tasks. This homepage does not itself verify applicants, process bookings, store user accounts, collect payments or submit applications to government departments. Service availability, terms, privacy policy, verification procedures and payment integrations must be implemented and published before public launch.</p>
-    </div>
-  <nav class="civicbird-audit-footer" aria-label="Website links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="how-it-works.html">How It Works</a><a href="pricing.html">Pricing</a><a href="safety.html">Safety</a><a href="about.html">About Us</a><a href="help.html">Help</a><a href="join-as-bird.html">Join as a Bird</a><a href="login.html">Login</a><a href="signup.html">Sign Up</a><a href="forgot-password.html">Forgot Password</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="index.html#contact">Contact</a></nav></footer>
-
-  <div class="mobile-sticky"><a class="btn btn-primary" href="services.html">Explore Services <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-
-  <script>
-    (function () {
-      "use strict";
-      const menuToggle = document.getElementById("menuToggle");
-      const mainNav = document.getElementById("mainNav");
-      if (menuToggle && mainNav) {
-        menuToggle.addEventListener("click", function () {
-          const isOpen = mainNav.classList.toggle("open");
-          menuToggle.setAttribute("aria-expanded", String(isOpen));
-          menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
-        });
-        mainNav.querySelectorAll("a").forEach(function (link) {
-          link.addEventListener("click", function () {
-            mainNav.classList.remove("open");
-            menuToggle.setAttribute("aria-expanded", "false");
-            menuToggle.setAttribute("aria-label", "Open navigation menu");
-          });
-        });
-      }
-
-      document.getElementById("currentYear").textContent = new Date().getFullYear();
-
-      document.querySelectorAll("[data-prefill]").forEach(function (link) {
-        link.addEventListener("click", function () {
-          const select = document.getElementById("serviceType");
-          if (select) select.value = link.getAttribute("data-prefill");
-        });
-      });
-
-      const form = document.getElementById("contactForm");
-      const status = document.getElementById("formStatus");
-      if (form && status) {
-        form.addEventListener("submit", function (event) {
-          event.preventDefault();
-          if (!form.reportValidity()) return;
-
-          const data = new FormData(form);
-          status.replaceChildren();
-          status.classList.add("show");
-          status.style.background = "#eef4ff";
-          status.style.color = "#173d6b";
-          status.style.whiteSpace = "pre-wrap";
-          status.style.lineHeight = "1.65";
-
-          const heading = document.createElement("strong");
-          heading.textContent = "Review your enquiry";
-          status.appendChild(heading);
-
-          const details = document.createElement("div");
-          details.style.marginTop = "8px";
-          const fields = [
-            ["Name", data.get("fullName")],
-            ["Phone", data.get("phoneNumber")],
-            ["Email", data.get("emailAddress") || "Not provided"],
-            ["Service", data.get("serviceType")],
-            ["Task details", data.get("taskDetails")],
-            ["Source / current location", data.get("sourceLocation") || "Not provided"],
-            ["Destination / office", data.get("destinationLocation") || "Not provided"]
-          ];
-          fields.forEach(function (item) {
-            const row = document.createElement("p");
-            row.style.margin = "5px 0";
-            row.style.color = "inherit";
-            const label = document.createElement("strong");
-            label.textContent = item[0] + ": ";
-            const value = document.createElement("span");
-            value.textContent = String(item[1] || "");
-            row.append(label, value);
-            details.appendChild(row);
-          });
-          status.appendChild(details);
-
-          const note = document.createElement("p");
-          note.style.margin = "12px 0 0";
-          note.style.color = "inherit";
-          note.textContent = "This is a local review only. Your enquiry has not been sent or saved. Online submission will be enabled after the CivicBird backend is connected.";
-          status.appendChild(note);
-          status.scrollIntoView({ behavior: "smooth", block: "nearest" });
-        });
-      }
-    })();
-  </script>
-</body>
-</html>
+<div class="topbar"><div class="container"><span>Citizen assistance, made simpler</span><span>Bhagalpur, Bihar · <a href="mailto:civicbird7@gmail.com">civicbird7@gmail.com</a></span></div></div>
+<header><div class="container nav">
+<a class="brand" href="index.html"><img src="logo.png" alt="CivicBird logo" onerror="this.style.display='none'"><span><strong>CivicBird</strong><small>CITIZEN ASSISTANCE</small></span></a>
+<nav class="links" aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="help.html">Help &amp; Support</a><a href="join-as-bird.html">Join as a Bird</a><a href="login.html">Customer Login</a><a href="how-it-works.html">How It Works</a><a href="safety.html">Safety</a><a href="about.html">About Us</a><a href="signup.html">Sign Up</a><a href="forgot-password.html">Forgot Password</a></nav>
+</div></header>
+<section class="hero"><div class="container"><span class="eyebrow">Join our local network</span><h1>Join Us as a Bird</h1><p>Apply to become a CivicBird representative and help people navigate everyday office-related tasks in Bhagalpur. Submit accurate details and wait for official review before treating your application as approved.</p></div></section>
+<main><div class="container layout">
+<section class="panel">
+<h2>Bird registration application</h2><p class="sub">Fields marked * are required. Please use your own current information. Secure document uploads are not available yet; do not send identity document images through this form.</p>
+<form id="birdForm">
+<div class="grid">
+<div class="field"><label for="name">Full name as on identity document *</label><input id="name" name="name" required maxlength="100" autocomplete="name" placeholder="Full legal name"></div>
+<div class="field"><label for="mobile">Mobile number *</label><input id="mobile" name="mobile" required type="tel" inputmode="tel" pattern="[0-9+() -]{10,18}" maxlength="18" placeholder="Active mobile number"></div>
+<div class="field"><label for="email">Email address *</label><input id="email" name="email" required type="email" maxlength="150" autocomplete="email" placeholder="you@example.com"></div>
+<div class="field"><label for="dob">Date of birth *</label><input id="dob" name="dob" required type="date"></div>
+<div class="field full"><label for="address">Complete current residential address *</label><textarea id="address" name="address" required maxlength="600" placeholder="House/flat, road, locality, city, district, state and PIN"></textarea></div>
+<div class="field full"><label for="altAddress">Permanent / alternate address *</label><textarea id="altAddress" name="altAddress" required maxlength="600" placeholder="Enter permanent address, or repeat current address if same"></textarea></div>
+<div class="field"><label for="area">Preferred work area in Bhagalpur *</label><input id="area" name="area" required maxlength="150" placeholder="Locality / nearby areas"></div>
+<div class="field"><label for="work">Relevant experience / skills *</label><select id="work" name="work" required><option value="">Select experience</option><option>Office assistance / documentation</option><option>Customer service</option><option>Field work / errands</option><option>Other relevant experience</option></select></div>
+<div class="field full"><p class="civicbird-upload-disabled">Photo and identity-document uploads are temporarily disabled until a secure upload system is available.</p></div></div>
+<div class="field full"><p class="civicbird-upload-disabled">Photo and identity-document uploads are temporarily disabled until a secure upload system is available.</p></div></div>
+<div class="field full"><p class="civicbird-upload-disabled">Photo and identity-document uploads are temporarily disabled until a secure upload system is available.</p></div></div>
+<div class="field full"><label class="checkline"><input id="truth" type="checkbox" required><span>I confirm that the details supplied are accurate and that I am applying voluntarily. I understand that submission of this draft does not approve my application or verify my identity.</span></label></div>
+<div class="field full"><label class="checkline"><input id="privacyConsent" type="checkbox" required><span>I have read the <a href="privacy.html" style="text-decoration:underline">Privacy Policy</a> and understand the current form does not transmit or store the information.</span></label></div>
+</div>
+<div class="notice"><strong>Application fee:</strong> ₹149. This fee is shown for planning purposes; payment is not collected on this page. Do not pay anyone based only on this draft form. An official secure application and payment flow must be enabled first.</div>
+<button class="btn btn-block" type="submit">Review application summary</button>
+<div class="status" id="result" role="status" aria-live="polite"></div>
+</form>
+</section>
+<aside class="aside"><h3>Before you apply</h3><ul><li>Keep your phone number and email accessible.</li><li>Secure photo and identity-document uploads will be enabled only after a secure upload system is ready.</li><li>Provide a complete current and permanent/alternate address.</li><li>Never send OTPs, passwords, UPI PINs or bank credentials.</li><li>Do not assume your application is approved until CivicBird confirms it through an official channel.</li></ul>
+<div class="notice"><strong>Verification transparency:</strong> CivicBird should describe a Bird as police-verified only after the relevant verification has actually been completed and documented.</div>
+<h3 style="margin-top:22px">Application steps</h3><ol style="padding-left:18px"><li style="font-size:11px;color:#66758a;margin:8px 0">Complete application details.</li><li style="font-size:11px;color:#66758a;margin:8px 0">Submit through the future secure application system.</li><li style="font-size:11px;color:#66758a;margin:8px 0">Wait for review and confirmation.</li></ol></aside>
+</div></main>
+<footer><div class="container"><p>© <span id="year"></span> CivicBird. All rights reserved.</p><div class="footlinks"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a><a href="help.html">Help &amp; Support</a></div></div><nav class="civicbird-audit-footer" aria-label="Website links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="how-it-works.html">How It Works</a><a href="pricing.html">Pricing</a><a href="safety.html">Safety</a><a href="about.html">About Us</a><a href="help.html">Help</a><a href="join-as-bird.html">Join as a Bird</a><a href="login.html">Login</a><a href="signup.html">Sign Up</a><a href="forgot-password.html">Forgot Password</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="index.html#contact">Contact</a></nav></footer>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+<script>
+(() => {
+const form=document.getElementById("birdForm"), result=document.getElementById("result");
+const fileFields=[["photo","photoPreview","Recent photograph"],["aadhaarFront","frontPreview","Identity document front"],["aadhaarBack","backPreview","Identity document back"]];
+fileFields.forEach(([inputId,previewId,label])=>{
+ const input=document.getElementById(inputId), box=document.getElementById(previewId);
+ input.addEventListener("change",()=>{
+  box.innerHTML=""; const file=input.files&&input.files[0]; if(!file){box.style.display="none";return;}
+  box.style.display="block"; const info=document.createElement("div"); info.textContent=label+": "+file.name+" ("+Math.ceil(file.size/1024)+" KB)"; box.appendChild(info);
+  if(file.type.startsWith("image/")){const img=document.createElement("img");img.alt=label+" preview";img.src=URL.createObjectURL(file);box.appendChild(img);}
+ });
+});
+form.addEventListener("submit",e=>{
+ e.preventDefault();if(!form.reportValidity())return;
+ const name=document.getElementById("name").value.trim(), email=document.getElementById("email").value.trim();
+ result.style.display="block";
+ result.textContent="Draft reviewed for "+name+" ("+email+"). No application has been sent or stored. No registration fee has been collected, no application ID has been generated, and your selected files have not been uploaded. A secure backend, protected document storage and payment integration must be connected before this form can accept official applications.";
+ result.scrollIntoView({behavior:"smooth",block:"nearest"});
+});
+})();
+</script>
+</body></html>

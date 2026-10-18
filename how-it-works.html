@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn how CivicBird helps you request citizen assistance, track your request, and receive service updates.">
+  <title>How It Works | CivicBird</title>
+  <style>
+    :root {
+      --navy: #102b50;
+      --navy-2: #173d6b;
+      --saffron: #f29b27;
+      --ink: #17263b;
+      --muted: #64748b;
+      --line: #e1e7ef;
+      --paper: #ffffff;
+      --soft: #f4f7fb;
+      --green: #18794e;
+      --radius: 18px;
+      --shadow: 0 14px 36px rgba(16, 43, 80, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, "Segoe UI", Arial, sans-serif; color: var(--ink); background: var(--paper); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .container { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .topbar { background: var(--navy); color: #fff; font-size: .85rem; }
+    .topbar-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 38px; }
+    .topbar a { color: #fff; opacity: .95; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 76px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 850; font-size: 1.28rem; letter-spacing: -.04em; color: var(--navy); }
+    .brand img { width: 43px; height: 43px; object-fit: contain; }
+    .brand-mark { width: 43px; height: 43px; border-radius: 13px; display: grid; place-items: center; background: var(--navy); color: white; }
+    .brand-mark svg { width: 25px; height: 25px; }
+    .nav-links { display: flex; align-items: center; gap: 22px; font-size: .92rem; font-weight: 650; }
+    .nav-links a:hover, .nav-links a[aria-current="page"] { color: #b66a08; }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 12px 17px; border-radius: 11px; font-weight: 750; border: 1px solid transparent; cursor: pointer; transition: transform .18s ease, background .18s ease; font-size: .93rem; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--saffron); color: #1f2937; }
+    .btn-primary:hover { background: #ffb64f; }
+    .btn-outline { border-color: #cbd5e1; background: #fff; color: var(--navy); }
+    .icon { width: 19px; height: 19px; flex: 0 0 auto; }
+    .menu-toggle { display: none; border: 1px solid var(--line); border-radius: 10px; padding: 9px; background: white; color: var(--navy); }
+    .hero { background: linear-gradient(125deg, #102b50 0%, #173d6b 68%, #24517d 100%); color: white; overflow: hidden; position: relative; }
+    .hero::after { content: ""; position: absolute; width: 390px; height: 390px; border: 1px solid rgba(255,255,255,.14); border-radius: 50%; right: -100px; top: -140px; box-shadow: 0 0 0 42px rgba(255,255,255,.025), 0 0 0 84px rgba(255,255,255,.025); }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: 50px; padding-block: 76px; position: relative; z-index: 1; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; font-size: .79rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 800; color: #ffd7a0; }
+    .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--saffron); }
+    h1 { font-size: clamp(2.45rem, 5vw, 4.15rem); line-height: 1.07; letter-spacing: -.055em; margin: 17px 0; max-width: 690px; }
+    .hero p { color: #e0eaf5; max-width: 600px; font-size: 1.08rem; margin: 0 0 25px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero .btn-outline { color: white; background: transparent; border-color: rgba(255,255,255,.35); }
+    .process-card { background: white; color: var(--ink); border-radius: 24px; padding: 25px; box-shadow: 0 25px 65px rgba(0,0,0,.18); }
+    .process-card h2 { margin: 0 0 5px; color: var(--navy); font-size: 1.15rem; }
+    .process-card > p { color: var(--muted); margin: 0 0 18px; font-size: .9rem; }
+    .mini-step { display: flex; gap: 13px; padding: 13px 0; border-top: 1px solid var(--line); align-items: flex-start; }
+    .mini-num { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 11px; flex: 0 0 auto; background: #fff2df; color: #8a4c00; font-weight: 850; }
+    .mini-step strong { display: block; color: var(--navy); font-size: .94rem; }
+    .mini-step span { color: var(--muted); display: block; font-size: .83rem; line-height: 1.45; margin-top: 2px; }
+    section { padding-block: 76px; }
+    .section-head { max-width: 680px; margin: 0 auto 38px; text-align: center; }
+    .section-head .eyebrow { color: #a65d05; }
+    h2 { color: var(--navy); letter-spacing: -.035em; line-height: 1.2; }
+    .section-head h2 { font-size: clamp(1.8rem, 3vw, 2.7rem); margin: 13px 0; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .step-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 25px; background: white; position: relative; box-shadow: 0 8px 24px rgba(16,43,80,.035); }
+    .step-card:hover { box-shadow: var(--shadow); }
+    .step-card .step-icon { width: 49px; height: 49px; border-radius: 14px; display: grid; place-items: center; background: #fff2df; color: #8a4c00; margin-bottom: 20px; }
+    .step-card .step-icon svg { width: 25px; height: 25px; }
+    .step-card .number { position: absolute; top: 20px; right: 22px; font-size: .8rem; font-weight: 850; color: #a7b3c3; }
+    .step-card h3 { color: var(--navy); margin: 0 0 8px; font-size: 1.1rem; }
+    .step-card p { color: var(--muted); margin: 0; font-size: .94rem; }
+    .soft-section { background: var(--soft); }
+    .journey { display: grid; grid-template-columns: .8fr 1.2fr; gap: 50px; align-items: start; }
+    .journey-intro h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); margin: 13px 0; }
+    .journey-intro p { color: var(--muted); }
+    .journey-list { display: grid; gap: 0; }
+    .journey-item { display: grid; grid-template-columns: 44px 1fr; gap: 15px; padding: 0 0 25px; position: relative; }
+    .journey-item:not(:last-child)::after { content: ""; position: absolute; left: 21px; top: 44px; bottom: 0; width: 2px; background: #d6e0ec; }
+    .journey-num { position: relative; z-index: 1; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--navy); color: white; font-weight: 850; border: 4px solid #e5edf7; }
+    .journey-item h3 { margin: 2px 0 5px; color: var(--navy); font-size: 1.04rem; }
+    .journey-item p { margin: 0; color: var(--muted); font-size: .93rem; }
+    .notice { background: #fff8ed; border: 1px solid #f5d7a8; border-radius: 14px; padding: 17px 18px; color: #6f4a13; font-size: .9rem; margin-top: 12px; }
+    .notice strong { color: #593707; }
+    .faq-list { max-width: 820px; margin: 0 auto; display: grid; gap: 12px; }
+    details { border: 1px solid var(--line); border-radius: 13px; padding: 0 18px; background: white; }
+    summary { list-style: none; cursor: pointer; padding: 18px 28px 18px 0; font-weight: 750; color: var(--navy); position: relative; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; position: absolute; right: 0; top: 14px; font-size: 1.4rem; color: #a65d05; }
+    details[open] summary::after { content: "−"; }
+    details p { color: var(--muted); margin: 0 0 18px; font-size: .93rem; }
+    .cta { background: var(--navy); color: white; border-radius: 24px; padding: 38px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .cta h2 { color: white; margin: 0 0 8px; font-size: clamp(1.6rem, 3vw, 2.2rem); }
+    .cta p { color: #d7e3f1; margin: 0; max-width: 620px; }
+    footer { background: #0b1e37; color: white; padding: 45px 0 20px; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr .8fr .8fr; gap: 35px; }
+    .footer-brand { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 850; }
+    .footer-brand img { width: 42px; height: 42px; object-fit: contain; }
+    footer p, footer .footer-muted { color: #bac9dc; font-size: .9rem; }
+    footer h3 { font-size: .95rem; margin: 5px 0 13px; }
+    .footer-links { display: grid; gap: 9px; color: #d7e3f1; font-size: .9rem; }
+    .footer-links a:hover { color: #ffc16d; }
+    .copyright { border-top: 1px solid rgba(255,255,255,.13); margin-top: 30px; padding-top: 18px; color: #aebed2; font-size: .82rem; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    @media (max-width: 920px) {
+      .nav-links { gap: 13px; font-size: .86rem; }
+      .nav-actions .btn { padding: 10px 12px; }
+      .hero-grid { gap: 28px; }
+      .steps-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 760px) {
+      .container { width: min(100% - 30px, 600px); }
+      .topbar-inner { justify-content: center; text-align: center; padding: 8px 0; }
+      .topbar-inner span:last-child { display: none; }
+      .nav { min-height: 68px; flex-wrap: wrap; }
+      .brand { font-size: 1.16rem; }
+      .brand img, .brand-mark { width: 39px; height: 39px; }
+      .menu-toggle { display: inline-grid; place-items: center; }
+      .nav-links { display: none; width: 100%; padding: 7px 0 17px; flex-direction: column; align-items: stretch; gap: 0; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 10px 5px; border-top: 1px solid var(--line); }
+      .nav-actions { margin-left: auto; }
+      .nav-actions .btn { display: none; }
+      .hero-grid { grid-template-columns: 1fr; padding-block: 54px; }
+      .hero-grid > div:first-child { max-width: 590px; }
+      .hero::after { right: -240px; }
+      section { padding-block: 57px; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .journey { grid-template-columns: 1fr; gap: 30px; }
+      .cta { padding: 27px; align-items: flex-start; flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > div:first-child { grid-column: 1 / -1; }
+    }
+    @media (max-width: 430px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-grid > div:first-child { grid-column: auto; }
+      .hero-actions .btn { width: 100%; }
+      .process-card { padding: 20px; }
+      .cta .btn { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Citizen assistance, made clearer.</span>
+      <span>Currently planned service area: Bhagalpur, Bihar</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="CivicBird home">
+        <img src="logo.png" alt="CivicBird logo" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+        <span class="brand-mark" style="display:none" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 14c5-1 6-7 12-7 2 0 3 1 4 2-1 4-4 7-8 7H8l-4 3 1-5Z"/><path d="M13 10h.01"/></svg>
+        </span>
+        <span>CivicBird</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="how-it-works.html" aria-current="page">How It Works</a>
+        <a href="safety.html">Safety</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="services.html">Request a Service</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-block:0">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Simple. Clear. Accountable.</span>
+          <h1>Getting assistance should feel straightforward.</h1>
+          <p>CivicBird is being built to help people organise eligible everyday assistance requests through one clear website journey—from describing the task to following its status.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="services.html">Explore Services <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-outline" href="pricing.html">View Pricing</a>
+          </div>
+        </div>
+        <div class="process-card">
+          <h2>Your journey at a glance</h2>
+          <p>A transparent sequence, with clear expectations at every stage.</p>
+          <div class="mini-step"><div class="mini-num">01</div><div><strong>Describe your task</strong><span>Choose a service and provide the required details.</span></div></div>
+          <div class="mini-step"><div class="mini-num">02</div><div><strong>Review the request</strong><span>Check the details and applicable service fee.</span></div></div>
+          <div class="mini-step"><div class="mini-num">03</div><div><strong>Follow the status</strong><span>Once the booking system is connected, updates will be available through the website.</span></div></div>
+          <div class="mini-step"><div class="mini-num">04</div><div><strong>Completion and bill</strong><span>Final status and bill details will be available when the full system is operational.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Four simple stages</span>
+          <h2>How CivicBird is designed to work</h2>
+          <p>The goal is to make each step easy to understand, without making customers depend on email or WhatsApp to place a request.</p>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="number">STEP 01</span>
+            <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21V5.5Z"/><path d="M4 6h13M8 10h8M8 14h6"/></svg></div>
+            <h3>Choose your service</h3>
+            <p>Select the type of assistance you need. Explain the task clearly and add the source, destination or office details when relevant.</p>
+          </article>
+          <article class="step-card">
+            <span class="number">STEP 02</span>
+            <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h8l4 4v14H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="M14 3v5h5M8 13h8M8 17h8"/></svg></div>
+            <h3>Review the details</h3>
+            <p>Check the information you entered and review the stated service fee and GST before proceeding.</p>
+          </article>
+          <article class="step-card">
+            <span class="number">STEP 03</span>
+            <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+            <h3>Receive a request status</h3>
+            <p>When the online booking backend is connected, a submitted request can receive a unique reference number and status in your account.</p>
+          </article>
+          <article class="step-card">
+            <span class="number">STEP 04</span>
+            <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></div>
+            <h3>Follow the progress</h3>
+            <p>After the customer and staff portals are operational, customers will be able to check assignments and progress on the website.</p>
+          </article>
+          <article class="step-card">
+            <span class="number">STEP 05</span>
+            <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h14v18l-2-1.5L15 21l-3-1.5L9 21l-2-1.5L5 21V3Z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+            <h3>View the final bill</h3>
+            <p>Once the billing workflow is connected, the final bill and payment status will be available with the completed request.</p>
+          </article>
+          <article class="step-card">
+            <span class="number">STEP 06</span>
+            <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 4.5 6v5.5c0 4.7 3.2 7.7 7.5 9.5 4.3-1.8 7.5-4.8 7.5-9.5V6L12 3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></div>
+            <h3>Keep a clear record</h3>
+            <p>The planned account system will keep request references, status history and bill records together for easier follow-up.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-section">
+      <div class="container journey">
+        <div class="journey-intro">
+          <span class="eyebrow">Designed for clarity</span>
+          <h2>Know what happens at each stage.</h2>
+          <p>CivicBird aims to make the process understandable for busy people, older residents and people who may find it difficult to visit an office themselves.</p>
+          <div class="notice"><strong>Important:</strong> The current website pages are being completed before database, customer login, online payments and live request tracking are connected. A request is not officially submitted just by viewing or reviewing the form.</div>
+        </div>
+        <div class="journey-list">
+          <div class="journey-item"><div class="journey-num">1</div><div><h3>Request preparation</h3><p>Provide accurate details and check that the requested task is eligible for assistance.</p></div></div>
+          <div class="journey-item"><div class="journey-num">2</div><div><h3>Submission and reference</h3><p>In the finished system, the website will save the request and display its generated reference number after successful submission.</p></div></div>
+          <div class="journey-item"><div class="journey-num">3</div><div><h3>Review and assignment</h3><p>The planned operations team will review the request and assign a suitable Bird when the task is accepted.</p></div></div>
+          <div class="journey-item"><div class="journey-num">4</div><div><h3>Progress and completion</h3><p>Customers will be able to view status changes and completion details in their account once these features are live.</p></div></div>
+          <div class="journey-item"><div class="journey-num">5</div><div><h3>Bill and record</h3><p>The finished billing system will show applicable charges, payment status and invoice details linked to the request.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Common questions</span>
+          <h2>Frequently asked questions</h2>
+          <p>Clear answers about the planned CivicBird process.</p>
+        </div>
+        <div class="faq-list">
+          <details><summary>How much does a standard task cost?</summary><p>The stated CivicBird service fee is ₹300 plus 18% GST (₹54), making ₹354 in total for the service fee. Any separate government fee or additional charge must be clearly disclosed where applicable.</p></details>
+          <details><summary>Will I receive a token or request number?</summary><p>Unique request numbers are part of the planned online booking system. They should only be issued after the backend successfully saves a request; the current review-only form does not create an official number.</p></details>
+          <details><summary>Can I track my request online?</summary><p>Online tracking is planned for the customer account area and will be available after the database and booking status features are connected and tested.</p></details>
+          <details><summary>Do I need to send an email or WhatsApp message to book?</summary><p>The intended customer booking workflow is website-based. The current form is for reviewing details only; the online submission backend is still to be connected.</p></details>
+          <details><summary>Does CivicBird guarantee that every government request will be approved?</summary><p>No. CivicBird can assist with eligible tasks, but decisions, approvals and processing times remain with the relevant authority. Never provide false information or misrepresent a representative's authority.</p></details>
+          <details><summary>What if a task requires official fees or original documents?</summary><p>Requirements vary by task and authority. Any official fee, document requirement or handling arrangement should be explained before proceeding. Do not share passwords, OTPs or banking credentials.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="container">
+        <div class="cta">
+          <div><h2>Ready to explore available services?</h2><p>Review the service options and pricing before preparing your request.</p></div>
+          <a class="btn btn-primary" href="services.html">Explore Services <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="footer-brand" href="index.html"><img src="logo.png" alt="" onerror="this.style.display='none'"><span>CivicBird</span></a>
+          <p>Citizen assistance designed around clarity, convenience and accountable service.</p>
+          <p class="footer-muted">Planned initial service area: Bhagalpur, Bihar.</p>
+        </div>
+        <div><h3>Explore</h3><div class="footer-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="how-it-works.html">How It Works</a><a href="safety.html">Safety</a></div></div>
+        <div><h3>Information</h3><div class="footer-links"><a href="about.html">About Us</a><a href="help.html">Help &amp; Support</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a><a href="mailto:civicbird7@gmail.com">Contact CivicBird</a></div></div>
+      </div>
+      <div class="copyright"><span>© <span id="year"></span> CivicBird. All rights reserved.</span><span>Clear process. Responsible assistance.</span></div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const toggle = document.getElementById("menuToggle");
+      const links = document.getElementById("navLinks");
+      if (toggle && links) {
+        toggle.addEventListener("click", function () {
+          const isOpen = links.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", String(isOpen));
+          toggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+        });
+        links.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            links.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+            toggle.setAttribute("aria-label", "Open navigation");
+          });
+        });
+      }
+      document.getElementById("year").textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>

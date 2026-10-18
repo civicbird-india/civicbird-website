@@ -25,7 +25,7 @@ footer{background:#0b1e38;color:#fff;padding:28px 0 18px}footer .container{displ
 <div class="topbar"><div class="container"><span>Citizen assistance, made simpler</span><span>Bhagalpur, Bihar · <a href="mailto:civicbird7@gmail.com">civicbird7@gmail.com</a></span></div></div>
 <header><div class="container nav">
 <a class="brand" href="index.html"><img src="logo.png" alt="CivicBird logo" onerror="this.style.display='none'"><span><strong>CivicBird</strong><small>CITIZEN ASSISTANCE</small></span></a>
-<nav class="links" aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="help.html">Help &amp; Support</a><a href="join-as-bird.html">Join as a Bird</a><a href="login.html">Customer Login</a></nav>
+<nav class="links" aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="help.html">Help &amp; Support</a><a href="join-as-bird.html">Join as a Bird</a><a href="login.html">Customer Login</a><a href="signup.html">Sign Up</a></nav>
 </div></header>
 <section class="hero"><div class="container"><span class="eyebrow">Customer account</span><h1>Welcome back</h1><p>Sign in to access your CivicBird customer account. Account authentication and live booking history will become available after the secure authentication backend is connected.</p></div></section>
 <main><div class="container layout">
@@ -49,4 +49,4 @@ document.getElementById("loginForm").addEventListener("submit",e=>{
  s.textContent="Login is not connected yet. Your details have not been sent and no login session was created. Firebase Authentication or another secure backend must be configured before customer sign-in can work.";
 });
 </script>
-</body></html>
+<script>document.querySelectorAll(".current-year").forEach(function(el){el.textContent=new Date().getFullYear();});</script></body></html>

@@ -57,11 +57,13 @@
             <div style="max-width:520px">
               <div class="step-label">Account and team access</div>
               <h2 id="accountOptionsTitle" style="font-size:1.35rem;margin:0 0 7px">Continue with CivicBird</h2>
-              <p style="margin:0;font-size:.91rem">Sign in or create an account to continue, or apply to join our team as a Bird.</p>
+              <p id="accountOptionsDescription" style="margin:0;font-size:.91rem">Sign in or create an account to continue, or apply to join our team as a Bird.</p>
+              <p id="customerAccountStatus" class="help" role="status" aria-live="polite" style="margin-top:8px"></p>
             </div>
-            <div class="service-access-actions" style="display:flex;gap:10px;flex-wrap:wrap">
-              <a class="btn btn-outline" href="/login.html">Login</a>
-              <a class="btn btn-outline" href="/signup.html">Sign Up</a>
+            <div class="service-access-actions" id="serviceAccessActions" style="display:flex;gap:10px;flex-wrap:wrap">
+              <a class="btn btn-outline" id="serviceLoginLink" href="/login.html">Login</a>
+              <a class="btn btn-outline" id="serviceSignupLink" href="/signup.html">Sign Up</a>
+              <button class="btn btn-outline" id="serviceLogoutButton" type="button" hidden>Log Out</button>
               <a class="btn btn-primary" href="/join-as-bird.html">Join as a Bird</a>
             </div>
           </div>
@@ -289,5 +291,58 @@
       });
     })();
   </script>
+
+  <script type="module">
+    import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+    import { firebaseConfig, firebaseConfigIsReady } from "./firebase-config.js";
+
+    const loginLink = document.getElementById("serviceLoginLink");
+    const signupLink = document.getElementById("serviceSignupLink");
+    const logoutButton = document.getElementById("serviceLogoutButton");
+    const heading = document.getElementById("accountOptionsTitle");
+    const description = document.getElementById("accountOptionsDescription");
+    const accountStatus = document.getElementById("customerAccountStatus");
+
+    if (firebaseConfigIsReady) {
+      const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      onAuthStateChanged(auth, (user) => {
+        if (user && user.emailVerified) {
+          if (loginLink) loginLink.hidden = true;
+          if (signupLink) signupLink.hidden = true;
+          if (logoutButton) logoutButton.hidden = false;
+          if (heading) heading.textContent = "Your CivicBird account";
+          if (description) description.textContent = "You are signed in. You can continue with your service request or manage your account.";
+          if (accountStatus) accountStatus.textContent = "Signed in as " + (user.email || "verified customer") + ".";
+        } else {
+          if (loginLink) loginLink.hidden = false;
+          if (signupLink) signupLink.hidden = false;
+          if (logoutButton) logoutButton.hidden = true;
+          if (heading) heading.textContent = "Continue with CivicBird";
+          if (description) description.textContent = "Sign in or create an account to continue, or apply to join our team as a Bird.";
+          if (accountStatus) accountStatus.textContent = "";
+        }
+      });
+
+      if (logoutButton) {
+        logoutButton.addEventListener("click", async () => {
+          logoutButton.disabled = true;
+          try {
+            await signOut(auth);
+          } catch (error) {
+            console.error("CivicBird logout failed:", error);
+            if (accountStatus) accountStatus.textContent = "Could not log out. Please try again.";
+          } finally {
+            logoutButton.disabled = false;
+          }
+        });
+      }
+    } else if (accountStatus) {
+      accountStatus.textContent = "Account status is temporarily unavailable.";
+    }
+  </script>
+
 </body>
 </html>

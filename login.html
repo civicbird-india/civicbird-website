@@ -54,17 +54,12 @@ footer{background:#0b1e38;color:#fff;padding:28px 0 18px}footer .container{displ
 <div class="field full"><label class="checkline"><input id="remember" type="checkbox"><span>Remember email on this device (this draft page does not save it).</span></label></div>
 </div><button class="btn btn-block" type="submit">Sign in</button><div class="status" id="status" role="status" aria-live="polite"></div></form>
 <div class="rowlinks"><a href="forgot-password.html">Forgot password?</a><a href="signup.html">Create a customer account</a></div>
-<div class="notice">Demo frontend only: this form does not authenticate users, send credentials, or retrieve bookings. Do not enter a real password until secure authentication is connected.</div>
+<div class="notice">Secure sign-in uses Firebase Authentication once the Firebase web configuration is added. Email verification is required. Booking history is not connected yet.</div>
 </section>
 <aside class="aside"><h3>Your customer account</h3><p>Once connected to the backend, your account can be used to access features such as:</p><ul><li>View booking requests and status.</li><li>See order, request and bill references when officially generated.</li><li>Review payment and invoice details.</li><li>Update contact details and manage account security.</li></ul><p>These account features are not active on this static page.</p><a class="btn btn-outline" href="services.html">Explore services</a></aside>
 </div></main>
 <footer><div class="container"><p>© <span id="year"></span> CivicBird. All rights reserved.</p><div class="footlinks"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a><a href="help.html">Help &amp; Support</a></div></div><nav class="civicbird-audit-footer" aria-label="Website links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="how-it-works.html">How It Works</a><a href="pricing.html">Pricing</a><a href="safety.html">Safety</a><a href="about.html">About Us</a><a href="help.html">Help</a><a href="join-as-bird.html">Join as a Bird</a><a href="login.html">Login</a><a href="signup.html">Sign Up</a><a href="forgot-password.html">Forgot Password</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="index.html#contact">Contact</a></nav></footer>
-<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
-<script>
-document.getElementById("loginForm").addEventListener("submit",e=>{
- e.preventDefault();if(!e.currentTarget.reportValidity())return;
- const s=document.getElementById("status");s.style.display="block";
- s.textContent="Login is not connected yet. Your details have not been sent and no login session was created. Firebase Authentication or another secure backend must be configured before customer sign-in can work.";
-});
-</script>
+
+
+<script type="module" src="firebase-auth.js"></script>
 </body></html>

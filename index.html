@@ -195,12 +195,6 @@
     .footer-links a:hover { color: white; }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,.15); padding-top: 20px; display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; color: #9eb0c6; font-size: .8rem; }
     .disclaimer { max-width: 800px; color: #9eb0c6; font-size: .78rem; margin-top: 16px; }
-    .quick-access { display: flex; align-items: center; justify-content: flex-end; gap: 10px; padding: 10px max(22px, calc((100% - var(--max)) / 2)); background: #f5f8fc; border-bottom: 1px solid var(--line); }
-    .quick-access a { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 8px 15px; border: 1px solid #d3deeb; border-radius: 9px; color: var(--navy); background: #fff; font-size: .88rem; font-weight: 750; text-decoration: none; }
-    .quick-access .quick-access-bird { color: #fff; background: var(--navy); border-color: var(--navy); }
-    .join-hero-btn { border-color: #d3deeb; }
-    .quick-access a:focus-visible, .hero-actions .btn:focus-visible { outline: 3px solid #e6a23c; outline-offset: 3px; }
-    .quick-access a, .hero-actions .btn { position: relative; z-index: 2; pointer-events: auto; touch-action: manipulation; }
     .mobile-sticky { display: none; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     @media (max-width: 1000px) {
@@ -217,9 +211,6 @@
       .container { width: min(var(--max), calc(100% - 30px)); }
       .section { padding: 66px 0; }
       .announcement { font-size: .77rem; }
-      .quick-access { justify-content: stretch; gap: 7px; padding: 9px 15px; }
-      .quick-access a { flex: 1 1 0; min-width: 0; padding: 8px 5px; font-size: .78rem; white-space: nowrap; }
-      .join-hero-btn { grid-column: 1 / -1; }
       .nav-wrap { min-height: 68px; }
       .brand { min-width: 0; }
       .brand img { width: 40px; height: 40px; }
@@ -545,12 +536,6 @@
   </div>
 </header>
 
-<div class="quick-access" aria-label="Account and team links">
-  <a href="/login.html">Login</a>
-  <a href="/signup.html">Sign Up</a>
-  <a class="quick-access-bird" href="/join-as-bird.html">Join as a Bird</a>
-</div>
-
   <main>
     <section class="hero" id="home">
       <div class="container hero-grid">
@@ -561,7 +546,6 @@
           <div class="hero-actions">
             <a class="btn btn-primary" href="/services.html">Explore Services <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             <a class="btn btn-outline" href="how-it-works.html">See How It Works</a>
-            <a class="btn btn-outline join-hero-btn" href="/join-as-bird.html">Join as a Bird</a>
           </div>
           <div class="hero-proof">
             <span class="proof-item"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Clear service process</span>

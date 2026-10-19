@@ -8,30 +8,12 @@
   <title>Services & Request Assistance | CivicBird</title>
   <style>
     :root{--navy:#123b72;--navy-dark:#0b2850;--blue:#2468bd;--sky:#eaf3ff;--ink:#172337;--muted:#607086;--line:#dce4ee;--paper:#fff;--soft:#f6f9fd;--green:#18794e;--red:#b42318;--radius:18px;--shadow:0 16px 45px rgba(18,59,114,.10);--max:1160px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}.container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}.icon{width:23px;height:23px;flex:0 0 23px}.announcement{background:var(--navy-dark);color:#fff;font-size:.85rem}.announcement-inner{min-height:36px;display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;padding:6px 0}.announcement strong{color:#fff}.site-header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav-wrap{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:inline-flex;align-items:center;gap:10px;min-width:170px}.brand img{width:44px;height:44px;object-fit:contain;border-radius:8px}.brand-name{display:block;color:var(--navy);font-size:1.3rem;font-weight:900;letter-spacing:-.045em;line-height:1}.brand-tag{display:block;color:var(--muted);font-size:.62rem;font-weight:700;letter-spacing:.035em;margin-top:5px}.nav-links{display:flex;align-items:center;gap:24px}.nav-links a{font-size:.91rem;font-weight:750;color:#34465c}.nav-links a:hover,.nav-links a[aria-current=page]{color:var(--blue)}.nav-actions{display:flex;gap:10px;align-items:center}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:11px 18px;border:1px solid transparent;border-radius:10px;font-weight:800;line-height:1.2;cursor:pointer;transition:transform .18s ease,background .18s ease}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--navy);color:#fff}.btn-primary:hover{background:var(--navy-dark)}.btn-outline{border-color:#c9d8eb;background:#fff;color:var(--navy)}.btn-outline:hover{background:var(--sky)}.menu-toggle{display:none;width:43px;height:43px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--navy)}.hero{background:radial-gradient(circle at 88% 15%,#d9eaff 0,transparent 27%),linear-gradient(120deg,#f8fbff,#fff 55%,#edf5ff);padding:62px 0 54px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--blue);font-weight:850;letter-spacing:.12em;text-transform:uppercase;font-size:.75rem}.eyebrow:before{content:"";width:23px;height:2px;background:currentColor;border-radius:9px}h1,h2,h3,p{margin-top:0}h1,h2,h3{line-height:1.14;letter-spacing:-.035em}h1{font-size:clamp(2.4rem,5vw,4rem);margin:16px 0}h1 span{color:var(--blue)}h2{font-size:clamp(1.8rem,3.5vw,2.7rem);margin-bottom:12px}h3{font-size:1.14rem;margin-bottom:9px}p{color:var(--muted)}.hero p{max-width:760px;font-size:1.06rem;margin-bottom:0}.section{padding:64px 0}.section-soft{background:var(--soft)}.layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);gap:26px;align-items:start}.panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 8px 28px rgba(18,59,114,.045)}.panel-heading{display:flex;align-items:flex-start;gap:13px;margin-bottom:24px}.icon-box{width:48px;height:48px;display:grid;place-items:center;border-radius:13px;background:var(--sky);color:var(--navy);flex:0 0 48px}.panel-heading p{font-size:.91rem;margin-bottom:0}.step-label{font-size:.75rem;font-weight:850;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}.form-section{padding:22px 0;border-top:1px solid var(--line)}.form-section:first-of-type{border-top:0;padding-top:0}.section-title{display:flex;align-items:center;gap:10px;font-size:1.04rem;font-weight:850;margin-bottom:16px}.section-title .number{width:29px;height:29px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:.82rem}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:grid;gap:7px;min-width:0}.field[hidden]{display:none!important}.field.full{grid-column:1/-1}label{font-size:.86rem;font-weight:780;color:#33465e}input,select,textarea{width:100%;min-height:47px;padding:11px 12px;border:1px solid #cbd6e4;border-radius:9px;background:#fff;color:var(--ink);outline:none}textarea{min-height:110px;resize:vertical}input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(36,104,189,.12)}.help{font-size:.78rem;color:var(--muted);margin:0}.required{color:var(--red)}.location-row{display:flex;gap:10px;align-items:stretch}.location-row input{flex:1;min-width:0}.location-row .btn{white-space:nowrap;padding-inline:13px}.location-status{font-size:.82rem;margin:9px 0 0;overflow-wrap:anywhere}.location-status.success{color:var(--green)}.location-status.error{color:var(--red)}.check-row{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:#43566e}.check-row input{width:18px;height:18px;min-height:18px;margin-top:3px;flex:0 0 18px}.estimate{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:18px}.estimate-title{font-size:.78rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:13px}.estimate-line{display:flex;justify-content:space-between;gap:15px;padding:8px 0;color:#43566e;font-size:.91rem}.estimate-line strong{color:var(--ink);text-align:right}.estimate-line.total{border-top:1px solid var(--line);margin-top:6px;padding-top:14px;font-size:1.03rem;font-weight:850}.estimate-line.total strong{color:var(--navy);font-size:1.25rem}.notice{display:flex;gap:10px;padding:13px;border-radius:11px;background:var(--sky);color:#294b77;font-size:.83rem;margin:17px 0}.notice .icon{width:20px;height:20px;flex:0 0 20px}.summary-list{display:grid;gap:13px;margin:0 0 20px}.summary-item{display:flex;align-items:flex-start;gap:10px}.summary-item .icon{color:var(--blue);width:19px;height:19px;flex:0 0 19px;margin-top:2px}.summary-item strong{display:block;font-size:.89rem}.summary-item span{display:block;font-size:.81rem;color:var(--muted)}.summary-card{position:sticky;top:100px}.summary-card h2{font-size:1.45rem}.summary-card>p{font-size:.9rem}.summary-rule{height:1px;background:var(--line);margin:20px 0}.legal-note{font-size:.78rem;line-height:1.6;margin:14px 0 0}.status-message{display:none;padding:13px;border-radius:10px;background:#e8f7ef;color:#176744;font-size:.88rem;margin-top:14px;overflow-wrap:anywhere}.status-message.show{display:block}.status-message.error{background:#fff0ef;color:#a12820}.status-message.review-panel{background:#f4f7fb;color:var(--ink);border:1px solid var(--line)}.review-title{font-weight:850;font-size:1rem;margin-bottom:8px}.review-list{display:grid;grid-template-columns:minmax(115px,.35fr) minmax(0,1fr);gap:7px 12px;margin:12px 0}.review-list dt{font-size:.82rem;color:var(--muted);font-weight:750}.review-list dd{font-size:.85rem;margin:0;overflow-wrap:anywhere;white-space:pre-wrap}.review-warning{font-size:.82rem;margin:12px 0 0;color:#79520b}.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.info-card{border:1px solid var(--line);background:#fff;border-radius:15px;padding:22px}.info-card .icon-box{margin-bottom:15px}.info-card p{font-size:.88rem;margin-bottom:0}.faq-list{display:grid;gap:11px;max-width:850px}details{border:1px solid var(--line);border-radius:12px;background:#fff;padding:0 17px}summary{list-style:none;cursor:pointer;padding:17px 30px 17px 0;position:relative;font-weight:800}summary::-webkit-details-marker{display:none}summary:after{content:"+";position:absolute;right:0;top:12px;font-size:1.45rem;color:var(--blue);font-weight:500}details[open] summary:after{content:"−"}details p{font-size:.9rem;margin:0;padding:0 0 17px}.site-footer{background:#0b1e36;color:#fff;padding:45px 0 22px}.footer-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:30px;padding-bottom:30px}.footer-brand p{color:#b7c6d9;font-size:.88rem;max-width:370px;margin-top:16px}.footer-brand .brand-name{color:#fff}.footer-brand .brand-tag{color:#b7c6d9}.footer-title{font-size:.9rem;font-weight:850;margin-bottom:13px}.footer-links{display:grid;gap:9px}.footer-links a{color:#b7c6d9;font-size:.87rem}.footer-links a:hover{color:#fff}.footer-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:18px;color:#9eb0c6;font-size:.79rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}.container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}.icon{width:23px;height:23px;flex:0 0 23px}.announcement{background:var(--navy-dark);color:#fff;font-size:.85rem}.announcement-inner{min-height:36px;display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;padding:6px 0}.announcement strong{color:#fff}.site-header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav-wrap{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:inline-flex;align-items:center;gap:10px;min-width:170px}.brand img{width:44px;height:44px;object-fit:contain;border-radius:8px}.brand-name{display:block;color:var(--navy);font-size:1.3rem;font-weight:900;letter-spacing:-.045em;line-height:1}.brand-tag{display:block;color:var(--muted);font-size:.62rem;font-weight:700;letter-spacing:.035em;margin-top:5px}.nav-links{display:flex;align-items:center;gap:24px}.nav-links a{font-size:.91rem;font-weight:750;color:#34465c}.nav-links a:hover,.nav-links a[aria-current=page]{color:var(--blue)}.nav-actions{display:flex;gap:10px;align-items:center}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:11px 18px;border:1px solid transparent;border-radius:10px;font-weight:800;line-height:1.2;cursor:pointer;transition:transform .18s ease,background .18s ease}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--navy);color:#fff}.btn-primary:hover{background:var(--navy-dark)}.btn-outline{border-color:#c9d8eb;background:#fff;color:var(--navy)}.btn-outline:hover{background:var(--sky)}.menu-toggle{display:none;width:43px;height:43px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--navy)}.hero{background:radial-gradient(circle at 88% 15%,#d9eaff 0,transparent 27%),linear-gradient(120deg,#f8fbff,#fff 55%,#edf5ff);padding:62px 0 54px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--blue);font-weight:850;letter-spacing:.12em;text-transform:uppercase;font-size:.75rem}.eyebrow:before{content:"";width:23px;height:2px;background:currentColor;border-radius:9px}h1,h2,h3,p{margin-top:0}h1,h2,h3{line-height:1.14;letter-spacing:-.035em}h1{font-size:clamp(2.4rem,5vw,4rem);margin:16px 0}h1 span{color:var(--blue)}h2{font-size:clamp(1.8rem,3.5vw,2.7rem);margin-bottom:12px}h3{font-size:1.14rem;margin-bottom:9px}p{color:var(--muted)}.hero p{max-width:760px;font-size:1.06rem;margin-bottom:0}.section{padding:64px 0}.section-soft{background:var(--soft)}.layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);gap:26px;align-items:start}.panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 8px 28px rgba(18,59,114,.045)}.panel-heading{display:flex;align-items:flex-start;gap:13px;margin-bottom:24px}.icon-box{width:48px;height:48px;display:grid;place-items:center;border-radius:13px;background:var(--sky);color:var(--navy);flex:0 0 48px}.panel-heading p{font-size:.91rem;margin-bottom:0}.step-label{font-size:.75rem;font-weight:850;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}.form-section{padding:22px 0;border-top:1px solid var(--line)}.form-section:first-of-type{border-top:0;padding-top:0}.section-title{display:flex;align-items:center;gap:10px;font-size:1.04rem;font-weight:850;margin-bottom:16px}.section-title .number{width:29px;height:29px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:.82rem}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:grid;gap:7px;min-width:0}.field[hidden]{display:none!important}.field.full{grid-column:1/-1}label{font-size:.86rem;font-weight:780;color:#33465e}input,select,textarea{width:100%;min-height:47px;padding:11px 12px;border:1px solid #cbd6e4;border-radius:9px;background:#fff;color:var(--ink);outline:none}textarea{min-height:110px;resize:vertical}input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(36,104,189,.12)}.help{font-size:.78rem;color:var(--muted);margin:0}.required{color:var(--red)}.location-row{display:flex;gap:10px;align-items:stretch}.location-row input{flex:1;min-width:0}.location-row .btn{white-space:nowrap;padding-inline:13px}.location-status{font-size:.82rem;margin:9px 0 0;overflow-wrap:anywhere}.location-status.success{color:var(--green)}.location-status.error{color:var(--red)}.check-row{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:#43566e}.check-row input{width:18px;height:18px;min-height:18px;margin-top:3px;flex:0 0 18px}.estimate{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:18px}.estimate-title{font-size:.78rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:13px}.estimate-line{display:flex;justify-content:space-between;gap:15px;padding:8px 0;color:#43566e;font-size:.91rem}.estimate-line strong{color:var(--ink);text-align:right}.estimate-line.total{border-top:1px solid var(--line);margin-top:6px;padding-top:14px;font-size:1.03rem;font-weight:850}.estimate-line.total strong{color:var(--navy);font-size:1.25rem}.notice{display:flex;gap:10px;padding:13px;border-radius:11px;background:var(--sky);color:#294b77;font-size:.83rem;margin:17px 0}.notice .icon{width:20px;height:20px;flex:0 0 20px}.summary-list{display:grid;gap:13px;margin:0 0 20px}.summary-item{display:flex;align-items:flex-start;gap:10px}.summary-item .icon{color:var(--blue);width:19px;height:19px;flex:0 0 19px;margin-top:2px}.summary-item strong{display:block;font-size:.89rem}.summary-item span{display:block;font-size:.81rem;color:var(--muted)}.summary-card{position:sticky;top:100px}.summary-card h2{font-size:1.45rem}.summary-card>p{font-size:.9rem}.summary-rule{height:1px;background:var(--line);margin:20px 0}.legal-note{font-size:.78rem;line-height:1.6;margin:14px 0 0}.status-message{display:none;padding:13px;border-radius:10px;background:#e8f7ef;color:#176744;font-size:.88rem;margin-top:14px;overflow-wrap:anywhere}.status-message.show{display:block}.status-message.error{background:#fff0ef;color:#a12820}.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.info-card{border:1px solid var(--line);background:#fff;border-radius:15px;padding:22px}.info-card .icon-box{margin-bottom:15px}.info-card p{font-size:.88rem;margin-bottom:0}.faq-list{display:grid;gap:11px;max-width:850px}details{border:1px solid var(--line);border-radius:12px;background:#fff;padding:0 17px}summary{list-style:none;cursor:pointer;padding:17px 30px 17px 0;position:relative;font-weight:800}summary::-webkit-details-marker{display:none}summary:after{content:"+";position:absolute;right:0;top:12px;font-size:1.45rem;color:var(--blue);font-weight:500}details[open] summary:after{content:"−"}details p{font-size:.9rem;margin:0;padding:0 0 17px}.site-footer{background:#0b1e36;color:#fff;padding:45px 0 22px}.footer-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:30px;padding-bottom:30px}.footer-brand p{color:#b7c6d9;font-size:.88rem;max-width:370px;margin-top:16px}.footer-brand .brand-name{color:#fff}.footer-brand .brand-tag{color:#b7c6d9}.footer-title{font-size:.9rem;font-weight:850;margin-bottom:13px}.footer-links{display:grid;gap:9px}.footer-links a{color:#b7c6d9;font-size:.87rem}.footer-links a:hover{color:#fff}.footer-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:18px;color:#9eb0c6;font-size:.79rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     @media(max-width:980px){.nav-links{gap:14px}.nav-links a{font-size:.84rem}.layout{grid-template-columns:minmax(0,1fr) 310px}.panel{padding:22px}.footer-grid{grid-template-columns:1.2fr 1fr 1fr}}
-    @media(max-width:760px){.container{width:min(var(--max),calc(100% - 30px))}.nav-wrap{min-height:68px}.brand{min-width:0}.brand img{width:40px;height:40px}.brand-name{font-size:1.2rem}.brand-tag{font-size:.58rem}.menu-toggle{display:grid;place-items:center}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;padding:12px 20px 20px;border-bottom:1px solid var(--line);box-shadow:0 15px 25px rgba(18,59,114,.08);gap:0;align-items:stretch}.nav-links.open{display:flex;flex-direction:column}.nav-links a{padding:12px 2px;border-bottom:1px solid #edf1f6;font-size:.94rem}.nav-actions .btn-outline{display:none}.nav-actions .btn-primary{min-height:41px;padding:9px 12px;font-size:.82rem}.hero{padding:48px 0 42px}.section{padding:48px 0}.layout{grid-template-columns:1fr}.summary-card{position:static}.info-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
+    @media(max-width:760px){.service-access-actions{width:100%;display:grid!important;grid-template-columns:1fr 1fr}.service-access-actions a:last-child{grid-column:1/-1}.container{width:min(var(--max),calc(100% - 30px))}.nav-wrap{min-height:68px}.brand{min-width:0}.brand img{width:40px;height:40px}.brand-name{font-size:1.2rem}.brand-tag{font-size:.58rem}.menu-toggle{display:grid;place-items:center}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;padding:12px 20px 20px;border-bottom:1px solid var(--line);box-shadow:0 15px 25px rgba(18,59,114,.08);gap:0;align-items:stretch}.nav-links.open{display:flex;flex-direction:column}.nav-links a{padding:12px 2px;border-bottom:1px solid #edf1f6;font-size:.94rem}.nav-actions .btn-outline{display:none}.nav-actions .btn-primary{min-height:41px;padding:9px 12px;font-size:.82rem}.hero{padding:48px 0 42px}.section{padding:48px 0}.layout{grid-template-columns:1fr}.summary-card{position:static}.info-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
     @media(max-width:460px){.field-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.location-row{flex-direction:column}.location-row .btn{width:100%}.panel{padding:19px}.footer-grid{gap:22px 16px}.nav-actions .btn-primary{display:none}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
-  
-/* CivicBird brand and navigation consistency */
-.brand img { width: 56px !important; height: 56px !important; min-width: 56px; object-fit: contain !important; flex: 0 0 56px; }
-.brand { gap: 12px !important; flex-shrink: 0; }
-.brand-tag, .brand small, .brand-name span { max-width: 190px; line-height: 1.35; }
-.site-header, header { position: relative; }
-.nav-wrap, .nav, .nav-inner { align-items: center; }
-.nav-links, .links { align-items: center; flex-wrap: wrap; row-gap: 8px; }
-@media (max-width: 1100px) {
-  .brand img { width: 52px !important; height: 52px !important; min-width: 52px; flex-basis: 52px; }
-  .nav-links, .links { gap: 10px !important; }
-}
-@media (max-width: 760px) {
-  .brand img { width: 48px !important; height: 48px !important; min-width: 48px; flex-basis: 48px; }
-  .brand-tag, .brand small, .brand-name span { font-size: 10px !important; max-width: 155px; }
-}
-
-</style>
-<style>.civicbird-audit-footer{display:flex;flex-wrap:wrap;gap:10px 18px;margin:18px 0;padding-top:12px;border-top:1px solid rgba(130,150,175,.35)}.civicbird-audit-footer a{font-size:13px;text-decoration:none;color:inherit}.civicbird-audit-footer a:hover{text-decoration:underline}.civicbird-common-tagline{font-size:.68rem;font-weight:750;letter-spacing:.04em}.civicbird-upload-disabled{padding:12px 14px;border:1px solid #e7c77c;background:#fff8e8;color:#654b16;border-radius:9px;font-size:12px}</style>
+  </style>
 </head>
 <body>
   <svg class="sr-only" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -47,13 +29,13 @@
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
   </svg>
 
-  <div class="announcement"><div class="container announcement-inner"><span>CivicBird Services</span><strong>KAAM AAP KA SAATH HAMARA</strong></div></div>
+  <div class="announcement"><div class="container announcement-inner"><span>CivicBird Services</span><strong>Kaam Aapka, Saath Hamara.</strong></div></div>
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="index.html" aria-label="CivicBird homepage"><img src="logo.png" alt="CivicBird logo" onerror="this.style.display='none'"><span><span class="brand-name">CivicBird</span><span class="brand-tag">KAAM AAP KA SAATH HAMARA</span></span></a>
+      <a class="brand" href="index.html" aria-label="CivicBird homepage"><img src="logo.png" alt="CivicBird logo" onerror="this.style.display='none'"><span><span class="brand-name">CivicBird</span><span class="brand-tag">KAAM AAPKA, SAATH HAMARA</span></span></a>
       <nav class="nav-links" id="mainNav" aria-label="Main navigation">
-        <a href="index.html">Home</a><a href="services.html" aria-current="page">Services</a><a href="how-it-works.html">How It Works</a><a href="pricing.html">Pricing</a><a href="safety.html">Safety</a><a href="index.html#contact">Contact</a>
-      <a href="about.html">About Us</a><a href="help.html">Help</a><a href="join-as-bird.html">Join as a Bird</a><a href="login.html">Login</a><a href="signup.html">Sign Up</a><a href="forgot-password.html">Forgot Password</a></nav>
+        <a href="index.html">Home</a><a href="services.html" aria-current="page">Services</a><a href="index.html#how-it-works">How It Works</a><a href="index.html#pricing">Pricing</a><a href="index.html#safety">Safety</a><a href="index.html#contact">Contact</a>
+      </nav>
       <div class="nav-actions"><a class="btn btn-outline" href="index.html#contact">Contact Us</a><a class="btn btn-primary" href="#requestForm">Request Assistance</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button></div>
     </div>
   </header>
@@ -63,7 +45,27 @@
       <div class="container">
         <span class="eyebrow">Services and task requests</span>
         <h1>Tell us what you need.<br><span>Plan the next step clearly.</span></h1>
-        <p>Select a service category, describe the work and add your source and destination. Review your request details and the service-fee breakdown before continuing.</p>
+        <p>Select a service category, describe the work and add your source and destination. Review the service-fee breakdown before preparing your request.</p>
+      </div>
+    </section>
+
+
+    <section class="section section-soft" aria-labelledby="accountOptionsTitle" style="padding-top:24px;padding-bottom:24px">
+      <div class="container">
+        <div class="panel" style="padding:22px 24px;box-shadow:none">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+            <div style="max-width:520px">
+              <div class="step-label">Account and team access</div>
+              <h2 id="accountOptionsTitle" style="font-size:1.35rem;margin:0 0 7px">Continue with CivicBird</h2>
+              <p style="margin:0;font-size:.91rem">Sign in or create an account to continue, or apply to join our team as a Bird.</p>
+            </div>
+            <div class="service-access-actions" style="display:flex;gap:10px;flex-wrap:wrap">
+              <a class="btn btn-outline" href="/login.html">Login</a>
+              <a class="btn btn-outline" href="/signup.html">Sign Up</a>
+              <a class="btn btn-primary" href="/join-as-bird.html">Join as a Bird</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -118,8 +120,8 @@
             <div class="section-title"><span class="number">3</span>Review and consent</div>
             <label class="check-row"><input type="checkbox" id="consent" name="consent" required><span>I confirm the information I have provided is accurate and agree that CivicBird may use these details to respond to this service request. I understand that a request is not confirmed until availability, scope and charges are reviewed.</span></label>
             <div class="notice"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Do not submit Aadhaar images, passwords, OTPs or banking credentials in this form. If documents are needed, use a secure method provided by CivicBird after the request is reviewed.</span></div>
-            <button class="btn btn-primary" type="submit" style="width:100%">Review Request <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
-            <p class="help" style="margin-top:12px">This page currently reviews your details only. Your request will be submitted after the CivicBird booking system is connected.</p>
+            <button class="btn btn-primary" type="submit" style="width:100%">Review Request Details <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <p class="help" style="margin-top:12px">Submitting this request does not guarantee availability, an appointment or a government approval.</p>
             <div class="status-message" id="formStatus" role="status" aria-live="polite"></div>
           </div>
         </form>
@@ -165,7 +167,7 @@
         <div style="max-width:740px;margin-bottom:28px"><span class="eyebrow">Service questions</span><h2>Before you submit a request.</h2></div>
         <div class="faq-list">
           <details><summary>What is included in the ₹354 service fee?</summary><p>The standard service fee is ₹300 plus 18% GST, totalling ₹354. Official department fees and any separately agreed travel or task-related charges are not included unless clearly stated.</p></details>
-          <details><summary>Why do I need to share my live location?</summary><p>Your current location helps identify where the request is being made. Your browser will ask permission before sharing coordinates. Location sharing is optional. If you deny permission, enter an area or address manually; the request form can still be completed.</p></details>
+          <details><summary>Why do I need to share my live location?</summary><p>Your current location helps identify where the request is being made. Your browser will ask permission before sharing coordinates. You can deny permission, but the location field is required to submit this request form.</p></details>
           <details><summary>Is my booking confirmed as soon as I submit the form?</summary><p>No. The request details need to be reviewed and availability, service scope and applicable charges confirmed. Do not consider a preferred date or time booked until you receive confirmation.</p></details>
           <details><summary>Can CivicBird guarantee a government certificate or approval?</summary><p>No. CivicBird may assist with process guidance or task coordination, but eligibility, decisions and processing timelines remain with the relevant government department or authority.</p></details>
         </div>
@@ -176,13 +178,13 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand"><a class="brand" href="index.html"><img src="logo.png" alt="" onerror="this.style.display='none'"><span><span class="brand-name">CivicBird</span><span class="brand-tag">KAAM AAP KA SAATH HAMARA</span></span></a><p>Everyday civic and documentation assistance, with clear communication and transparent service expectations.</p></div>
-        <div><div class="footer-title">Explore</div><div class="footer-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="how-it-works.html">How It Works</a><a href="pricing.html">Pricing</a></div></div>
-        <div><div class="footer-title">Contact</div><div class="footer-links"><a href="tel:+919065760751">+91 90657 60751</a><a href="mailto:civicbird7@gmail.com">civicbird7@gmail.com</a><a href="safety.html">Safety</a><a href="index.html#contact">Contact Us</a></div></div>
+        <div class="footer-brand"><a class="brand" href="index.html"><img src="logo.png" alt="" onerror="this.style.display='none'"><span><span class="brand-name">CivicBird</span><span class="brand-tag">KAAM AAPKA, SAATH HAMARA</span></span></a><p>Everyday civic and documentation assistance, with clear communication and transparent service expectations.</p></div>
+        <div><div class="footer-title">Explore</div><div class="footer-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="index.html#how-it-works">How It Works</a><a href="index.html#pricing">Pricing</a></div></div>
+        <div><div class="footer-title">Contact</div><div class="footer-links"><a href="tel:+919065760751">+91 90657 60751</a><a href="mailto:civicbird7@gmail.com">civicbird7@gmail.com</a><a href="index.html#safety">Safety</a><a href="index.html#contact">Contact Us</a></div></div>
       </div>
-      <div class="footer-bottom"><span>© <span id="currentYear">2026</span> CivicBird. All rights reserved.</span><span>KAAM AAP KA SAATH HAMARA</span></div>
+      <div class="footer-bottom"><span>© <span id="currentYear">2026</span> CivicBird. All rights reserved.</span><span>Kaam Aapka, Saath Hamara.</span></div>
     </div>
-  <nav class="civicbird-audit-footer" aria-label="Website links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="how-it-works.html">How It Works</a><a href="pricing.html">Pricing</a><a href="safety.html">Safety</a><a href="about.html">About Us</a><a href="help.html">Help</a><a href="join-as-bird.html">Join as a Bird</a><a href="login.html">Login</a><a href="signup.html">Sign Up</a><a href="forgot-password.html">Forgot Password</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="index.html#contact">Contact</a></nav></footer>
+  </footer>
 
   <script>
     (function(){
@@ -251,7 +253,6 @@
       form.addEventListener("submit",function(event){
         event.preventDefault();
         status.className="status-message";
-        status.replaceChildren();
         if(!form.reportValidity())return;
         if(!coordinates){
           status.textContent="Please share your current location before reviewing the request.";
@@ -259,50 +260,32 @@
           locationButton.scrollIntoView({behavior:"smooth",block:"center"});
           return;
         }
-
         const d=new FormData(form);
-        const chosenService=d.get("serviceCategory")==="Other — please specify"
-          ?String(d.get("otherService")||"Other service")
-          :String(d.get("serviceCategory")||"");
-        const rows=[
-          ["Service category",chosenService],
-          ["Task details",String(d.get("workDescription")||"")],
-          ["Preferred date",String(d.get("preferredDate")||"")],
-          ["Preferred time",String(d.get("preferredTime")||"")],
-          ["Source / current location",String(d.get("sourceAddress")||"")],
-          ["Destination / office",String(d.get("destinationAddress")||"")],
-          ["Customer live coordinates",coordinates.latitude.toFixed(6)+", "+coordinates.longitude.toFixed(6)],
-          ["Customer name",String(d.get("customerName")||"")],
-          ["Mobile number",String(d.get("customerPhone")||"")],
-          ["Email address",String(d.get("customerEmail")||"Not provided")],
-          ["Service fee","₹300.00"],
-          ["GST (18%)","₹54.00"],
-          ["Service fee total","₹354.00"]
-        ];
-
-        status.className="status-message show review-panel";
-        const heading=document.createElement("div");
-        heading.className="review-title";
-        heading.textContent="Review your request details";
-        status.appendChild(heading);
-        const intro=document.createElement("p");
-        intro.textContent="Please check the information below. You can close this review and edit the form if anything needs to change.";
-        status.appendChild(intro);
-        const list=document.createElement("dl");
-        list.className="review-list";
-        rows.forEach(function(row){
-          const term=document.createElement("dt");
-          term.textContent=row[0];
-          const value=document.createElement("dd");
-          value.textContent=row[1];
-          list.append(term,value);
-        });
-        status.appendChild(list);
-        const note=document.createElement("p");
-        note.className="review-warning";
-        note.textContent="Review only: this page has not submitted or saved a booking, and no token, order number or bill number has been issued. Online submission will be enabled when the CivicBird backend is connected.";
-        status.appendChild(note);
-        status.scrollIntoView({behavior:"smooth",block:"nearest"});
+        const chosenService=d.get("serviceCategory")==="Other — please specify"?String(d.get("otherService")||"Other service"):String(d.get("serviceCategory")||"");
+        const message=[
+          "CIVICBIRD SERVICE REQUEST",
+          "",
+          "Customer: "+String(d.get("customerName")||""),
+          "Mobile: "+String(d.get("customerPhone")||""),
+          "Email: "+String(d.get("customerEmail")||"Not provided"),
+          "Service category: "+chosenService,
+          "Task details: "+String(d.get("workDescription")||""),
+          "Preferred date: "+String(d.get("preferredDate")||""),
+          "Preferred time: "+String(d.get("preferredTime")||""),
+          "Source / current location: "+String(d.get("sourceAddress")||""),
+          "Destination / office: "+String(d.get("destinationAddress")||""),
+          "Customer coordinates: "+coordinates.latitude+", "+coordinates.longitude,
+          "Service fee: INR 300.00",
+          "GST (18%): INR 54.00",
+          "Service fee total: INR 354.00",
+          "",
+          "Please review availability, task scope and any additional charges before confirming."
+        ].join("\n");
+        const subject="CivicBird service request — "+chosenService;
+        status.textContent="Your request details are ready. Your email app will open so you can review and send the request to CivicBird. The request is not confirmed until CivicBird replies.";
+        status.classList.add("show");
+        const mailto="mailto:civicbird7@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(message);
+        window.location.href=mailto;
       });
     })();
   </script>

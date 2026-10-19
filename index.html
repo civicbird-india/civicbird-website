@@ -80,6 +80,7 @@
     .hero h1 span { color: var(--blue); }
     .hero-copy > p { max-width: 610px; font-size: 1.12rem; line-height: 1.8; margin-bottom: 28px; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+    .hero-actions, .hero-actions .btn { position: relative; z-index: 2; pointer-events: auto; touch-action: manipulation; }
     .hero-proof { display: flex; flex-wrap: wrap; gap: 18px; color: #465970; font-size: .88rem; font-weight: 650; }
     .proof-item { display: inline-flex; align-items: center; gap: 8px; }
     .proof-item .icon { width: 18px; height: 18px; color: var(--green); }
@@ -249,6 +250,8 @@
       .footer-brand { grid-column: 1 / -1; }
       .mobile-sticky { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 45; padding: 10px 15px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.96); backdrop-filter: blur(12px); border-top: 1px solid var(--line); }
       .mobile-sticky .btn { width: 100%; }
+      .mobile-sticky { pointer-events: none; }
+      .mobile-sticky .btn { pointer-events: auto; }
       .site-footer { padding-bottom: 95px; }
     }
     @media (max-width: 430px) {
@@ -267,58 +270,194 @@
       *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
     }
   
-/* CivicBird responsive header refinements */
-@media (min-width: 901px) {
-  .nav-wrap { gap: 22px; }
-  .brand { min-width: 0; flex: 0 0 auto; }
-  .brand img { width: 46px; height: 46px; min-width: 46px; }
-  .nav-links { flex: 1 1 auto; justify-content: center; flex-wrap: nowrap; gap: clamp(10px, 1.4vw, 20px); min-width: 0; }
-  .nav-links a { flex: 0 0 auto; white-space: nowrap; font-size: .86rem; }
-  .nav-actions { flex: 0 0 auto; gap: 8px; }
-  .nav-actions .btn { white-space: nowrap; padding: 10px 14px; font-size: .86rem; }
+/* CivicBird: clean, responsive header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,.97);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
 }
-@media (max-width: 1100px) and (min-width: 901px) {
-  .nav-wrap { gap: 12px; }
-  .brand-tag { font-size: .53rem; }
-  .nav-links { gap: 10px; }
-  .nav-links a { font-size: .78rem; }
-  .nav-actions .btn { padding: 9px 10px; font-size: .8rem; }
+
+.nav-wrap {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
 }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.brand img {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  object-fit: contain;
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.brand-name {
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: -.045em;
+  line-height: 1.1;
+  color: var(--navy);
+}
+
+.brand-tag {
+  display: block;
+  margin-top: 5px;
+  font-size: .59rem;
+  font-weight: 750;
+  letter-spacing: .025em;
+  white-space: nowrap;
+  color: var(--muted);
+}
+
+.nav-links {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: clamp(10px, 1.4vw, 20px);
+  min-width: 0;
+}
+
+.nav-links a {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  font-size: .86rem;
+  font-weight: 700;
+  color: #34465c;
+}
+
+.nav-links a:hover {
+  color: var(--blue);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 8px;
+}
+
+.nav-actions .btn {
+  white-space: nowrap;
+  min-height: 44px;
+  padding: 10px 14px;
+  font-size: .86rem;
+}
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 10px;
+  color: var(--navy);
+}
+
+@media (max-width: 1100px) {
+  .nav-wrap {
+    gap: 12px;
+  }
+
+  .brand-tag {
+    font-size: .53rem;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: .78rem;
+  }
+
+  .nav-actions .btn {
+    padding: 9px 10px;
+    font-size: .8rem;
+  }
+}
+
 @media (max-width: 900px) {
-  .nav-wrap { position: relative; min-height: 68px; gap: 10px; }
-  .menu-toggle { display: grid; place-items: center; flex: 0 0 44px; }
+  .nav-wrap {
+    min-height: 68px;
+  }
+
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+  }
+
   .nav-links {
     display: none;
     position: absolute;
     top: 100%;
-    left: -15px;
-    right: -15px;
-    z-index: 60;
-    max-height: calc(100vh - 140px);
-    overflow-y: auto;
+    left: 0;
+    right: 0;
     padding: 12px 20px 20px;
-    background: #fff;
+    background: white;
     border-bottom: 1px solid var(--line);
-    box-shadow: 0 15px 25px rgba(18,59,114,.12);
+    box-shadow: 0 15px 25px rgba(18,59,114,.08);
     align-items: stretch;
     gap: 0;
   }
-  .nav-links.open { display: flex; flex-direction: column; }
-  .nav-links a { display: block; padding: 12px 2px; border-bottom: 1px solid #edf1f6; font-size: .95rem; white-space: normal; }
-  .nav-actions .btn-outline { display: none; }
-  .nav-actions .btn-primary { min-height: 42px; padding: 10px 12px; font-size: .82rem; white-space: nowrap; }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-links a {
+    padding: 12px 2px;
+    border-bottom: 1px solid #edf1f6;
+    font-size: .95rem;
+  }
+
+  .nav-actions .btn-outline {
+    display: none;
+  }
 }
+
 @media (max-width: 430px) {
-  .brand img { width: 40px; height: 40px; min-width: 40px; }
-  .brand-name { font-size: 1.12rem; }
-  .brand-tag { font-size: .49rem; }
-  .nav-actions .btn-primary { min-height: 40px; padding: 9px 10px; font-size: .78rem; }
+  .brand img {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+
+  .brand-name {
+    font-size: 1.12rem;
+  }
+
+  .brand-tag {
+    font-size: .49rem;
+  }
+
+  .nav-actions .btn-primary {
+    min-height: 40px;
+    padding: 9px 10px;
+    font-size: .78rem;
+  }
 }
-/* Avoid a second fixed CTA covering the homepage hero buttons on mobile. */
-@media (max-width: 760px) {
-  .mobile-sticky { display: none !important; }
-  .site-footer { padding-bottom: 22px; }
-}
+
 </style>
 <style>.civicbird-audit-footer{display:flex;flex-wrap:wrap;gap:10px 18px;margin:18px 0;padding-top:12px;border-top:1px solid rgba(130,150,175,.35)}.civicbird-audit-footer a{font-size:13px;text-decoration:none;color:inherit}.civicbird-audit-footer a:hover{text-decoration:underline}.civicbird-common-tagline{font-size:.68rem;font-weight:750;letter-spacing:.04em}.civicbird-upload-disabled{padding:12px 14px;border:1px solid #e7c77c;background:#fff8e8;color:#654b16;border-radius:9px;font-size:12px}</style>
 </head>
@@ -364,7 +503,7 @@
     </a>
 
     <nav class="nav-links" id="mainNav" aria-label="Main navigation">
-      <a href="services.html">Services</a>
+      <a href="/services.html">Services</a>
       <a href="how-it-works.html">How It Works</a>
       <a href="pricing.html">Pricing</a>
       <a href="safety.html">Safety</a>
@@ -374,7 +513,7 @@
 
     <div class="nav-actions">
       <a class="btn btn-outline" href="help.html">Contact</a>
-      <a class="btn btn-primary" href="services.html">
+      <a class="btn btn-primary" href="/services.html">
         Get Started
         <svg class="icon" aria-hidden="true">
           <use href="#i-arrow"/>
@@ -406,7 +545,7 @@
           <h1>Important work.<br><span>Less confusion.</span><br>More support.</h1>
           <p>CivicBird helps you navigate everyday civic and documentation tasks with a clear process, transparent service pricing and a support team to guide you along the way.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="services.html">Explore Services <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-primary" href="/services.html">Explore Services <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             <a class="btn btn-outline" href="how-it-works.html">See How It Works</a>
           </div>
           <div class="hero-proof">
@@ -459,37 +598,37 @@
             <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></div>
             <h3>Documentation Assistance</h3>
             <p>Get help understanding forms, document checklists, application steps and where to submit your request.</p>
-            <a class="text-link service-select" href="services.html" data-service="Documentation assistance">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="text-link service-select" href="/services.html" data-service="Documentation assistance">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </article>
           <article class="service-card">
             <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-landmark"/></svg></div>
             <h3>Civic & Public Services</h3>
             <p>Get guidance for selected civic tasks, public-service applications and administrative processes.</p>
-            <a class="text-link service-select" href="services.html" data-service="Civic and public services">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="text-link service-select" href="/services.html" data-service="Civic and public services">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </article>
           <article class="service-card">
             <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-location"/></svg></div>
             <h3>Local Task Assistance</h3>
             <p>Describe the work, where it needs to happen and the destination or office involved so the request can be reviewed.</p>
-            <a class="text-link service-select" href="services.html" data-service="Local task assistance">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="text-link service-select" href="/services.html" data-service="Local task assistance">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </article>
           <article class="service-card">
             <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"/></svg></div>
             <h3>Form & Application Guidance</h3>
             <p>Understand the information typically requested on a form and identify the next step before you apply.</p>
-            <a class="text-link service-select" href="services.html" data-service="Form and application guidance">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="text-link service-select" href="/services.html" data-service="Form and application guidance">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </article>
           <article class="service-card">
             <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></div>
             <h3>Assistance from a Bird</h3>
             <p>Send the details of your task and preferred location. Availability and scope will need to be confirmed before work begins.</p>
-            <a class="text-link service-select" href="services.html" data-service="Assistance from a Bird">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="text-link service-select" href="/services.html" data-service="Assistance from a Bird">Request assistance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </article>
           <article class="service-card">
             <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg></div>
             <h3>Not Sure Where to Start?</h3>
             <p>Tell us what you are trying to complete. We can help you identify the right service category or next question.</p>
-            <a class="text-link service-select" href="services.html" data-service="Help me choose a service">Get guidance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="text-link service-select" href="/services.html" data-service="Help me choose a service">Get guidance <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </article>
         </div>
         <div class="service-note"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><p><strong>Important:</strong> CivicBird provides assistance and process guidance. Government decisions, eligibility, official charges and approval timelines remain with the relevant authority. We do not promise or guarantee approvals.</p></div>
@@ -531,7 +670,7 @@
               <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Total service fee including GST: ₹354</strong></span></li>
               <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Any official department fees are separate unless expressly stated otherwise.</span></li>
             </ul>
-            <a class="btn btn-white btn-block" href="services.html">Ask About a Service <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-white btn-block" href="/services.html">Ask About a Service <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             <p class="price-fineprint">The final amount and scope must be confirmed before a service is accepted.</p>
           </article>
           <article class="price-card">
@@ -678,7 +817,7 @@
           </a>
           <p>Everyday civic and documentation assistance, designed around clear communication, transparent service expectations and responsible support.</p>
         </div>
-        <div><div class="footer-title">Explore</div><div class="footer-links"><a href="services.html">Services</a><a href="how-it-works.html">How It Works</a><a href="pricing.html">Pricing</a><a href="safety.html">Safety</a></div></div>
+        <div><div class="footer-title">Explore</div><div class="footer-links"><a href="/services.html">Services</a><a href="how-it-works.html">How It Works</a><a href="pricing.html">Pricing</a><a href="safety.html">Safety</a></div></div>
         <div><div class="footer-title">CivicBird</div><div class="footer-links"><a href="about.html">About Us</a><a href="join-as-bird.html">Become a Bird</a><a href="#faq">FAQs</a><a href="#contact">Contact</a></div></div>
         <div><div class="footer-title">Get in touch</div><div class="footer-links"><a href="tel:+919065760751">+91 90657 60751</a><a href="mailto:civicbird7@gmail.com">civicbird7@gmail.com</a><a href="#contact">Send an enquiry</a></div></div>
       </div>
@@ -688,9 +827,9 @@
       </div>
       <p class="disclaimer">CivicBird is developing a clear, supported service for everyday civic and documentation tasks. This homepage does not itself verify applicants, process bookings, store user accounts, collect payments or submit applications to government departments. Service availability, terms, privacy policy, verification procedures and payment integrations must be implemented and published before public launch.</p>
     </div>
-  <nav class="civicbird-audit-footer" aria-label="Website links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="how-it-works.html">How It Works</a><a href="pricing.html">Pricing</a><a href="safety.html">Safety</a><a href="about.html">About Us</a><a href="help.html">Help</a><a href="join-as-bird.html">Join as a Bird</a><a href="login.html">Login</a><a href="signup.html">Sign Up</a><a href="forgot-password.html">Forgot Password</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="index.html#contact">Contact</a></nav></footer>
+  <nav class="civicbird-audit-footer" aria-label="Website links"><a href="index.html">Home</a><a href="/services.html">Services</a><a href="how-it-works.html">How It Works</a><a href="pricing.html">Pricing</a><a href="safety.html">Safety</a><a href="about.html">About Us</a><a href="help.html">Help</a><a href="join-as-bird.html">Join as a Bird</a><a href="login.html">Login</a><a href="signup.html">Sign Up</a><a href="forgot-password.html">Forgot Password</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="index.html#contact">Contact</a></nav></footer>
 
-  <div class="mobile-sticky"><a class="btn btn-primary" href="services.html">Explore Services <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+  <div class="mobile-sticky"><a class="btn btn-primary" href="/services.html">Explore Services <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
 
   <script>
     (function () {
@@ -712,7 +851,7 @@
         });
       }
 
-      const currentYear = document.getElementById("currentYear");\n      if (currentYear) currentYear.textContent = new Date().getFullYear();
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
 
       document.querySelectorAll("[data-prefill]").forEach(function (link) {
         link.addEventListener("click", function () {

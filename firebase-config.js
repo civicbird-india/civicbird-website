@@ -1,4 +1,4 @@
-
+// CivicBird Firebase configuration
 export const firebaseConfig = {
   apiKey: "AIzaSyAWHoWXlK-mDw1-xDWubOjCafNd0zoRaqw",
   authDomain: "civicbird.firebaseapp.com",
@@ -9,4 +9,4 @@ export const firebaseConfig = {
   measurementId: "G-GQYPHKHGRT"
 };
 
-export const firebaseConfigIsReady = true;
+export const firebaseConfigured = true;

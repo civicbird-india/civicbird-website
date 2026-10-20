@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function verified() { return signedIn() && request.auth.token.email_verified == true; }
+    match /users/{userId} {
+      allow read: if signedIn() && request.auth.uid == userId;
+      allow create, update: if signedIn() && request.auth.uid == userId
+        && request.resource.data.keys().hasOnly(['fullName','email','phone','address','notifications','createdAt','updatedAt']);
+      allow delete: if false;
+    }
+    match /bookings/{bookingId} {
+      allow create: if verified()
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.status == 'Pending review'
+        && request.resource.data.total == 354
+        && request.resource.data.keys().hasOnly(['category','otherService','description','customerName','customerPhone','preferredDate','preferredTime','sourceAddress','destinationAddress','latitude','longitude','serviceFee','gst','total','status','userId','userEmail','createdAt']);
+      allow read: if verified() && resource.data.userId == request.auth.uid;
+      allow update, delete: if false;
+    }
+    match /birdApplications/{applicationId} {
+      allow create: if verified()
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.status == 'Pending review'
+        && request.resource.data.keys().hasOnly(['userId','name','phone','address','experience','consent','status','createdAt']);
+      allow read, update, delete: if false;
+    }
+  }
+}

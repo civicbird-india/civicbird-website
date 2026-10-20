@@ -1,100 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#102b50"><meta name="description" content="Apply to join the CivicBird representative network in Bhagalpur, Bihar.">
-<title>Join Us as a Bird | CivicBird</title><link rel="icon" href="logo.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--navy:#102b50;--navy-dark:#0b1e38;--saffron:#f4a51c;--ink:#18263a;--muted:#66758a;--line:#e4e9f0;--surface:#f5f8fc;--white:#fff}
-*{box-sizing:border-box}body{margin:0;font-family:"Poppins",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.65}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
-.container{width:min(1120px,calc(100% - 36px));margin:auto}.topbar{background:var(--navy-dark);color:#fff;font-size:11px;padding:8px 0}.topbar .container{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.topbar a{color:#fff}
-header{background:#fff;border-bottom:1px solid var(--line)}.nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:10px 0}.brand{display:flex;align-items:center;gap:10px}.brand img{width:42px;height:42px;object-fit:contain}.brand strong{font-size:21px;color:var(--navy);letter-spacing:-.5px}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:1.7px}.links{display:flex;gap:17px;align-items:center;flex-wrap:wrap}.links a{font-size:12px;font-weight:600;color:#33445b}.links a:hover{color:#9a6500}
-.hero{background:linear-gradient(125deg,#102b50,#214c79);color:#fff;padding:45px 0}.hero h1{font-size:clamp(29px,4vw,43px);line-height:1.2;letter-spacing:-1px;margin:0 0 10px}.hero p{font-size:13px;color:#d9e5f3;max-width:700px;margin:0}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:1.8px;color:#ffd17a;font-weight:700;display:block;margin-bottom:10px}
-main{padding:42px 0 60px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:25px;align-items:start}.panel{border:1px solid var(--line);border-radius:16px;padding:25px;background:#fff;box-shadow:0 10px 30px rgba(16,43,80,.055)}.panel h2{font-size:20px;color:var(--navy);margin:0 0 6px}.sub{font-size:12px;color:var(--muted);margin:0 0 22px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:6px}.full{grid-column:1/-1}label{font-size:11px;font-weight:700;color:#35445a}input,select,textarea{width:100%;border:1px solid #d6dee9;border-radius:9px;padding:12px;background:#fff;color:var(--ink);font-size:12px;outline:none}input:focus,select:focus,textarea:focus{border-color:#416b9d;box-shadow:0 0 0 3px rgba(65,107,157,.12)}textarea{min-height:95px;resize:vertical}.hint{font-size:10px;color:var(--muted)}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:9px;background:var(--saffron);color:#1b2a3c;padding:13px 17px;font-size:12px;font-weight:700;cursor:pointer}.btn:hover{filter:brightness(.97)}.btn-block{width:100%;margin-top:17px}.btn-outline{background:#fff;border:1px solid var(--line);color:var(--navy)}.rowlinks{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:15px;font-size:11px}.rowlinks a{color:#805600;font-weight:700;text-decoration:underline;text-underline-offset:3px}
-.aside{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}.aside h3{font-size:16px;color:var(--navy);margin:0 0 10px}.aside p,.aside li{font-size:11px;color:var(--muted)}.aside ul{padding-left:18px}.aside li{margin:7px 0}.notice{border-left:3px solid var(--saffron);padding:12px 14px;background:#fff7e6;border-radius:0 9px 9px 0;color:#655333;font-size:11px;margin:17px 0 0}
-.checkline{display:flex;gap:9px;align-items:flex-start;font-size:10px;color:var(--muted)}.checkline input{width:15px;margin-top:3px;flex-shrink:0}.status{display:none;margin-top:17px;padding:13px;border-radius:10px;background:#fff7e6;border:1px solid #f0d9a4;color:#5d490f;font-size:11px}.preview{display:none;margin-top:10px;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:11px;color:var(--muted)}.preview img{max-width:100%;max-height:180px;display:block;margin-top:8px;border-radius:8px}
-footer{background:#0b1e38;color:#fff;padding:28px 0 18px}footer .container{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}footer p,footer a{font-size:10px;color:#c0ccdc;margin:0}footer .footlinks{display:flex;gap:14px;flex-wrap:wrap}
-@media(max-width:850px){.layout{grid-template-columns:1fr}.aside{order:2}.links{gap:11px}.nav{align-items:flex-start;flex-direction:column}}
-@media(max-width:560px){.container{width:calc(100% - 26px)}.grid{grid-template-columns:1fr}.full{grid-column:auto}.panel{padding:19px}.hero{padding:35px 0}.links a{font-size:11px}}
-
-/* CivicBird brand and navigation consistency */
-.brand img { width: 56px !important; height: 56px !important; min-width: 56px; object-fit: contain !important; flex: 0 0 56px; }
-.brand { gap: 12px !important; flex-shrink: 0; }
-.brand-tag, .brand small, .brand-name span { max-width: 190px; line-height: 1.35; }
-.site-header, header { position: relative; }
-.nav-wrap, .nav, .nav-inner { align-items: center; }
-.nav-links, .links { align-items: center; flex-wrap: wrap; row-gap: 8px; }
-@media (max-width: 1100px) {
-  .brand img { width: 52px !important; height: 52px !important; min-width: 52px; flex-basis: 52px; }
-  .nav-links, .links { gap: 10px !important; }
-}
-@media (max-width: 760px) {
-  .brand img { width: 48px !important; height: 48px !important; min-width: 48px; flex-basis: 48px; }
-  .brand-tag, .brand small, .brand-name span { font-size: 10px !important; max-width: 155px; }
-}
-
-</style>
-<style>.civicbird-audit-footer{display:flex;flex-wrap:wrap;gap:10px 18px;margin:18px 0;padding-top:12px;border-top:1px solid rgba(130,150,175,.35)}.civicbird-audit-footer a{font-size:13px;text-decoration:none;color:inherit}.civicbird-audit-footer a:hover{text-decoration:underline}.civicbird-common-tagline{font-size:.68rem;font-weight:750;letter-spacing:.04em}.civicbird-upload-disabled{padding:12px 14px;border:1px solid #e7c77c;background:#fff8e8;color:#654b16;border-radius:9px;font-size:12px}</style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Apply to join CivicBird as a service representative.">
+<meta name="theme-color" content="#102b46">
+<title>Join as a Bird | CivicBird</title>
+<link rel="icon" href="logo.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+<script type="module" src="app.js"></script>
 </head>
-<body>
-<div class="topbar"><div class="container"><span>Citizen assistance, made simpler</span><span>Bhagalpur, Bihar · <a href="mailto:civicbird7@gmail.com">civicbird7@gmail.com</a></span></div></div>
-<header><div class="container nav">
-<a class="brand" href="index.html"><img src="logo.png" alt="CivicBird logo" onerror="this.style.display='none'"><span><strong>CivicBird</strong><small>KAAM AAP KA SAATH HAMARA</small></span></a>
-<nav class="links" aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="help.html">Help &amp; Support</a><a href="join-as-bird.html">Join as a Bird</a><a href="login.html">Customer Login</a><a href="how-it-works.html">How It Works</a><a href="safety.html">Safety</a><a href="about.html">About Us</a><a href="signup.html">Sign Up</a><a href="forgot-password.html">Forgot Password</a></nav>
-</div></header>
-<section class="hero"><div class="container"><span class="eyebrow">Join our local network</span><h1>Join Us as a Bird</h1><p>Apply to become a CivicBird representative and help people navigate everyday office-related tasks in Bhagalpur. Submit accurate details and wait for official review before treating your application as approved.</p></div></section>
-<main><div class="container layout">
-<section class="panel">
-<h2>Bird registration application</h2><p class="sub">Fields marked * are required. Please use your own current information. Secure document uploads are not available yet; do not send identity document images through this form.</p>
-<form id="birdForm">
-<div class="grid">
-<div class="field"><label for="name">Full name as on identity document *</label><input id="name" name="name" required maxlength="100" autocomplete="name" placeholder="Full legal name"></div>
-<div class="field"><label for="mobile">Mobile number *</label><input id="mobile" name="mobile" required type="tel" inputmode="tel" pattern="[0-9+() -]{10,18}" maxlength="18" placeholder="Active mobile number"></div>
-<div class="field"><label for="email">Email address *</label><input id="email" name="email" required type="email" maxlength="150" autocomplete="email" placeholder="you@example.com"></div>
-<div class="field"><label for="dob">Date of birth *</label><input id="dob" name="dob" required type="date"></div>
-<div class="field full"><label for="address">Complete current residential address *</label><textarea id="address" name="address" required maxlength="600" placeholder="House/flat, road, locality, city, district, state and PIN"></textarea></div>
-<div class="field full"><label for="altAddress">Permanent / alternate address *</label><textarea id="altAddress" name="altAddress" required maxlength="600" placeholder="Enter permanent address, or repeat current address if same"></textarea></div>
-<div class="field"><label for="area">Preferred work area in Bhagalpur *</label><input id="area" name="area" required maxlength="150" placeholder="Locality / nearby areas"></div>
-<div class="field"><label for="work">Relevant experience / skills *</label><select id="work" name="work" required><option value="">Select experience</option><option>Office assistance / documentation</option><option>Customer service</option><option>Field work / errands</option><option>Other relevant experience</option></select></div>
-<div class="field full"><p class="civicbird-upload-disabled">Photo and identity-document uploads are temporarily disabled until a secure upload system is available.</p></div></div>
-<div class="field full"><p class="civicbird-upload-disabled">Photo and identity-document uploads are temporarily disabled until a secure upload system is available.</p></div></div>
-<div class="field full"><p class="civicbird-upload-disabled">Photo and identity-document uploads are temporarily disabled until a secure upload system is available.</p></div></div>
-<div class="field full"><label class="checkline"><input id="truth" type="checkbox" required><span>I confirm that the details supplied are accurate and that I am applying voluntarily. I understand that submission of this draft does not approve my application or verify my identity.</span></label></div>
-<div class="field full"><label class="checkline"><input id="privacyConsent" type="checkbox" required><span>I have read the <a href="privacy.html" style="text-decoration:underline">Privacy Policy</a> and understand the current form does not transmit or store the information.</span></label></div>
-</div>
-<div class="notice"><strong>Application fee:</strong> ₹149. This fee is shown for planning purposes; payment is not collected on this page. Do not pay anyone based only on this draft form. An official secure application and payment flow must be enabled first.</div>
-<button class="btn btn-block" type="submit">Review application summary</button>
-<div class="status" id="result" role="status" aria-live="polite"></div>
-</form>
-</section>
-<aside class="aside"><h3>Before you apply</h3><ul><li>Keep your phone number and email accessible.</li><li>Secure photo and identity-document uploads will be enabled only after a secure upload system is ready.</li><li>Provide a complete current and permanent/alternate address.</li><li>Never send OTPs, passwords, UPI PINs or bank credentials.</li><li>Do not assume your application is approved until CivicBird confirms it through an official channel.</li></ul>
-<div class="notice"><strong>Verification transparency:</strong> CivicBird should describe a Bird as police-verified only after the relevant verification has actually been completed and documented.</div>
-<h3 style="margin-top:22px">Application steps</h3><ol style="padding-left:18px"><li style="font-size:11px;color:#66758a;margin:8px 0">Complete application details.</li><li style="font-size:11px;color:#66758a;margin:8px 0">Submit through the future secure application system.</li><li style="font-size:11px;color:#66758a;margin:8px 0">Wait for review and confirmation.</li></ol></aside>
-</div></main>
-<footer><div class="container"><p>© <span id="year"></span> CivicBird. All rights reserved.</p><div class="footlinks"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a><a href="help.html">Help &amp; Support</a></div></div><nav class="civicbird-audit-footer" aria-label="Website links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="how-it-works.html">How It Works</a><a href="pricing.html">Pricing</a><a href="safety.html">Safety</a><a href="about.html">About Us</a><a href="help.html">Help</a><a href="join-as-bird.html">Join as a Bird</a><a href="login.html">Login</a><a href="signup.html">Sign Up</a><a href="forgot-password.html">Forgot Password</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="index.html#contact">Contact</a></nav></footer>
-<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
-<script>
-(() => {
-const form=document.getElementById("birdForm"), result=document.getElementById("result");
-const fileFields=[["photo","photoPreview","Recent photograph"],["aadhaarFront","frontPreview","Identity document front"],["aadhaarBack","backPreview","Identity document back"]];
-fileFields.forEach(([inputId,previewId,label])=>{
- const input=document.getElementById(inputId), box=document.getElementById(previewId);
- input.addEventListener("change",()=>{
-  box.innerHTML=""; const file=input.files&&input.files[0]; if(!file){box.style.display="none";return;}
-  box.style.display="block"; const info=document.createElement("div"); info.textContent=label+": "+file.name+" ("+Math.ceil(file.size/1024)+" KB)"; box.appendChild(info);
-  if(file.type.startsWith("image/")){const img=document.createElement("img");img.alt=label+" preview";img.src=URL.createObjectURL(file);box.appendChild(img);}
- });
-});
-form.addEventListener("submit",e=>{
- e.preventDefault();if(!form.reportValidity())return;
- const name=document.getElementById("name").value.trim(), email=document.getElementById("email").value.trim();
- result.style.display="block";
- result.textContent="Draft reviewed for "+name+" ("+email+"). No application has been sent or stored. No registration fee has been collected, no application ID has been generated, and your selected files have not been uploaded. A secure backend, protected document storage and payment integration must be connected before this form can accept official applications.";
- result.scrollIntoView({behavior:"smooth",block:"nearest"});
-});
-})();
-</script>
+<body data-page="join-as-bird">
+<div id="siteHeader"></div>
+<main id="mainContent">
+<section class="hero"><div class="container hero-content"><span class="eyebrow">Join the team</span><h1>Become a Bird</h1><p>Apply to work with CivicBird. Applications are reviewed before any approval or assignment. The ₹149 registration fee is not collected online on this page.</p></div></section>
+<section class="section"><div class="container form-layout"><form class="panel" id="birdForm"><h2>Application details</h2><p>Sign in to associate your application with your account. Do not email identity documents or upload sensitive documents through an unverified form.</p><div class="form-grid"><div class="field full"><label for="name">Full name *</label><input id="name" name="name" required maxlength="100" autocomplete="name"></div><div class="field full"><label for="phone">Mobile number *</label><input id="phone" name="phone" required inputmode="tel" pattern="[0-9+() -]{8,18}" autocomplete="tel"></div><div class="field full"><label for="address">Complete address *</label><textarea id="address" name="address" required maxlength="500" autocomplete="street-address"></textarea></div><div class="field full"><label for="experience">Relevant experience and service areas *</label><textarea id="experience" name="experience" required maxlength="1500"></textarea></div><div class="field full"><div class="notice">Identity and police-verification documents are not collected on this page. CivicBird must provide a secure, documented verification process before collecting them.</div></div><div class="field full"><label class="checkline"><input id="consent" type="checkbox" required><span>I consent to CivicBird reviewing the application details I provide under its <a href="privacy.html">Privacy Policy</a>. *</span></label></div><div class="field full"><button class="btn btn-primary btn-block" type="submit">Submit application for review</button><div id="formStatus" class="status" role="status" aria-live="polite"></div></div></div></form><aside class="panel"><h3>Application fee</h3><div class="price">₹149</div><p>This is the planned registration fee. No online payment is processed here and this form does not mean the fee has been paid.</p><h3>Review process</h3><p>Application status remains pending until CivicBird reviews it and communicates a decision. Do not describe yourself as an approved or verified Bird before confirmation.</p></aside></div></section>
+</main>
+<div id="siteFooter"></div>
+<div id="globalStatus" class="container status" role="status" aria-live="polite"></div>
 </body></html>

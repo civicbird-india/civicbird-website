@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="View your CivicBird service requests and status.">
+<meta name="theme-color" content="#102b46">
+<title>My Bookings | CivicBird</title>
+<link rel="icon" href="logo.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+<script type="module" src="app.js"></script>
+</head>
+<body data-page="bookings">
+<div id="siteHeader"></div>
+<main id="mainContent">
+<section class="hero"><div class="container hero-content"><span class="eyebrow">Customer account</span><h1>My Bookings</h1><p>Review requests submitted through your signed-in account. A pending request is not a confirmed appointment.</p><div class="hero-actions"><a class="btn btn-primary" href="services.html">New service request</a><a class="btn btn-outline" href="settings.html">Account settings</a></div></div></section>
+<section class="section"><div class="container"><div id="pageStatus" class="status" role="status" aria-live="polite"></div><div id="bookingList"><div class="empty-state"><h3>Loading your bookings</h3><p>Your saved requests will appear here.</p></div></div></div></section>
+</main>
+<div id="siteFooter"></div>
+<div id="globalStatus" class="container status" role="status" aria-live="polite"></div>
+</body></html>

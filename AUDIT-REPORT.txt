@@ -1,0 +1,20 @@
+PRE-ZIP STATIC AUDIT
+====================
+about.html: doctype=True; duplicate_ids=none; missing_local_refs=none
+bookings.html: doctype=True; duplicate_ids=none; missing_local_refs=none
+forgot-password.html: doctype=True; duplicate_ids=none; missing_local_refs=none
+help.html: doctype=True; duplicate_ids=none; missing_local_refs=none
+how-it-works.html: doctype=True; duplicate_ids=none; missing_local_refs=none
+index.html: doctype=True; duplicate_ids=none; missing_local_refs=none
+join-as-bird.html: doctype=True; duplicate_ids=none; missing_local_refs=none
+login.html: doctype=True; duplicate_ids=none; missing_local_refs=none
+pricing.html: doctype=True; duplicate_ids=none; missing_local_refs=none
+privacy.html: doctype=True; duplicate_ids=none; missing_local_refs=none
+safety.html: doctype=True; duplicate_ids=none; missing_local_refs=none
+services.html: doctype=True; duplicate_ids=none; missing_local_refs=none
+settings.html: doctype=True; duplicate_ids=none; missing_local_refs=none
+signup.html: doctype=True; duplicate_ids=none; missing_local_refs=none
+terms.html: doctype=True; duplicate_ids=none; missing_local_refs=none
+
+Checks performed: HTML doctype, duplicate IDs, local href/src targets. This is a static file audit, not a browser/device QA or backend security audit.
+Backend features such as Firebase auth, booking writes, payment collection, admin assignment, verification and notifications must be configured and tested separately.

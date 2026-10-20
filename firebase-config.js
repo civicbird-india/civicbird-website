@@ -1,4 +1,5 @@
-// CivicBird Firebase configuration
+// CivicBird Firebase Web App configuration.
+// These are web-app config values, not a service-account private key.
 export const firebaseConfig = {
   apiKey: "AIzaSyAWHoWXlK-mDw1-xDWubOjCafNd0zoRaqw",
   authDomain: "civicbird.firebaseapp.com",

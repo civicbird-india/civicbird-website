@@ -1,3 +1,5 @@
+ORIGINAL THEME PRESERVED: CivicBird blue (#123b72), blue accent (#2468bd), white and pale blue sections; no unrelated redesign.
+
 CIVICBIRD WEBSITE — REQUIRED SETUP BEFORE LIVE USE
 
 IMPORTANT
